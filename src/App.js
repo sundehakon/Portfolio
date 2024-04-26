@@ -1,4 +1,4 @@
-import { Box, Typography, List, ListItem, Button } from '@mui/material';
+import { Box, Typography, List, ListItemButton, Button } from '@mui/material';
 
 function App() {
   return (
@@ -12,26 +12,26 @@ function App() {
         </Box>
       </Box>
       <List>
-        <ListItem>
-          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 20 }}>
+        <ListItemButton>
+          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }}>
             Projects
           </Button>
-        </ListItem>
-        <ListItem>
-          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 20 }}>
+        </ListItemButton>
+        <ListItemButton>
+          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17 }}>
             Blog
           </Button>
-        </ListItem>
-        <ListItem>
-          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 20, marginLeft: -1 }}>
-           Me
+        </ListItemButton>
+        <ListItemButton>
+          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, marginLeft: -1 }}>
+            Me
           </Button>
-        </ListItem>
-        <ListItem>
-          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 20 }}>
+        </ListItemButton>
+        <ListItemButton>
+          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17 }}>
             Contact
           </Button>
-        </ListItem>
+        </ListItemButton>
       </List>
       <Typography
         sx={{
