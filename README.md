@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-Apache-orange.svg)](LICENSE)
 
 ## Description
 
