@@ -1,7 +1,12 @@
-import { Box, Typography, List, ListItemButton, Button, ThemeProvider } from '@mui/material';
+import { Box, Typography, List, Button, ThemeProvider } from '@mui/material';
 import theme from './theme';
 
 function App() {
+  
+  const windowScrollProject = () => {
+    window.scrollTo(1, 0);
+  }
+
   return (
     <div>
     <ThemeProvider theme={theme}>
@@ -14,7 +19,7 @@ function App() {
         </Box>
       </Box>
       <List sx={{ marginRight: 2 }}>
-          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }}>
+          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={windowScrollProject}>
             Projects
           </Button>
           <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }}>
