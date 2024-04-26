@@ -59,7 +59,7 @@ function App() {
         Here are some of my projects
       </Typography>
       <Grid>
-        <Card variant='outlined' sx={{ maxWidth: 345 }}>
+        <Card variant='outlined' sx={{ maxWidth: 346 }}>
           <CardMedia 
             sx={{ height: 140 }}
           />
