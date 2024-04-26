@@ -1,5 +1,6 @@
 import { Box, Typography, List, Button, ThemeProvider } from '@mui/material';
 import theme from './theme';
+import './App.css';
 
 function App() {
   
