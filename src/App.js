@@ -4,7 +4,7 @@ import theme from './theme';
 function App() {
   
   const windowScrollProject = () => {
-    window.scrollTo(1, 0);
+    window.scrollBy(0, 1000);
   }
 
   return (
@@ -54,7 +54,7 @@ function App() {
       <Typography variant='h2' sx={{ color: '#818181', marginTop: 4 }}>
         Projects
       </Typography>
-      <Typography variant='subtitle1' sx={{ color: '#818181', marginTop: 5 }}>
+      <Typography variant='subtitle1' sx={{ color: '#818181', marginTop: 5, marginBottom: 103 }}>
         Here are some of my projects
       </Typography>
     </Box>
