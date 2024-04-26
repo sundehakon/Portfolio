@@ -1,4 +1,4 @@
-import { Box, Typography, List, Button, ThemeProvider } from '@mui/material';
+import { Box, Typography, List, Button, ThemeProvider, Grid, Card, CardMedia } from '@mui/material';
 import theme from './theme';
 import './App.css';
 
@@ -55,9 +55,17 @@ function App() {
       <Typography variant='h2' sx={{ color: '#818181', marginTop: 4 }}>
         Projects
       </Typography>
-      <Typography variant='subtitle1' sx={{ color: '#818181', marginTop: 5, marginBottom: 103 }}>
+      <Typography variant='subtitle1' sx={{ color: '#818181', marginTop: 5 }}>
         Here are some of my projects
       </Typography>
+      <Grid>
+        <Card variant='outlined' sx={{ maxWidth: 345 }}>
+          <CardMedia 
+            sx={{ height: 140 }}
+          />
+          Hotell
+        </Card>
+      </Grid>
     </Box>
     </ThemeProvider>
     </div>
