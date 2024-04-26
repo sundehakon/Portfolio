@@ -3,8 +3,12 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
     components: {
         MuiButton: {
-            defaultProps: {
-                disableElevation: true,
+            styleOverrides: {
+                root: {
+                    '&:hover': {
+                        boxShadow: 'none',
+                    },
+                },
             },
         },
     },

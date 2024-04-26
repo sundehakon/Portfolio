@@ -1,37 +1,31 @@
-import { Box, Typography, List, ListItemButton, Button } from '@mui/material';
+import { Box, Typography, List, ListItemButton, Button, ThemeProvider } from '@mui/material';
+import theme from './theme';
 
 function App() {
   return (
     <div>
+    <ThemeProvider theme={theme}>
     <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', height: '100vh', overflow: 'hidden', gap: -10 }}>
       <Box sx={{ position: 'relative' }}>
         <Box sx={{ marginLeft: 10 }}>
-        <Typography sx={{ fontSize: 100, marginBottom: 55, color: '#818181', marginRight: -16 }}>
+        <Typography sx={{ fontSize: 100, marginBottom: 55, color: '#818181', marginRight: -13 }}>
           Håkon
         </Typography>
         </Box>
       </Box>
-      <List>
-        <ListItemButton>
-          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }}>
+      <List sx={{ marginRight: 2 }}>
+          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }}>
             Projects
           </Button>
-        </ListItemButton>
-        <ListItemButton>
-          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17 }}>
+          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }}>
             Blog
           </Button>
-        </ListItemButton>
-        <ListItemButton>
-          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, marginLeft: -1 }}>
+          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, marginLeft: -1, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }}>
             Me
           </Button>
-        </ListItemButton>
-        <ListItemButton>
-          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17 }}>
+          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }}>
             Contact
           </Button>
-        </ListItemButton>
       </List>
       <Typography
         sx={{
@@ -51,6 +45,7 @@ function App() {
         style={{ width: 'auto', height: '100%', minWidth: '83%' }}
       />
     </Box>
+    </ThemeProvider>
     </div>
   );
 }
