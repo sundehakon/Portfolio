@@ -72,7 +72,7 @@ function App() {
           <Typography variant='subtitle2' sx={{ marginTop: 1 }}>This was created as a project for my programming class at school. It is designed to make hotel reservations easy both for the customer and staff. It aims to provide information about the hotel, meanwhile also providing functionality which makes the hotel experience that much better!</Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: 'center' }}>
-          <Button size='small' href='https://github.com/sundehakon/Hotell-React/tree/master' target='_blank'>Learn More</Button>
+          <Button size='small' href='https://github.com/sundehakon/Hotell-React' target='_blank'>Learn More</Button>
         </CardActions>
       </Card>
     </Grid>
@@ -89,7 +89,7 @@ function App() {
           <Typography variant='subtitle2' sx={{ marginTop: 1 }}>This was created as a project for my programming class at school. It is designed to make hotel reservations easy both for the customer and staff. It aims to provide information about the hotel, meanwhile also providing functionality which makes the hotel experience that much better!</Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: 'center' }}>
-          <Button size='small' href='https://github.com/sundehakon/Hotell-React/tree/master' target='_blank'>Learn More</Button>
+          <Button size='small' href='https://github.com/sundehakon/Hotell-React' target='_blank'>Learn More</Button>
         </CardActions>
       </Card>
     </Grid>
@@ -106,7 +106,7 @@ function App() {
           <Typography variant='subtitle2' sx={{ marginTop: 1 }}>This was created as a project for my programming class at school. It is designed to make hotel reservations easy both for the customer and staff. It aims to provide information about the hotel, meanwhile also providing functionality which makes the hotel experience that much better!</Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: 'center' }}>
-          <Button size='small' href='https://github.com/sundehakon/Hotell-React/tree/master' target='_blank'>Learn More</Button>
+          <Button size='small' href='https://github.com/sundehakon/Hotell-React' target='_blank'>Learn More</Button>
         </CardActions>
       </Card>
     </Grid>
@@ -123,7 +123,7 @@ function App() {
           <Typography variant='subtitle2' sx={{ marginTop: 1 }}>This was created as a project for my programming class at school. It is designed to make hotel reservations easy both for the customer and staff. It aims to provide information about the hotel, meanwhile also providing functionality which makes the hotel experience that much better!</Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: 'center' }}>
-          <Button size='small' href='https://github.com/sundehakon/Hotell-React/tree/master' target='_blank'>Learn More</Button>
+          <Button size='small' href='https://github.com/sundehakon/Hotell-React' target='_blank'>Learn More</Button>
         </CardActions>
       </Card>
     </Grid>
