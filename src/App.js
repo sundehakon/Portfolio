@@ -12,6 +12,14 @@ function App() {
     window.scrollBy(0, 2651);
   }
 
+  const windowScrollMe = () => {
+    window.scrollBy(0, 3614)
+  }
+
+  const windowScrollContact = () => {
+    window.scrollBy(0, 4577)
+  }
+
   return (
     <div>
     <ThemeProvider theme={theme}>
@@ -30,10 +38,10 @@ function App() {
           <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={windowScrollBlog}>
             Blog
           </Button>
-          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, marginLeft: -1, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }}>
+          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, marginLeft: -1, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={windowScrollMe}>
             Me
           </Button>
-          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }}>
+          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={windowScrollContact}>
             Contact
           </Button>
       </List>
@@ -195,16 +203,24 @@ function App() {
   </Grid>
 </Box>
 <Box sx={{ backgroundColor: '#dedede', width: '99,5vw', height: 963 }}>
-
+  <Typography sx={{ textAlign: 'center' }}>
+    Blog
+  </Typography>
 </Box>
 <Box sx={{ backgroundColor: 'white', width: '99,5vw', height: 963 }}>
-
+  <Typography sx={{ textAlign: 'center' }}>
+    Me
+  </Typography>
 </Box>
 <Box sx={{ backgroundColor: '#dedede', width: '99,5vw', height: 963 }}>
-
+  <Typography sx={{ textAlign: 'center' }}>
+    Contact
+  </Typography>
 </Box>
 <Box sx={{ backgroundColor: 'white', width: '99,5vw', height: 400 }}>
-
+  <Typography sx={{ textAlign: 'center' }}>
+    Footer
+  </Typography>
 </Box>
 </ThemeProvider>
 </div>
