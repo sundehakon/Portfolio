@@ -38,8 +38,8 @@ function App() {
           fontSize: 100,
           position: 'absolute',
           color: 'white',
-          top: '28%',
-          left: '30%', 
+          top: '27%',
+          left: '33%', 
           transform: 'translate(-50%, -50%)',
         }}
       >
