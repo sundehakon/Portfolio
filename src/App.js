@@ -211,6 +211,7 @@ function App() {
   <Typography sx={{ textAlign: 'center' }}>
     Me
   </Typography>
+  <img src='/images/flight-reacts-removebg-preview.png' alt='Selfie of famous streamer Flight Reacts'/>
 </Box>
 <Box sx={{ backgroundColor: '#dedede', width: '99,5vw', height: 963 }}>
   <Typography sx={{ textAlign: 'center' }}>
