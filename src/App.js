@@ -79,13 +79,12 @@ function App() {
       <Card variant='outlined' sx={{ maxWidth: 346 }}>
         <CardMedia 
           sx={{ height: 280 }}
-          image='/images/havblikk-logo.png'
+          image='/images/ai-image-cat.png'
           title='Logo for Havblikk'
         />
-        <hr style={{ width: '90%' }}/> 
         <CardContent>
-          <Typography variant='h5'>Hotel Website</Typography>
-          <Typography variant='subtitle2' sx={{ marginTop: 1 }}>This was created as a project for my programming class at school. It is designed to make hotel reservations easy both for the customer and staff. It aims to provide information about the hotel, meanwhile also providing functionality which makes the hotel experience that much better!</Typography>
+          <Typography variant='h5'>SundeAI</Typography>
+          <Typography variant='subtitle2' sx={{ marginTop: 1 }}>A simple console based application which uses an API provided by Stability AI to generate images. This project was created with JavaScript and helped teach me about fetching data from APIs using JS and Node.</Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: 'center' }}>
           <Button size='small' href='https://github.com/sundehakon/Hotell-React' target='_blank'>Learn More</Button>
