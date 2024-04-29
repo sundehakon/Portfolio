@@ -8,6 +8,10 @@ function App() {
     window.scrollBy(0, 963);
   }
 
+  const windowScrollBlog = () => {
+    window.scrollBy(0, 2651);
+  }
+
   return (
     <div>
     <ThemeProvider theme={theme}>
@@ -23,7 +27,7 @@ function App() {
           <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={windowScrollProject}>
             Projects
           </Button>
-          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }}>
+          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={windowScrollBlog}>
             Blog
           </Button>
           <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, marginLeft: -1, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }}>
@@ -142,9 +146,14 @@ function App() {
     </Grid>
   </Grid>
 </Box>
+<Box sx={{ backgroundColor: '#dedede', width: '99,5vw', height: 963 }}>
 
-    </ThemeProvider>
-    </div>
+</Box>
+<Box sx={{ backgroundColor: 'white', width: '99,5vw', height: 963 }}>
+
+</Box>
+</ThemeProvider>
+</div>
   );
 }
 
