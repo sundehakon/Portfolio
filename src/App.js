@@ -39,7 +39,7 @@ function App() {
           position: 'absolute',
           color: 'white',
           top: '27%',
-          left: '33%', 
+          left: '34%', 
           transform: 'translate(-50%, -50%)',
         }}
       >
