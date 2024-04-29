@@ -8,12 +8,15 @@ This is a project which aims to showcase personal projects and work.
 
 ## Table of Contents
 
+- [Hosting](#hosting)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
+## Hosting
+The website is currently being hosted using Netlify: **https://sundehakon.netlify.app/**
 ## Installation
 
 To install and set up this project, follow these steps:
