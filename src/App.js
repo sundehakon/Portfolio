@@ -64,7 +64,7 @@ function App() {
         <CardMedia 
           sx={{ height: 280 }}
           image='/images/five-stars.jpeg'
-          title='Logo for Havblikk'
+          title='Hotel sign with 5 stars'
         />
         <CardContent>
           <Typography variant='h5'>Hotel Website</Typography>
@@ -80,7 +80,7 @@ function App() {
         <CardMedia 
           sx={{ height: 280 }}
           image='/images/ai-image-cat.png'
-          title='Logo for Havblikk'
+          title='AI generated image of cat'
         />
         <CardContent>
           <Typography variant='h5'>SundeAI</Typography>
@@ -96,7 +96,7 @@ function App() {
         <CardMedia 
           sx={{ height: 280 }}
           image='/images/youtube-logo-1.webp'
-          title='Logo for Havblikk'
+          title='YouTube logo'
         />
         <CardContent>
           <Typography variant='h5'>YouTube Downloader</Typography>
@@ -112,7 +112,7 @@ function App() {
         <CardMedia 
           sx={{ height: 280 }}
           image='/images/numbers.webp'
-          title='Logo for Havblikk'
+          title='Bunch of futuristic numbers packed together'
         />
         <CardContent>
           <Typography variant='h5'>Random Number Game</Typography>
@@ -129,7 +129,7 @@ function App() {
         <CardMedia 
           sx={{ height: 280 }}
           image='/images/portfolio.jpeg'
-          title='Logo for Havblikk'
+          title='Metal pieces spelling out portfolio'
         />
         <CardContent>
           <Typography variant='h5'>Portfolio</Typography>
