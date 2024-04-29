@@ -124,6 +124,22 @@ function App() {
         </CardActions>
       </Card>
     </Grid>
+    <Grid item>
+      <Card variant='outlined' sx={{ maxWidth: 346 }}>
+        <CardMedia 
+          sx={{ height: 280 }}
+          image='/images/portfolio.jpeg'
+          title='Logo for Havblikk'
+        />
+        <CardContent>
+          <Typography variant='h5'>Portfolio</Typography>
+          <Typography variant='subtitle2' sx={{ marginTop: 1 }}>The website you are currently on! A React based portfolio to showcase myself and the projects I have worked on so far in my career. It is mostly frontend, but I am thinking of adding blog functionalities which will allow me to add blog posts to the website and users like you the ability to comment on them.</Typography>
+        </CardContent>
+        <CardActions sx={{ justifyContent: 'center' }}>
+          <Button size='small' href='https://github.com/sundehakon/random-number-game' target='_blank'>Learn More</Button>
+        </CardActions>
+      </Card>
+    </Grid>
   </Grid>
 </Box>
 
