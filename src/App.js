@@ -60,7 +60,7 @@ function App() {
   </Typography>
   <Grid container spacing={7} justifyContent="center" sx={{ marginTop: 3, marginBottom: 22 }}>
     <Grid item>
-      <Card variant='outlined' sx={{ maxWidth: 346 }}>
+      <Card variant='outlined' sx={{ maxWidth: 346, height: 600 }}>
         <CardMedia 
           sx={{ height: 280 }}
           image='/images/five-stars.jpeg'
@@ -71,12 +71,12 @@ function App() {
           <Typography variant='subtitle2' sx={{ marginTop: 1 }}>This was created as a project for my programming class at school. It is designed to make hotel reservations easy both for the customer and staff. It aims to provide information about the hotel, meanwhile also providing functionality which makes the hotel experience that much better!</Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: 'center' }}>
-          <Button size='small' href='https://github.com/sundehakon/Hotell-React' target='_blank'>Learn More</Button>
+          <Button size='small' href='https://github.com/sundehakon/Hotell-React' target='_blank' sx={{ marginTop: 3 }}>Learn More</Button>
         </CardActions>
       </Card>
     </Grid>
     <Grid item>
-      <Card variant='outlined' sx={{ maxWidth: 346 }}>
+      <Card variant='outlined' sx={{ maxWidth: 346, height: 600 }}>
         <CardMedia 
           sx={{ height: 280 }}
           image='/images/ai-image-cat.png'
@@ -87,12 +87,12 @@ function App() {
           <Typography variant='subtitle2' sx={{ marginTop: 1 }}>A simple console based application which uses an API provided by Stability AI to generate images. This project was created with JavaScript and helped teach me about fetching data from APIs using JS and Node.</Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: 'center' }}>
-          <Button size='small' href='https://github.com/sundehakon/SundeAI' target='_blank'>Learn More</Button>
+          <Button size='small' href='https://github.com/sundehakon/SundeAI' target='_blank' sx={{ marginTop: 9 }}>Learn More</Button>
         </CardActions>
       </Card>
     </Grid>
     <Grid item>
-      <Card variant='outlined' sx={{ maxWidth: 346 }}>
+      <Card variant='outlined' sx={{ maxWidth: 346, height: 600 }}>
         <CardMedia 
           sx={{ height: 280 }}
           image='/images/youtube-logo-1.webp'
@@ -103,12 +103,12 @@ function App() {
           <Typography variant='subtitle2' sx={{ marginTop: 1 }}>One of my first intermediate level C# projects. I wanted to make a script which actually felt useful, and had real purpose and functionality. I advise you however not to use this program with ill intentions because it I do not think YouTube likes programs such as this...</Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: 'center' }}>
-          <Button size='small' href='https://github.com/sundehakon/youtubedownload-csharp' target='_blank'>Learn More</Button>
+          <Button size='small' href='https://github.com/sundehakon/youtubedownload-csharp' target='_blank' sx={{ marginTop: 6 }}>Learn More</Button>
         </CardActions>
       </Card>
     </Grid>
     <Grid item>
-      <Card variant='outlined' sx={{ maxWidth: 346 }}>
+      <Card variant='outlined' sx={{ maxWidth: 346, height: 600 }}>
         <CardMedia 
           sx={{ height: 280 }}
           image='/images/numbers.webp'
@@ -125,7 +125,7 @@ function App() {
       </Card>
     </Grid>
     <Grid item>
-      <Card variant='outlined' sx={{ maxWidth: 346 }}>
+      <Card variant='outlined' sx={{ maxWidth: 346, height: 600 }}>
         <CardMedia 
           sx={{ height: 280 }}
           image='/images/portfolio.jpeg'
@@ -136,7 +136,7 @@ function App() {
           <Typography variant='subtitle2' sx={{ marginTop: 1 }}>The website you are currently on! A React based portfolio to showcase myself and the projects I have worked on so far in my career. It is mostly frontend, but I am thinking of adding blog functionalities which will allow me to add blog posts to the website and users like you the ability to comment on them.</Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: 'center' }}>
-          <Button size='small' href='https://github.com/sundehakon/random-number-game' target='_blank'>Learn More</Button>
+          <Button size='small' href='https://github.com/sundehakon/random-number-game' target='_blank' sx={{ marginTop: 3 }}>Learn More</Button>
         </CardActions>
       </Card>
     </Grid>
