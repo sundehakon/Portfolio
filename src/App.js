@@ -87,7 +87,7 @@ function App() {
           <Typography variant='subtitle2' sx={{ marginTop: 1 }}>A simple console based application which uses an API provided by Stability AI to generate images. This project was created with JavaScript and helped teach me about fetching data from APIs using JS and Node.</Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: 'center' }}>
-          <Button size='small' href='https://github.com/sundehakon/Hotell-React' target='_blank'>Learn More</Button>
+          <Button size='small' href='https://github.com/sundehakon/SundeAI' target='_blank'>Learn More</Button>
         </CardActions>
       </Card>
     </Grid>
