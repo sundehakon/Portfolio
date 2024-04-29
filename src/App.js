@@ -5,7 +5,7 @@ import './App.css';
 function App() {
   
   const windowScrollProject = () => {
-    window.scrollBy(0, 1000);
+    window.scrollBy(0, 963);
   }
 
   return (
@@ -95,16 +95,15 @@ function App() {
       <Card variant='outlined' sx={{ maxWidth: 346 }}>
         <CardMedia 
           sx={{ height: 280 }}
-          image='/images/havblikk-logo.png'
+          image='/images/youtube-logo-1.webp'
           title='Logo for Havblikk'
         />
-        <hr style={{ width: '90%' }}/> 
         <CardContent>
-          <Typography variant='h5'>Hotel Website</Typography>
-          <Typography variant='subtitle2' sx={{ marginTop: 1 }}>This was created as a project for my programming class at school. It is designed to make hotel reservations easy both for the customer and staff. It aims to provide information about the hotel, meanwhile also providing functionality which makes the hotel experience that much better!</Typography>
+          <Typography variant='h5'>YouTube Downloader</Typography>
+          <Typography variant='subtitle2' sx={{ marginTop: 1 }}>One of my first intermediate level C# projects. I wanted to make a script which actually felt useful, and had real purpose and functionality. I advise you however not to use this program with ill intentions because it I do not think YouTube likes programs such as this...</Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: 'center' }}>
-          <Button size='small' href='https://github.com/sundehakon/Hotell-React' target='_blank'>Learn More</Button>
+          <Button size='small' href='https://github.com/sundehakon/youtubedownload-csharp' target='_blank'>Learn More</Button>
         </CardActions>
       </Card>
     </Grid>
