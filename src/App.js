@@ -48,7 +48,7 @@ function App() {
       <img
         src='/images/IMG_0903.jpeg'
         alt='Blossoming nature'
-        style={{ width: 'auto', height: '100%', minWidth: '79%' }}
+        style={{ width: 'auto', height: '100%', minWidth: '76%' }}
       />
     </Box>
     <Box sx={{ textAlign: 'center' }}>
