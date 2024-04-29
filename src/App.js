@@ -1,4 +1,4 @@
-import { Box, Typography, List, Button, ThemeProvider, Grid, Card, CardMedia, CardContent, CardActions } from '@mui/material';
+import { Box, Typography, List, Button, ThemeProvider, Grid, Card, CardMedia, CardContent, CardActions, Link } from '@mui/material';
 import theme from './theme';
 import './App.css';
 
@@ -207,11 +207,19 @@ function App() {
     Blog
   </Typography>
 </Box>
-<Box sx={{ backgroundColor: 'white', width: '99,5vw', height: 963 }}>
-  <Typography sx={{ textAlign: 'center' }}>
-    Me
-  </Typography>
-  <img src='/images/flight-reacts-removebg-preview.png' alt='Selfie of famous streamer Flight Reacts'/>
+<Box sx={{ backgroundColor: 'white', width: '99,5vw', height: 963, display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
+  <Box sx={{ color: '#818181' }}>
+    <Typography sx={{ fontWeight: 'bold' }} variant='h4'>
+      Hi, I'm Håkon Sunde
+    </Typography>
+    <Typography sx={{ marginTop: 2 }}>
+      a 16 year old developer from Norway
+    </Typography>
+    <Typography sx={{ marginTop: 2 }}>
+      Want to talk with me?: <Link href='mailto: hakon.su@gmail.com' underline='hover' color={'inherit'}>hakon.su@gmail.com</Link>
+    </Typography>
+  </Box>
+  <img src='/images/flight-reacts-removebg-preview.png' alt='Selfie of famous streamer Flight Reacts' style={{ width: '25%', height: 400 }}/>
 </Box>
 <Box sx={{ backgroundColor: '#dedede', width: '99,5vw', height: 963 }}>
   <Typography sx={{ textAlign: 'center' }}>
