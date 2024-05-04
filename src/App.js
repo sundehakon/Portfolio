@@ -48,7 +48,7 @@ function App() {
       <Box sx={{ position: 'absolute', marginLeft: 10 }}>
         <Box>
           {user &&
-            <img src={user.picture} alt='Profile picture' style={{ width: 32, height: 32, borderRadius: '50%', position: 'absolute', top: '-27%', left: '-7%'}}/>
+            <img src={user.picture} alt='Profile pic' style={{ width: 32, height: 32, borderRadius: '50%', position: 'absolute', top: '-27%', left: '-7%'}}/>
           }
         </Box>
         <Box sx={{ position: 'absolute', top: '-26.7%'}}>
