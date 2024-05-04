@@ -9,6 +9,7 @@ app.use(cors());
 app.use(bodyParser.json()); 
 
 mongoose.connect(process.env.MONGO_URI, {});
+const db = mongoose.connection;
 
 const postSchema = new mongoose.Schema({
     userId: String,
@@ -27,9 +28,13 @@ app.get('/api/Blog', async (req, res) => {
         console.error('Error fetching post:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
-})
+});
+
+db.once('open', () => {
+    console.log('MongoDB connected');
+});
 
 const PORT = 9999;
 app.listen(PORT, () => {
     console.log(`PORT: ${PORT}`);
-})
+});
