@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from './login';
 import axios from 'axios';
+import LogoutButton from './logout';
 
 function App() {
   const { user } = useAuth0();
@@ -62,7 +63,12 @@ function App() {
           <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={windowScrollContact}>
             Contact
           </Button>
-          <LoginButton />
+          {!user &&
+            <LoginButton />
+          }
+          {user &&
+            <LogoutButton />
+          }
       </List>
       <Box sx={{ backgroundColor: '#BABABA', width: '100vw', height: '100vh' }}>
       </Box>
