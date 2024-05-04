@@ -46,6 +46,16 @@ function App() {
     <ThemeProvider theme={theme}>
     <Box sx={{  position: 'relative', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', height: '100vh', gap: -10 }}>
       <Box sx={{ position: 'absolute', marginLeft: 10 }}>
+        <Box>
+          {user &&
+            <img src={user.picture} alt='Profile picture' style={{ width: 32, height: 32, borderRadius: '50%', position: 'absolute', top: '-27%', left: '-7%'}}/>
+          }
+        </Box>
+        <Box sx={{ position: 'absolute', top: '-26.7%'}}>
+          {user &&
+            <Typography>{user.nickname}</Typography>
+          }
+        </Box>
         <Typography sx={{ fontSize: 100, marginBottom: 55, color: '#818181' }}>
           Håkon &nbsp;<span style={{ color: '#ededed' }}>Sunde</span>
         </Typography>
