@@ -14,9 +14,10 @@ function App() {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
+        if (user) {
           const response = await axios.get('http://localhost:9999/api/Blogs');
           setBlog(response.data);
-          console.log(response.data);
+        }
       } catch (error) {
           console.error('Error fetching orders', error);
       }
@@ -223,12 +224,23 @@ function App() {
   </Grid>
 </Box>
 <Box sx={{ backgroundColor: '#dedede', width: '99,5vw', height: 963 }}>
-  <Typography sx={{ textAlign: 'center' }}>
+  <Typography sx={{ textAlign: 'center', paddingTop: 4 }} variant='h4'>
     Blog
   </Typography>
   {blogs.map((blog, index) => (
-    <Typography key={index}>{blog.title}</Typography>
+    
   ))}
+  {!user && (
+      <div>
+      <Typography sx={{ textAlign: 'center', marginTop: 45 }} variant='subtitle1'>
+        Please Log In To View Blog Posts
+      </Typography>
+      <Box sx={{ display: 'flex', justifyContent: 'center'}}>
+        <LoginButton />
+      </Box>
+    </div>
+  
+  )}
 </Box>
 <Box sx={{ backgroundColor: 'white', width: '99,5vw', height: 963, display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
   <Box sx={{ color: '#818181' }}>
