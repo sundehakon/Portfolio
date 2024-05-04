@@ -1,8 +1,16 @@
 import { Box, Typography, List, Button, ThemeProvider, Grid, Card, CardMedia, CardContent, CardActions, Link } from '@mui/material';
 import theme from './theme';
 import './App.css';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    const fetchBlog = async () => {
+      try {
+        const response = await axios.get('http://localhost:9999/api/Blog');
+      }
+    }
+  });
   
   const windowScrollProject = () => {
     window.scrollBy(0, 963);
