@@ -23,15 +23,13 @@ function App() {
   return (
     <div>
     <ThemeProvider theme={theme}>
-    <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', height: '100vh', gap: -10 }}>
-      <Box sx={{ position: 'relative' }}>
-        <Box sx={{ marginLeft: 10 }}>
-        <Typography sx={{ fontSize: 100, marginBottom: 55, color: '#818181', marginRight: -13 }}>
-          Håkon
+    <Box sx={{  position: 'relative', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', height: '100vh', gap: -10 }}>
+      <Box sx={{ position: 'absolute', marginLeft: 10 }}>
+        <Typography sx={{ fontSize: 100, marginBottom: 55, color: '#818181' }}>
+          Håkon &nbsp;<span style={{ color: '#ededed' }}>Sunde</span>
         </Typography>
-        </Box>
       </Box>
-      <List sx={{ marginRight: 2 }}>
+      <List sx={{ display: 'flex', flexDirection: 'column', marginRight: 5, marginLeft: 32, alignItems: 'flex-start', marginTop: 10 }}>
           <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={windowScrollProject}>
             Projects
           </Button>
@@ -45,23 +43,8 @@ function App() {
             Contact
           </Button>
       </List>
-      <Typography
-        sx={{
-          fontSize: 100,
-          position: 'absolute',
-          color: 'white',
-          top: '27%',
-          left: '34%', 
-          transform: 'translate(-50%, -50%)',
-        }}
-      >
-        Sunde
-      </Typography>
-      <img
-        src='/images/IMG_0903.jpeg'
-        alt='Blossoming nature'
-        style={{ width: 'auto', height: '100%', minWidth: '76%' }}
-      />
+      <Box sx={{ backgroundColor: '#BABABA', width: '100vw', height: '100vh' }}>
+      </Box>
     </Box>
     <Box sx={{ textAlign: 'center' }}>
   <Typography variant='h2' sx={{ color: '#818181', marginTop: 4 }}>
