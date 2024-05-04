@@ -16,14 +16,14 @@ const postSchema = new mongoose.Schema({
     title: String,
     content: String,
     date: Date,
-}, { collection: 'Blog' });
+}, { collection: 'Blogs' });
 
 const Post = mongoose.model('Post', postSchema);
 
-app.get('/api/Blog', async (req, res) => {
+app.get('/api/Blogs', async (req, res) => {
     try {
-        const blog = await Post.find();
-        res.status(200).json(blog);
+        const blogs = await Post.find();
+        res.status(200).json(blogs);
     } catch (error) {
         console.error('Error fetching post:', error);
         res.status(500).json({ error: 'Internal server error' });
