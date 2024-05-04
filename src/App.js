@@ -8,23 +8,21 @@ import axios from 'axios';
 
 function App() {
   const { user } = useAuth0();
-  const [blogs, setBlogs] = useState([]);
+  const [blogs, setBlog] = useState([]);
 
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        if (user) {
           const response = await axios.get('http://localhost:9999/api/Blogs');
-          const matchingId = response.data.filter(blog => blog.userId === user.sub);
-          setBlogs(matchingId);
-        }
+          setBlog(response.data);
+          console.log(response.data);
       } catch (error) {
           console.error('Error fetching orders', error);
       }
     };
 
     fetchBlog();
-  }, [user, setBlogs]);
+  }, [user, setBlog]);
   
   const windowScrollProject = () => {
     window.scrollBy(0, 963);
@@ -213,7 +211,7 @@ function App() {
     Blog
   </Typography>
   {blogs.map((blog, index) => (
-    <Typography>{blog.title}</Typography>
+    <Typography key={index}>{blog.title}</Typography>
   ))}
 </Box>
 <Box sx={{ backgroundColor: 'white', width: '99,5vw', height: 963, display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>

@@ -15,7 +15,7 @@ const postSchema = new mongoose.Schema({
     userId: String,
     title: String,
     content: String,
-    date: Date,
+    date: String,
 }, { collection: 'Blogs' });
 
 const Post = mongoose.model('Post', postSchema);
