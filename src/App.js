@@ -228,7 +228,10 @@ function App() {
     Blog
   </Typography>
   {blogs.map((blog, index) => (
-    
+    <Card sx={{ width: 200, height: 250}}>
+      {/* TODO: Add values for blog post and fix styling */}
+      <Typography variant='h5'>{blog.title}</Typography>
+    </Card>
   ))}
   {!user && (
       <div>
