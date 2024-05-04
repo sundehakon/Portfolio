@@ -1,16 +1,30 @@
 import { Box, Typography, List, Button, ThemeProvider, Grid, Card, CardMedia, CardContent, CardActions, Link } from '@mui/material';
 import theme from './theme';
 import './App.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import LoginButton from './login';
+import axios from 'axios';
 
 function App() {
+  const { user } = useAuth0();
+  const [ setPost ] = useState([]);
+
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await axios.get('http://localhost:9999/api/Blog');
+        if (user) {
+          const response = await axios.get('http://localhost:9999/api/Blog');
+          const matchingId = response.data.filter(post => post.userId === user.sub);
+          setPost(matchingId);
+        }
+      } catch (error) {
+          console.error('Error fetching orders', error);
       }
-    }
-  });
+    };
+
+    fetchBlog();
+  }, [user, setPost]);
   
   const windowScrollProject = () => {
     window.scrollBy(0, 963);
@@ -50,6 +64,7 @@ function App() {
           <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={windowScrollContact}>
             Contact
           </Button>
+          <LoginButton />
       </List>
       <Box sx={{ backgroundColor: '#BABABA', width: '100vw', height: '100vh' }}>
       </Box>
