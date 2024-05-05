@@ -197,13 +197,17 @@ function App() {
     Blog
   </Typography>
   {blogs.map((blog, index) => (
-    <Paper sx={{ width: 400, height: 600, cursor: 'pointer', overflow: 'hidden' }} key={index} onClick={() => handleOpen(blog)}>
-      <Box sx={{ display: 'flex', gap: 11 }}>
-        <Typography variant='h5' sx={{ marginTop: 2 }}>{blog.title}</Typography>
-        <Typography>{blog.date}</Typography>
-      </Box>
-      <Typography>{blog.content}</Typography>
-    </Paper>
+    <Grid spacing={3} sx={{ marginLeft: 3 }}>
+      <Grid item>
+        <Paper sx={{ width: 400, height: '60%', cursor: 'pointer', overflow: 'hidden', paddingLeft: 2 }} key={index} onClick={() => handleOpen(blog)}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
+            <Typography variant='h5' sx={{ marginTop: 2 }}>{blog.title}</Typography>
+            <Typography sx={{ marginTop: 2, marginRight: 2 }}>{blog.date}</Typography>
+          </Box>
+            <Typography sx={{ marginBottom: 3 }}>{blog.content}</Typography>
+        </Paper>
+      </Grid>
+    </Grid>
   ))}
   <Modal open={selectedBlog !== null} onClose={handleClose}>
     <Box 
@@ -218,9 +222,13 @@ function App() {
         maxWidth: '90%',
         maxHeight: '90%',
         overflow: 'auto',
+        outline: 'none',
       }}>
-      <Typography variant='h5'>{selectedBlog?.title}</Typography>
-      <Typography>{selectedBlog?.content}</Typography>
+      <Typography variant='h4'>{selectedBlog?.title}</Typography>
+      <Typography sx={{ marginTop: 2 }}>{selectedBlog?.date}</Typography>
+      <Typography sx={{ marginBottom: 3, marginTop: 2 }}>{selectedBlog?.content}</Typography>
+      <hr />
+      <Typography variant='h6' sx={{ fontWeight: 'bold' }}>Comments</Typography>
     </Box>
   </Modal>
   {!user && (

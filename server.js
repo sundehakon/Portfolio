@@ -13,6 +13,7 @@ const db = mongoose.connection;
 
 const postSchema = new mongoose.Schema({
     title: String,
+    author: String,
     content: String,
     date: String,
 }, { collection: 'Blogs' });
