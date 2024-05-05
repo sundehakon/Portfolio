@@ -249,14 +249,13 @@ function App() {
       comments
         .filter((comment) => comment.postId === selectedBlog._id)
         .map((comment, index) => (
-          <Box key={index}>
+          <Box key={index} sx={{ marginTop: 2 }}>
             <Typography>{comment.content}</Typography>
-            <Typography>{comment.user.nickname}</Typography>
           </Box>
         ))
       )}
       {selectedBlog?._id && comments.filter((comment) => comment.postId === selectedBlog._id).length === 0 && (
-        <Typography>No comments</Typography>
+        <Typography sx={{ marginTop: 2 }}>No comments</Typography>
       )}  
     </Box>
   </Modal>
