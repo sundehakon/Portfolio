@@ -30,7 +30,6 @@ function App() {
         if (user) {
           const response = await axios.get('http://localhost:9999/api/Comments');
           setComment(response.data);
-          console.log(response.data);
         }
       } catch (error) {
         console.error('Error fetching comments', error);
@@ -246,9 +245,11 @@ function App() {
       <Typography sx={{ marginBottom: 3, marginTop: 2 }}>{selectedBlog?.content}</Typography>
       <hr />
       <Typography variant='h6' sx={{ fontWeight: 'bold' }}>Comments</Typography>
-      {comments.map((comment, index) => {
-        <Typography>{comment.content}</Typography>
-      })}
+      {comments.map((comment, index) => (
+        <Box key={index}>
+          <Typography>{comment.content}</Typography>
+        </Box>
+      ))}
     </Box>
   </Modal>
   {!user && (
