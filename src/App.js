@@ -254,7 +254,10 @@ function App() {
             <Typography>{comment.content}</Typography>
           </Box>
         ))
-    )}
+      )}
+      {selectedBlog?._id && comments.filter((comment) => comment.postId === selectedBlog._id).length === 0 && (
+        <Typography>No comments</Typography>
+      )}  
     </Box>
   </Modal>
   {!user && (
