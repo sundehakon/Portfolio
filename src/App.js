@@ -245,7 +245,7 @@ function App() {
       <hr />
       <Typography variant='h6' sx={{ fontWeight: 'bold' }}>Comments</Typography>
       {comments.map((comment, index) => {
-        <Typography>{comment.</Typography>
+        <Typography>{comment.content}</Typography>
       })}
     </Box>
   </Modal>

@@ -18,6 +18,13 @@ const postSchema = new mongoose.Schema({
     date: String,
 }, { collection: 'Blogs' });
 
+const commentSchema = new mongoose.Schema({
+    postId: String,
+    userId: String,
+    content: String,
+    date: String,
+});
+
 const Post = mongoose.model('Post', postSchema);
 
 app.get('/api/Blogs', async (req, res) => {
