@@ -12,6 +12,7 @@ function App() {
   const [blogs, setBlog] = useState([]);
   const [comments, setComment] = useState([]);
   const [selectedBlog, setSelectedBlog] = useState(null);
+  const [commentContent, setCommentContent] = useState('');
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -39,6 +40,21 @@ function App() {
     fetchBlog();
     fetchComment();
   }, [user, setBlog, setComment]);
+
+  const handleSubmitComment = async () => {
+    try {
+      const response = await axios.post('http://localhost:9999/api/Comments', {
+        postId: selectedBlog?._id,
+        userId: user?.sub,
+        content: commentContent,
+        date: new Date().toISOString(),
+    });
+
+    setComment([...comments, response.data]);
+    setCommentContent('');
+  } catch (error) {
+    console.error('Error submitting comment:', error);
+  }};
 
   const handleOpen = (blog) => {
     setSelectedBlog(blog);
@@ -258,7 +274,15 @@ function App() {
         <Typography sx={{ marginTop: 2 }}>No comments</Typography>
       )}  
       <Box>
-        <TextField variant='outlined' label='Write comment' fullWidth sx={{ marginTop: 3 }}/>
+        <TextField 
+          variant='outlined' 
+          label='Write comment' 
+          fullWidth 
+          sx={{ marginTop: 3 }}
+          value={commentContent}
+          onChange={(e) => setCommentContent(e.target.value)}
+        />
+        <Button onClick={handleSubmitComment}>Submit</Button>
       </Box>
     </Box>
   </Modal>
