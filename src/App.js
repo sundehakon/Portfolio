@@ -117,21 +117,21 @@ function App() {
     <Grid item>
       <Card variant='outlined' sx={{ maxWidth: 346, height: 400 }}>
         <CardContent>
-          <Typography variant='h5'>YouTube Downloader</Typography>
-          <Typography variant='subtitle2' sx={{ marginTop: 1 }}>One of my first intermediate level C# projects. I wanted to make a script which actually felt useful, and had real purpose and functionality. I advise you however not to use this program with ill intentions because it I do not think YouTube likes programs such as this...</Typography>
+          <Typography variant='h5' sx={{ marginTop: 4 }}>YouTube Downloader</Typography>
+          <Typography variant='subtitle2' sx={{ marginTop: 6 }}>One of my first intermediate level C# projects. I wanted to make a script which actually felt useful, and had real purpose and functionality. I advise you however not to use this program with ill intentions because it I do not think YouTube likes programs such as this...</Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: 'center' }}>
-          <Button size='small' href='https://github.com/sundehakon/youtubedownload-csharp' target='_blank' sx={{ marginTop: 6 }}>Learn More</Button>
+          <Button size='small' href='https://github.com/sundehakon/youtubedownload-csharp' target='_blank' sx={{ marginTop: 7 }}>Learn More</Button>
         </CardActions>
       </Card>
     </Grid>
     <Grid item>
       <Card variant='outlined' sx={{ maxWidth: 346, height: 400 }}>
         <CardContent>
-          <Typography variant='h5'>Random Number Game</Typography>
-          <Typography variant='subtitle2' sx={{ marginTop: 1 }}>A game created using C# which main purpose is having the user guess a computer generated number. This game provides functionality such as letting the user pick a difficulty, randomly generating numbers that users can guess, a score which checks your difference from the actual answer and ASCII art representing the game intro, game over and victory!</Typography>
+          <Typography variant='h5' sx={{ marginTop: 4 }}>Random Number Game</Typography>
+          <Typography variant='subtitle2' sx={{ marginTop: 6 }}>A game created using C# which main purpose is having the user guess a computer generated number. This game provides functionality such as letting the user pick a difficulty, randomly generating numbers that users can guess, a score which checks your difference from the actual answer and ASCII art representing the game intro, game over and victory!</Typography>
         </CardContent>
-        <CardActions sx={{ justifyContent: 'center' }}>
+        <CardActions sx={{ justifyContent: 'center', marginTop: 2 }}>
           <Button size='small' href='https://github.com/sundehakon/random-number-game' target='_blank'>Learn More</Button>
           <Button size='small' href='https://dotnetfiddle.net/ZtSWcW' target='_blank'>Try It Out</Button>
         </CardActions>
@@ -151,33 +151,33 @@ function App() {
     <Grid item>
       <Card variant='outlined' sx={{ maxWidth: 346, height: 400 }}>
         <CardContent>
-          <Typography variant='h5'>Portfolio</Typography>
-          <Typography variant='subtitle2' sx={{ marginTop: 1 }}>The website you are currently on! A React based portfolio to showcase myself and the projects I have worked on so far in my career. It is mostly frontend, but I am thinking of adding blog functionalities which will allow me to add blog posts to the website and users like you the ability to comment on them.</Typography>
+          <Typography variant='h5'>Placeholder</Typography>
+          <Typography variant='subtitle2' sx={{ marginTop: 1 }}>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: 'center' }}>
-          <Button size='small' href='https://github.com/sundehakon/random-number-game' target='_blank' sx={{ marginTop: 3 }}>Learn More</Button>
+          <Button size='small' href='#' target='_blank' sx={{ marginTop: 3 }}>Learn More</Button>
         </CardActions>
       </Card>
     </Grid>
     <Grid item>
       <Card variant='outlined' sx={{ maxWidth: 346, height: 400 }}>
         <CardContent>
-          <Typography variant='h5'>Portfolio</Typography>
-          <Typography variant='subtitle2' sx={{ marginTop: 1 }}>The website you are currently on! A React based portfolio to showcase myself and the projects I have worked on so far in my career. It is mostly frontend, but I am thinking of adding blog functionalities which will allow me to add blog posts to the website and users like you the ability to comment on them.</Typography>
+          <Typography variant='h5'>Placeholder</Typography>
+          <Typography variant='subtitle2' sx={{ marginTop: 1 }}>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: 'center' }}>
-          <Button size='small' href='https://github.com/sundehakon/random-number-game' target='_blank' sx={{ marginTop: 3 }}>Learn More</Button>
+          <Button size='small' href='#' target='_blank' sx={{ marginTop: 3 }}>Learn More</Button>
         </CardActions>
       </Card>
     </Grid>
     <Grid item>
       <Card variant='outlined' sx={{ maxWidth: 346, height: 400 }}>
         <CardContent>
-          <Typography variant='h5'>Portfolio</Typography>
-          <Typography variant='subtitle2' sx={{ marginTop: 1 }}>The website you are currently on! A React based portfolio to showcase myself and the projects I have worked on so far in my career. It is mostly frontend, but I am thinking of adding blog functionalities which will allow me to add blog posts to the website and users like you the ability to comment on them.</Typography>
+          <Typography variant='h5'>Placeholder</Typography>
+          <Typography variant='subtitle2' sx={{ marginTop: 1 }}>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: 'center' }}>
-          <Button size='small' href='https://github.com/sundehakon/random-number-game' target='_blank' sx={{ marginTop: 3 }}>Learn More</Button>
+          <Button size='small' href='#' target='_blank' sx={{ marginTop: 3 }}>Learn More</Button>
         </CardActions>
       </Card>
     </Grid>
