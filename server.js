@@ -63,6 +63,24 @@ app.get('/api/Comments', async (req, res) => {
     }
 });
 
+app.post('/api/Comments', async (req, res) => {
+    const { postId, userId, content, date } = req.body;
+
+    const comment = new Comment({
+        postId,
+        userId,
+        content,
+        date,
+    });
+
+    try {
+        const savedComment = await comment.save();
+        res.status(200).json(savedComment);
+    } catch (error) {
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
 db.once('open', () => {
     console.log('MongoDB connected');
 });
