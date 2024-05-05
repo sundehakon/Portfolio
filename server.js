@@ -26,6 +26,7 @@ const commentSchema = new mongoose.Schema({
 });
 
 const Post = mongoose.model('Post', postSchema);
+const Comment = mongoose.model('Comment', commentSchema);
 
 app.get('/api/Blogs', async (req, res) => {
     try {
@@ -33,6 +34,16 @@ app.get('/api/Blogs', async (req, res) => {
         res.status(200).json(blogs);
     } catch (error) {
         console.error('Error fetching post:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+app.get('/api/Comments', async (req, res) => {
+    try {
+        const comments = await Comment.find();
+        res.status(200).json(comments);
+    } catch (error) {
+        console.error('Error fetching comments:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
 });
