@@ -1,4 +1,4 @@
-import { Box, Typography, List, Button, ThemeProvider, Grid, Card, CardMedia, CardContent, CardActions, Link } from '@mui/material';
+import { Box, Typography, List, Button, ThemeProvider, Grid, Card, CardContent, CardActions, Link, Paper } from '@mui/material';
 import theme from './theme';
 import './App.css';
 import { useEffect, useState } from 'react';
@@ -58,7 +58,7 @@ function App() {
           }
         </Box>
         <Typography sx={{ fontSize: 100, marginBottom: 55, color: '#818181' }}>
-          Håkon &nbsp;<span style={{ color: '#ededed' }}>Sunde</span>
+          Håkon &nbsp;<span style={{ color: '#F4F4F4' }}>Sunde</span>
         </Typography>
       </Box>
       <List sx={{ display: 'flex', flexDirection: 'column', marginRight: 5, marginLeft: 32, alignItems: 'flex-start', marginTop: 10 }}>
@@ -93,44 +93,29 @@ function App() {
   </Typography>
   <Grid container spacing={7} justifyContent="center" sx={{ marginTop: 3, marginBottom: 22 }}>
     <Grid item>
-      <Card variant='outlined' sx={{ maxWidth: 346, height: 600 }}>
-        <CardMedia 
-          sx={{ height: 280 }}
-          image='/images/five-stars.jpeg'
-          title='Hotel sign with 5 stars'
-        />
+      <Card variant='outlined' sx={{ maxWidth: 346, height: 400 }}>
         <CardContent>
-          <Typography variant='h5'>Hotel Website</Typography>
-          <Typography variant='subtitle2' sx={{ marginTop: 1 }}>This was created as a project for my programming class at school. It is designed to make hotel reservations easy both for the customer and staff. It aims to provide information about the hotel, meanwhile also providing functionality which makes the hotel experience that much better!</Typography>
+          <Typography variant='h5' sx={{ marginTop: 4 }}>Hotel Website</Typography>
+          <Typography variant='subtitle2' sx={{ marginTop: 6 }}>This was created as a project for my programming class at school. It is designed to make hotel reservations easy both for the customer and staff. It aims to provide information about the hotel, meanwhile also providing functionality which makes the hotel experience that much better!</Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: 'center' }}>
-          <Button size='small' href='https://github.com/sundehakon/Hotell-React' target='_blank' sx={{ marginTop: 3 }}>Learn More</Button>
+          <Button size='small' href='https://github.com/sundehakon/Hotell-React' target='_blank' sx={{ marginTop: 5 }}>Learn More</Button>
         </CardActions>
       </Card>
     </Grid>
     <Grid item>
-      <Card variant='outlined' sx={{ maxWidth: 346, height: 600 }}>
-        <CardMedia 
-          sx={{ height: 280 }}
-          image='/images/ai-image-cat.png'
-          title='AI generated image of cat'
-        />
+      <Card variant='outlined' sx={{ maxWidth: 346, height: 400 }}>
         <CardContent>
-          <Typography variant='h5'>SundeAI</Typography>
-          <Typography variant='subtitle2' sx={{ marginTop: 1 }}>A simple console based application which uses an API provided by Stability AI to generate images. This project was created with JavaScript and helped teach me about fetching data from APIs using JS and Node.</Typography>
+          <Typography variant='h5' sx={{ marginTop: 4 }}>SundeAI</Typography>
+          <Typography variant='subtitle2' sx={{ marginTop: 6 }}>A simple console based application which uses an API provided by Stability AI to generate images. This project was created with JavaScript and helped teach me about fetching data from APIs using JS and Node.</Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: 'center' }}>
-          <Button size='small' href='https://github.com/sundehakon/SundeAI' target='_blank' sx={{ marginTop: 9 }}>Learn More</Button>
+          <Button size='small' href='https://github.com/sundehakon/SundeAI' target='_blank' sx={{ marginTop: 10 }}>Learn More</Button>
         </CardActions>
       </Card>
     </Grid>
     <Grid item>
-      <Card variant='outlined' sx={{ maxWidth: 346, height: 600 }}>
-        <CardMedia 
-          sx={{ height: 280 }}
-          image='/images/youtube-logo-1.webp'
-          title='YouTube logo'
-        />
+      <Card variant='outlined' sx={{ maxWidth: 346, height: 400 }}>
         <CardContent>
           <Typography variant='h5'>YouTube Downloader</Typography>
           <Typography variant='subtitle2' sx={{ marginTop: 1 }}>One of my first intermediate level C# projects. I wanted to make a script which actually felt useful, and had real purpose and functionality. I advise you however not to use this program with ill intentions because it I do not think YouTube likes programs such as this...</Typography>
@@ -141,12 +126,7 @@ function App() {
       </Card>
     </Grid>
     <Grid item>
-      <Card variant='outlined' sx={{ maxWidth: 346, height: 600 }}>
-        <CardMedia 
-          sx={{ height: 280 }}
-          image='/images/numbers.webp'
-          title='Bunch of futuristic numbers packed together'
-        />
+      <Card variant='outlined' sx={{ maxWidth: 346, height: 400 }}>
         <CardContent>
           <Typography variant='h5'>Random Number Game</Typography>
           <Typography variant='subtitle2' sx={{ marginTop: 1 }}>A game created using C# which main purpose is having the user guess a computer generated number. This game provides functionality such as letting the user pick a difficulty, randomly generating numbers that users can guess, a score which checks your difference from the actual answer and ASCII art representing the game intro, game over and victory!</Typography>
@@ -158,12 +138,7 @@ function App() {
       </Card>
     </Grid>
     <Grid item>
-      <Card variant='outlined' sx={{ maxWidth: 346, height: 600 }}>
-        <CardMedia 
-          sx={{ height: 280 }}
-          image='/images/portfolio.jpeg'
-          title='Metal pieces spelling out portfolio'
-        />
+      <Card variant='outlined' sx={{ maxWidth: 346, height: 400 }}>
         <CardContent>
           <Typography variant='h5'>Portfolio</Typography>
           <Typography variant='subtitle2' sx={{ marginTop: 1 }}>The website you are currently on! A React based portfolio to showcase myself and the projects I have worked on so far in my career. It is mostly frontend, but I am thinking of adding blog functionalities which will allow me to add blog posts to the website and users like you the ability to comment on them.</Typography>
@@ -174,12 +149,7 @@ function App() {
       </Card>
     </Grid>
     <Grid item>
-      <Card variant='outlined' sx={{ maxWidth: 346, height: 600 }}>
-        <CardMedia 
-          sx={{ height: 280 }}
-          image='/images/portfolio.jpeg'
-          title='Metal pieces spelling out portfolio'
-        />
+      <Card variant='outlined' sx={{ maxWidth: 346, height: 400 }}>
         <CardContent>
           <Typography variant='h5'>Portfolio</Typography>
           <Typography variant='subtitle2' sx={{ marginTop: 1 }}>The website you are currently on! A React based portfolio to showcase myself and the projects I have worked on so far in my career. It is mostly frontend, but I am thinking of adding blog functionalities which will allow me to add blog posts to the website and users like you the ability to comment on them.</Typography>
@@ -190,12 +160,7 @@ function App() {
       </Card>
     </Grid>
     <Grid item>
-      <Card variant='outlined' sx={{ maxWidth: 346, height: 600 }}>
-        <CardMedia 
-          sx={{ height: 280 }}
-          image='/images/portfolio.jpeg'
-          title='Metal pieces spelling out portfolio'
-        />
+      <Card variant='outlined' sx={{ maxWidth: 346, height: 400 }}>
         <CardContent>
           <Typography variant='h5'>Portfolio</Typography>
           <Typography variant='subtitle2' sx={{ marginTop: 1 }}>The website you are currently on! A React based portfolio to showcase myself and the projects I have worked on so far in my career. It is mostly frontend, but I am thinking of adding blog functionalities which will allow me to add blog posts to the website and users like you the ability to comment on them.</Typography>
@@ -206,12 +171,7 @@ function App() {
       </Card>
     </Grid>
     <Grid item>
-      <Card variant='outlined' sx={{ maxWidth: 346, height: 600 }}>
-        <CardMedia 
-          sx={{ height: 280 }}
-          image='/images/portfolio.jpeg'
-          title='Metal pieces spelling out portfolio'
-        />
+      <Card variant='outlined' sx={{ maxWidth: 346, height: 400 }}>
         <CardContent>
           <Typography variant='h5'>Portfolio</Typography>
           <Typography variant='subtitle2' sx={{ marginTop: 1 }}>The website you are currently on! A React based portfolio to showcase myself and the projects I have worked on so far in my career. It is mostly frontend, but I am thinking of adding blog functionalities which will allow me to add blog posts to the website and users like you the ability to comment on them.</Typography>
@@ -228,10 +188,13 @@ function App() {
     Blog
   </Typography>
   {blogs.map((blog, index) => (
-    <Card sx={{ width: 200, height: 250}}>
-      {/* TODO: Add values for blog post and fix styling */}
-      <Typography variant='h5'>{blog.title}</Typography>
-    </Card>
+    <Paper sx={{ width: 200, height: 250}} key={index}>
+      <Box sx={{ display: 'flex', gap: 11 }}>
+        <Typography variant='h5'>{blog.title}</Typography>
+        <Typography>{blog.date}</Typography>
+      </Box>
+      <Typography>{blog.content}</Typography>
+    </Paper>
   ))}
   {!user && (
       <div>
