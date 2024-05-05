@@ -9,7 +9,7 @@ import LogoutButton from './logout';
 
 function App() {
   const { user } = useAuth0();
-  const [blogs, setBlog] = useState([]);
+  const [blogs, setBlog, comments, setComment] = useState([]);
   const [selectedBlog, setSelectedBlog] = useState(null);
 
   useEffect(() => {
@@ -24,8 +24,20 @@ function App() {
       }
     };
 
+    const fetchComment = async () => {
+      try {
+        if (user) {
+          const response = await axios.get('http://localhost:9999/api/Comments');
+          setComment(response.data);
+        }
+      } catch (error) {
+        console.error('Error fetching comments', error);
+      }
+    };
+
     fetchBlog();
-  }, [user, setBlog]);
+    fetchComment();
+  }, [user, setBlog, setComment]);
 
   const handleOpen = (blog) => {
     setSelectedBlog(blog);
@@ -90,13 +102,13 @@ function App() {
             <LogoutButton />
           }
       </List>
-      <Box sx={{ backgroundColor: '#BABABA', width: '100vw', height: '100vh' }}>
+      <Box sx={{ backgroundColor: '#BABABA', width: '100%', height: '100vh' }}>
       </Box>
     </Box>
-    <Box sx={{ textAlign: 'center' }}>
+    <Box sx={{ textAlign: 'center', maxWidth: '100%' }}>
   <Typography variant='h2' sx={{ color: '#818181', marginTop: 4 }}>
     Projects
-  </Typography>
+  </Typography> 
   <Typography variant='subtitle1' sx={{ color: '#818181', marginTop: 5 }}>
     Check out my work below!
   </Typography>
@@ -192,23 +204,23 @@ function App() {
     </Grid>
   </Grid>
 </Box>
-<Box sx={{ backgroundColor: '#dedede', width: '99,5vw', height: 963 }}>
+<Box sx={{ backgroundColor: '#dedede', width: '100vw', height: 963 }}>
   <Typography sx={{ textAlign: 'center', paddingTop: 4 }} variant='h4'>
     Blog
   </Typography>
+  <Grid container spacing={3} sx={{ marginLeft: 3, marginTop: 7, width: '90%' }} direction='row'>
   {blogs.map((blog, index) => (
-    <Grid spacing={3} sx={{ marginLeft: 3 }}>
-      <Grid item>
-        <Paper sx={{ width: 400, height: '60%', cursor: 'pointer', overflow: 'hidden', paddingLeft: 2 }} key={index} onClick={() => handleOpen(blog)}>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
-            <Typography variant='h5' sx={{ marginTop: 2 }}>{blog.title}</Typography>
-            <Typography sx={{ marginTop: 2, marginRight: 2 }}>{blog.date}</Typography>
-          </Box>
-            <Typography sx={{ marginBottom: 3 }}>{blog.content}</Typography>
-        </Paper>
-      </Grid>
+    <Grid item key={index}>
+      <Paper sx={{ width: 400, cursor: 'pointer', overflow: 'hidden', padding: 4 }} onClick={() => handleOpen(blog)}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
+          <Typography variant='h5' sx={{ marginTop: 2 }}>{blog.title}</Typography>
+          <Typography sx={{ marginTop: 2, marginRight: 2 }}>{blog.date}</Typography>
+        </Box>
+        <Typography sx={{ marginBottom: 3 }}>{blog.content}</Typography>
+      </Paper>
     </Grid>
   ))}
+</Grid>
   <Modal open={selectedBlog !== null} onClose={handleClose}>
     <Box 
       sx={{
@@ -225,10 +237,16 @@ function App() {
         outline: 'none',
       }}>
       <Typography variant='h4'>{selectedBlog?.title}</Typography>
-      <Typography sx={{ marginTop: 2 }}>{selectedBlog?.date}</Typography>
+      <Box sx={{ display: 'flex', gap: 2, alignItems: 'center', marginTop: 2 }}>
+        <Typography>written by {selectedBlog?.author}</Typography>
+        <Typography>{selectedBlog?.date}</Typography>
+      </Box>
       <Typography sx={{ marginBottom: 3, marginTop: 2 }}>{selectedBlog?.content}</Typography>
       <hr />
       <Typography variant='h6' sx={{ fontWeight: 'bold' }}>Comments</Typography>
+      {comments.map((comment, index) => {
+        <Typography>{comment.</Typography>
+      })}
     </Box>
   </Modal>
   {!user && (
@@ -243,7 +261,7 @@ function App() {
   
   )}
 </Box>
-<Box sx={{ backgroundColor: 'white', width: '99,5vw', height: 963, display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
+<Box sx={{ backgroundColor: 'white', width: '100%', height: 963, display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
   <Box sx={{ color: '#818181' }}>
     <Typography sx={{ fontWeight: 'bold' }} variant='h4'>
       Hi, I'm Håkon Sunde
@@ -260,12 +278,12 @@ function App() {
   </Box>
   <img src='/images/flight-reacts-removebg-preview.png' alt='Selfie of famous streamer Flight Reacts' style={{ width: '25%', height: 400 }}/>
 </Box>
-<Box sx={{ backgroundColor: '#dedede', width: '99,5vw', height: 963 }}>
+<Box sx={{ backgroundColor: '#dedede', width: '100%', height: 963 }}>
   <Typography sx={{ textAlign: 'center' }}>
     Contact
   </Typography>
 </Box>
-<Box sx={{ backgroundColor: 'white', width: '99,5vw', height: 400 }}>
+<Box sx={{ backgroundColor: 'white', width: '100%', height: 400 }}>
   <Typography sx={{ textAlign: 'center' }}>
     Footer
   </Typography>
