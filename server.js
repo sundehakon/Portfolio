@@ -49,7 +49,8 @@ var options = { method: 'POST',
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
 
-  console.log(body);
+  const responseBody = JSON.parse(body);
+  console.log(responseBody.access_token);
 });
 
 app.get('/api/Comments', async (req, res) => {
