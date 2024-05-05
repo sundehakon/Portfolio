@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
 const axios = require('axios');
+const ManagementClient = require('auth0').ManagementClient;
 app.use(cors());
 app.use(bodyParser.json()); 
 
@@ -41,16 +42,47 @@ app.get('/api/Blogs', async (req, res) => {
 
 var request = require("request");
 
+var accessToken;
+
 var options = { method: 'POST',
   url: `https://${process.env.REACT_APP_AUTH0_DOMAIN}/oauth/token`,
   headers: { 'content-type': 'application/json' },
   body: `{"client_id":"${process.env.REACT_APP_AUTH0_M2M_CLIENT_ID}","client_secret":"${process.env.REACT_APP_AUTH0_M2M_CLIENT_SECRET}","audience":"${process.env.REACT_APP_AUTH0_AUDIENCE}","grant_type":"client_credentials"}` };
 
 request(options, function (error, response, body) {
-  if (error) throw new Error(error);
+    if (error) throw new Error(error);
 
-  const responseBody = JSON.parse(body);
-  console.log(responseBody.access_token);
+    const responseBody = JSON.parse(body);
+    accessToken = responseBody.access_token;
+    console.log(accessToken);
+
+    const management = new ManagementClient({
+        token: accessToken,
+        domain: process.env.REACT_APP_AUTH0_DOMAIN
+    });
+    
+    app.get('/api/userProfile/:userId', async (req, res) => {
+        try {
+            const user = await management.getUser({ id: req.params.userId });
+            res.status(200).json(user.picture);
+        } catch (error) {
+            console.error('Error fetching user profile:', error);
+            res.status(500).json({ error: 'Internal server error'});
+        }
+    })
+    
+    app.get('/api/allUsers', async (req, res) => {
+        try {
+          const users = await management.getUsers({ fields: 'email,name,picture', include_fields: true });
+          users.forEach(user => {
+            console.log(user.email);
+          });
+          res.status(200).json(users);
+        } catch (error) {
+          console.error('Error fetching users:', error);
+          res.status(500).json({ error: 'Internal server error' });
+        }
+      });
 });
 
 app.get('/api/Comments', async (req, res) => {
