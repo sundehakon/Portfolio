@@ -1,4 +1,4 @@
-import { Box, Typography, List, Button, ThemeProvider, Grid, Card, CardContent, CardActions, Link, Paper, Modal } from '@mui/material';
+import { Box, Typography, List, Button, ThemeProvider, Grid, Card, CardContent, CardActions, Link, Paper, Modal, TextField } from '@mui/material';
 import theme from './theme';
 import './App.css';
 import { useEffect, useState } from 'react';
@@ -257,6 +257,9 @@ function App() {
       {selectedBlog?._id && comments.filter((comment) => comment.postId === selectedBlog._id).length === 0 && (
         <Typography sx={{ marginTop: 2 }}>No comments</Typography>
       )}  
+      <Box>
+        <TextField variant='outlined' label='Write comment' fullWidth sx={{ marginTop: 3 }}/>
+      </Box>
     </Box>
   </Modal>
   {!user && (
