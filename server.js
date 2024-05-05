@@ -12,7 +12,6 @@ mongoose.connect(process.env.MONGO_URI, {});
 const db = mongoose.connection;
 
 const postSchema = new mongoose.Schema({
-    userId: String,
     title: String,
     content: String,
     date: String,
