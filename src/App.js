@@ -9,7 +9,8 @@ import LogoutButton from './logout';
 
 function App() {
   const { user } = useAuth0();
-  const [blogs, setBlog, comments, setComment] = useState([]);
+  const [blogs, setBlog] = useState([]);
+  const [comments, setComment] = useState([]);
   const [selectedBlog, setSelectedBlog] = useState(null);
 
   useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
         if (user) {
           const response = await axios.get('http://localhost:9999/api/Comments');
           setComment(response.data);
+          console.log(response.data);
         }
       } catch (error) {
         console.error('Error fetching comments', error);

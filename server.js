@@ -23,7 +23,7 @@ const commentSchema = new mongoose.Schema({
     userId: String,
     content: String,
     date: String,
-});
+}, { collection: 'Comments' });
 
 const Post = mongoose.model('Post', postSchema);
 const Comment = mongoose.model('Comment', commentSchema);
