@@ -1,4 +1,4 @@
-import { Box, Typography, List, Button, ThemeProvider, Grid, Card, CardContent, CardActions, Link, Paper } from '@mui/material';
+import { Box, Typography, List, Button, ThemeProvider, Grid, Card, CardContent, CardActions, Link, Paper, Modal } from '@mui/material';
 import theme from './theme';
 import './App.css';
 import { useEffect, useState } from 'react';
@@ -10,6 +10,7 @@ import LogoutButton from './logout';
 function App() {
   const { user } = useAuth0();
   const [blogs, setBlog] = useState([]);
+  const [selectedBlog, setSelectedBlog] = useState(null);
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -25,22 +26,30 @@ function App() {
 
     fetchBlog();
   }, [user, setBlog]);
+
+  const handleOpen = (blog) => {
+    setSelectedBlog(blog);
+  };
+
+  const handleClose = () => {
+    setSelectedBlog(null);
+  };
   
   const windowScrollProject = () => {
     window.scrollBy(0, 963);
-  }
+  };
 
   const windowScrollBlog = () => {
     window.scrollBy(0, 2651);
-  }
+  };
 
   const windowScrollMe = () => {
     window.scrollBy(0, 3614)
-  }
+  };
 
   const windowScrollContact = () => {
     window.scrollBy(0, 4577)
-  }
+  };
 
   return (
     <div>
@@ -188,7 +197,7 @@ function App() {
     Blog
   </Typography>
   {blogs.map((blog, index) => (
-    <Paper sx={{ width: 200, height: 250}} key={index}>
+    <Paper sx={{ width: 200, height: 250, cursor: 'pointer' }} key={index} onClick={() => handleOpen(blog)}>
       <Box sx={{ display: 'flex', gap: 11 }}>
         <Typography variant='h5'>{blog.title}</Typography>
         <Typography>{blog.date}</Typography>
@@ -196,6 +205,24 @@ function App() {
       <Typography>{blog.content}</Typography>
     </Paper>
   ))}
+  <Modal open={selectedBlog !== null} onClose={handleClose}>
+    <Box 
+      sx={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        bgcolor: 'background.paper',
+        boxShadow: 24,
+        p: 4,
+        maxWidth: '90%',
+        maxHeight: '90%',
+        overflow: 'auto',
+      }}>
+      <Typography variant='h5'>{selectedBlog?.title}</Typography>
+      <Typography>{selectedBlog?.content}</Typography>
+    </Box>
+  </Modal>
   {!user && (
       <div>
       <Typography sx={{ textAlign: 'center', marginTop: 45 }} variant='subtitle1'>
