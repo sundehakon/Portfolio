@@ -197,9 +197,9 @@ function App() {
     Blog
   </Typography>
   {blogs.map((blog, index) => (
-    <Paper sx={{ width: 200, height: 250, cursor: 'pointer' }} key={index} onClick={() => handleOpen(blog)}>
+    <Paper sx={{ width: 400, height: 600, cursor: 'pointer', overflow: 'hidden' }} key={index} onClick={() => handleOpen(blog)}>
       <Box sx={{ display: 'flex', gap: 11 }}>
-        <Typography variant='h5'>{blog.title}</Typography>
+        <Typography variant='h5' sx={{ marginTop: 2 }}>{blog.title}</Typography>
         <Typography>{blog.date}</Typography>
       </Box>
       <Typography>{blog.content}</Typography>
