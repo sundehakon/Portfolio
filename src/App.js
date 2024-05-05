@@ -1,4 +1,4 @@
-import { Box, Typography, List, Button, ThemeProvider, Grid, Card, CardContent, CardActions, Link, Paper, Modal, TextField } from '@mui/material';
+import { Box, Typography, List, Button, ThemeProvider, Grid, Card, CardContent, CardActions, Link, Paper, Modal, TextField, IconButton } from '@mui/material';
 import theme from './theme';
 import './App.css';
 import { useEffect, useState } from 'react';
@@ -6,6 +6,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from './login';
 import axios from 'axios';
 import LogoutButton from './logout';
+import SendIcon from '@mui/icons-material/Send';
 
 function App() {
   const { user } = useAuth0();
@@ -273,16 +274,17 @@ function App() {
       {selectedBlog?._id && comments.filter((comment) => comment.postId === selectedBlog._id).length === 0 && (
         <Typography sx={{ marginTop: 2 }}>No comments</Typography>
       )}  
-      <Box>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 3 }}>
         <TextField 
           variant='outlined' 
           label='Write comment' 
-          fullWidth 
-          sx={{ marginTop: 3 }}
+          sx={{ marginTop: 3, width: 700 }}
           value={commentContent}
           onChange={(e) => setCommentContent(e.target.value)}
         />
-        <Button onClick={handleSubmitComment}>Submit</Button>
+        <IconButton onClick={handleSubmitComment} sx={{ marginTop: 3 }}>
+          <SendIcon />
+        </IconButton>
       </Box>
     </Box>
   </Modal>
