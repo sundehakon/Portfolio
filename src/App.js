@@ -30,7 +30,6 @@ function App() {
         if (user) {
           const response = await axios.get('http://localhost:9999/api/Comments');
           setComment(response.data);
-          console.log(response.data);
         }
       } catch (error) {
         console.error('Error fetching comments', error);
@@ -252,6 +251,7 @@ function App() {
         .map((comment, index) => (
           <Box key={index}>
             <Typography>{comment.content}</Typography>
+            <Typography>{comment.user.nickname}</Typography>
           </Box>
         ))
       )}

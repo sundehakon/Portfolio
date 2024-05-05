@@ -5,6 +5,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
+const axios = require('axios');
 app.use(cors());
 app.use(bodyParser.json()); 
 
@@ -36,6 +37,19 @@ app.get('/api/Blogs', async (req, res) => {
         console.error('Error fetching post:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
+});
+
+var request = require("request");
+
+var options = { method: 'POST',
+  url: `https://${process.env.REACT_APP_AUTH0_DOMAIN}/oauth/token`,
+  headers: { 'content-type': 'application/json' },
+  body: `{"client_id":"${process.env.REACT_APP_AUTH0_M2M_CLIENT_ID}","client_secret":"${process.env.REACT_APP_AUTH0_M2M_CLIENT_SECRET}","audience":"${process.env.REACT_APP_AUTH0_AUDIENCE}","grant_type":"client_credentials"}` };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
 });
 
 app.get('/api/Comments', async (req, res) => {
