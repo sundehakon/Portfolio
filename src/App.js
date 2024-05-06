@@ -1,12 +1,13 @@
-import { Box, Typography, List, Button, ThemeProvider, Grid, Card, CardContent, CardActions, Link, Paper, Modal, TextField, IconButton } from '@mui/material';
+import { Box, Typography, List, Button, ThemeProvider, Grid, Card, CardContent, CardActions, Link, Paper, Modal, TextField, IconButton, Snackbar } from '@mui/material';
 import theme from './theme';
 import './App.css';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from './login';
 import axios from 'axios';
 import LogoutButton from './logout';
 import SendIcon from '@mui/icons-material/Send';
+import CloseIcon from '@mui/icons-material/Close';
 
 function App() {
   const { user } = useAuth0();
@@ -14,9 +15,10 @@ function App() {
   const [comments, setComment] = useState([]);
   const [selectedBlog, setSelectedBlog] = useState(null);
   const [commentContent, setCommentContent] = useState('');
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const fetchBlog = async () => {
+    const fetchBlog = async () => { 
       try {
           const response = await axios.get('http://localhost:9999/api/Blogs');
           setBlog(response.data);
@@ -43,9 +45,10 @@ function App() {
   const handleSubmitComment = async () => {
     try {
       const userComments = comments.filter(comment => comment.userId === user?.sub);
-      const maxCommentsPerUser = 5; 
+      const maxCommentsPerUser = 10; 
       if (userComments.length >= maxCommentsPerUser) {
         console.log('You have reached the maximum comment limit.');
+        setOpen(true);
         return;
       }
       const response = await axios.post('http://localhost:9999/api/Comments', {
@@ -60,6 +63,27 @@ function App() {
   } catch (error) {
     console.error('Error submitting comment:', error);
   }};
+
+  const handleSnackbarClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  }
+
+  const confirmDelete = (
+    <React.Fragment>
+        <IconButton
+            size='small'
+            aria-label='close'
+            color='inherit'
+            onClick={handleSnackbarClose}
+        >
+            <CloseIcon fontSize='small' />
+        </IconButton>
+    </React.Fragment>
+)
 
   const handleOpen = (blog) => {
     setSelectedBlog(blog);
@@ -328,6 +352,13 @@ function App() {
     Footer
   </Typography>
 </Box>
+<Snackbar
+  open={open}
+  autoHideDuration={6000}
+  onClose={handleSnackbarClose}
+  message='You have reached the maximum comment limit'
+  action={confirmDelete}
+/>
 </ThemeProvider>
 </div>
   );
