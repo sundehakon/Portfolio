@@ -18,10 +18,8 @@ function App() {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        if (user) {
           const response = await axios.get('http://localhost:9999/api/Blogs');
           setBlog(response.data);
-        }
       } catch (error) {
           console.error('Error fetching orders', error);
       }
@@ -288,18 +286,14 @@ function App() {
         </Box>
         </>
       )}
+      {!user && (
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+          <Typography>Login to comment</Typography>
+          <LoginButton />
+        </Box>
+      )}
       </Box>
   </Modal>
-  {!user && (
-      <div>
-      <Typography sx={{ textAlign: 'center', marginTop: 45 }} variant='subtitle1'>
-        Please Log In To View Blog Posts
-      </Typography>
-      <Box sx={{ display: 'flex', justifyContent: 'center'}}>
-        <LoginButton />
-      </Box>
-    </div>
-  )}
 </Box>
 <Box sx={{ backgroundColor: 'white', width: '100%', height: 963, display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
   <Box sx={{ color: '#818181' }}>
