@@ -226,7 +226,7 @@ function App() {
   <Typography sx={{ textAlign: 'center', paddingTop: 4 }} variant='h4'>
     Blog
   </Typography>
-  <Grid container spacing={3} sx={{ marginLeft: 3, marginTop: 7, width: '90%' }} direction='row'>
+  <Grid container spacing={3} sx={{ marginLeft: 10, marginTop: 7, width: '90%' }} direction='row'>
   {blogs.map((blog, index) => (
     <Grid item key={index}>
       <Paper sx={{ width: 400, cursor: 'pointer', overflow: 'hidden', padding: 4 }} onClick={() => handleOpen(blog)}>

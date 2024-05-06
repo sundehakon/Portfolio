@@ -54,7 +54,6 @@ request(options, function (error, response, body) {
 
     const responseBody = JSON.parse(body);
     accessToken = responseBody.access_token;
-    console.log(accessToken);
 
     const management = new ManagementClient({
         token: accessToken,
