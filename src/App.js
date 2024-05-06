@@ -55,6 +55,7 @@ function App() {
         postId: selectedBlog?._id,
         userId: user?.sub,
         userPicture: user?.picture,
+        userName: user?.nickname,
         content: commentContent,
         date: new Date().toISOString(),
     });
@@ -297,8 +298,11 @@ function App() {
           .filter((comment) => comment.postId === selectedBlog._id)
           .map((comment, index) => (
             <Box key={index} sx={{ marginTop: 2, display: 'flex', alignItems: 'center', gap: 2 }}>
-              <img src={comment.userPicture} alt='Profile pic' style={{ width: 32, height: 32, borderRadius: '50%' }}/>
+              <img src={comment.userPicture} alt='Profile pic' style={{ width: 37, height: 37, borderRadius: '50%' }}/>
+              <Box>
+              <Typography sx={{ fontWeight: 'bold' }}>{comment.userName}</Typography>
               <Typography>{comment.content}</Typography>
+              </Box>
             </Box>
           ))}
         {selectedBlog?._id && comments.filter((comment) => comment.postId === selectedBlog._id).length === 0 && (

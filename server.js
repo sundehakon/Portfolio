@@ -24,6 +24,7 @@ const commentSchema = new mongoose.Schema({
     postId: String,
     userId: String,
     userPicture: String,
+    userName: String,
     content: String,
     date: String,
 }, { collection: 'Comments' });
@@ -96,11 +97,12 @@ app.get('/api/Comments', async (req, res) => {
 });
 
 app.post('/api/Comments', async (req, res) => {
-    const { postId, userId, userPicture, content, date } = req.body;
+    const { postId, userId, userPicture, userName, content, date } = req.body;
 
     const comment = new Comment({
         postId,
         userId,
+        userName,
         userPicture,
         content,
         date,
