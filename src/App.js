@@ -54,6 +54,7 @@ function App() {
       const response = await axios.post('http://localhost:9999/api/Comments', {
         postId: selectedBlog?._id,
         userId: user?.sub,
+        userPicture: user?.picture,
         content: commentContent,
         date: new Date().toISOString(),
     });
@@ -295,7 +296,8 @@ function App() {
         {comments
           .filter((comment) => comment.postId === selectedBlog._id)
           .map((comment, index) => (
-            <Box key={index} sx={{ marginTop: 2 }}>
+            <Box key={index} sx={{ marginTop: 2, display: 'flex', alignItems: 'center', gap: 2 }}>
+              <img src={comment.userPicture} alt='Profile pic' style={{ width: 32, height: 32, borderRadius: '50%' }}/>
               <Typography>{comment.content}</Typography>
             </Box>
           ))}
