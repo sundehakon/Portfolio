@@ -226,18 +226,18 @@ function App() {
   <Typography sx={{ textAlign: 'center', paddingTop: 4 }} variant='h4'>
     Blog
   </Typography>
-  <Grid container spacing={3} sx={{ marginLeft: 10, marginTop: 7, width: '90%' }} direction='row'>
+  <Grid container spacing={3} sx={{ marginLeft: 10, marginTop: 10, width: '90%' }} direction='row'>
   {blogs.map((blog, index) => (
-    <Grid item key={index}>
-      <Paper sx={{ width: 400, cursor: 'pointer', overflow: 'hidden', padding: 4 }} onClick={() => handleOpen(blog)}>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
-          <Typography variant='h5' sx={{ marginTop: 2 }}>{blog.title}</Typography>
-          <Typography sx={{ marginTop: 2, marginRight: 2 }}>{blog.date}</Typography>
-        </Box>
-        <Typography sx={{ marginBottom: 3 }}>{blog.content}</Typography>
-      </Paper>
-    </Grid>
-  ))}
+  <Grid item key={index}>
+    <Paper sx={{ width: 400, height: 510, cursor: 'pointer', overflow: 'hidden', padding: 4 }} onClick={() => handleOpen(blog)}>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
+        <Typography variant='h5' sx={{ marginTop: 2 }}>{blog.title}</Typography>
+        <Typography sx={{ marginTop: 2, marginRight: 2 }}>{blog.date}</Typography>
+      </Box>
+      <Typography sx={{ marginBottom: 3, overflow: 'hidden', textOverflow: 'ellipsis', display: 'inline-block', maxHeight: '25.4em', lineHeight: '1.8em' }}>{blog.content}</Typography>
+    </Paper>
+  </Grid>
+))}
 </Grid>
   <Modal open={selectedBlog !== null} onClose={handleClose}>
     <Box 
@@ -262,31 +262,33 @@ function App() {
       <Typography sx={{ marginBottom: 3, marginTop: 2 }}>{selectedBlog?.content}</Typography>
       <hr />
       <Typography variant='h6' sx={{ fontWeight: 'bold' }}>Comments</Typography>
-      {selectedBlog?._id && (
-      comments
-        .filter((comment) => comment.postId === selectedBlog._id)
-        .map((comment, index) => (
-          <Box key={index} sx={{ marginTop: 2 }}>
-            <Typography>{comment.content}</Typography>
-          </Box>
-        ))
+      {user && selectedBlog?._id && (
+        <>
+        {comments
+          .filter((comment) => comment.postId === selectedBlog._id)
+          .map((comment, index) => (
+            <Box key={index} sx={{ marginTop: 2 }}>
+              <Typography>{comment.content}</Typography>
+            </Box>
+          ))}
+        {selectedBlog?._id && comments.filter((comment) => comment.postId === selectedBlog._id).length === 0 && (
+          <Typography sx={{ marginTop: 2 }}>No comments</Typography>
+        )}  
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+          <TextField 
+            variant='outlined' 
+            label='Write comment' 
+            sx={{ marginTop: 3, width: 730 }}
+            value={commentContent}
+            onChange={(e) => setCommentContent(e.target.value)}
+          />
+          <IconButton onClick={handleSubmitComment} sx={{ marginTop: 3 }}>
+            <SendIcon />
+          </IconButton>
+        </Box>
+        </>
       )}
-      {selectedBlog?._id && comments.filter((comment) => comment.postId === selectedBlog._id).length === 0 && (
-        <Typography sx={{ marginTop: 2 }}>No comments</Typography>
-      )}  
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 3 }}>
-        <TextField 
-          variant='outlined' 
-          label='Write comment' 
-          sx={{ marginTop: 3, width: 700 }}
-          value={commentContent}
-          onChange={(e) => setCommentContent(e.target.value)}
-        />
-        <IconButton onClick={handleSubmitComment} sx={{ marginTop: 3 }}>
-          <SendIcon />
-        </IconButton>
       </Box>
-    </Box>
   </Modal>
   {!user && (
       <div>
