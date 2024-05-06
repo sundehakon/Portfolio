@@ -129,14 +129,14 @@ function App() {
           Håkon &nbsp;<span style={{ color: '#F4F4F4' }}>Sunde</span>
         </Typography>
       </Box>
-      <List sx={{ display: 'flex', flexDirection: 'column', marginRight: 5, marginLeft: 32, alignItems: 'flex-start', marginTop: 10 }}>
+      <List sx={{ display: 'flex', flexDirection: 'column', marginRight: 5, marginLeft: 32, alignItems: 'flex-end', marginTop: 10 }}>
           <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={windowScrollProject}>
             Projects
           </Button>
           <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={windowScrollBlog}>
             Blog
           </Button>
-          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, marginLeft: -1, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={windowScrollMe}>
+          <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, marginRight: -1, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={windowScrollMe}>
             Me
           </Button>
           <Button sx={{ color: '#818181', fontWeight: 'bolder', fontSize: 17, '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={windowScrollContact}>
