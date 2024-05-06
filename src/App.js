@@ -42,6 +42,12 @@ function App() {
 
   const handleSubmitComment = async () => {
     try {
+      const userComments = comments.filter(comment => comment.userId === user?.sub);
+      const maxCommentsPerUser = 5; 
+      if (userComments.length >= maxCommentsPerUser) {
+        console.log('You have reached the maximum comment limit.');
+        return;
+      }
       const response = await axios.post('http://localhost:9999/api/Comments', {
         postId: selectedBlog?._id,
         userId: user?.sub,
@@ -288,7 +294,7 @@ function App() {
       )}
       {!user && (
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <Typography>Login to comment</Typography>
+          <Typography>Login to view comments</Typography>
           <LoginButton />
         </Box>
       )}
