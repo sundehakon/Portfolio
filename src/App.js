@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     const fetchBlog = async () => { 
       try {
-          const response = await axios.get('http://localhost:9999/api/Blogs');
+          const response = await axios.get('http://localhost:443/api/Blogs');
           setBlog(response.data);
       } catch (error) {
           console.error('Error fetching orders', error);
@@ -30,7 +30,7 @@ function App() {
     const fetchComment = async () => {
       try {
         if (user) {
-          const response = await axios.get('http://localhost:9999/api/Comments');
+          const response = await axios.get('http://localhost:443/api/Comments');
           setComment(response.data);
         }
       } catch (error) {
