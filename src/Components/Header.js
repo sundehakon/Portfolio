@@ -16,7 +16,7 @@ const Header = () => {
             }}
         >
             <h1
-                className='caprasimo-regular'
+                className='fira-sans-condensed-thin'
                 style={{
                     color: '#fcfcfc',
                     fontSize: isSmallScreen ? '3rem' : '4.375rem', 
@@ -24,14 +24,14 @@ const Header = () => {
                     marginTop: isSmallScreen ? '0' : '0rem',
                 }}
             >
-                Håkon Sunde
+                håkon sunde
             </h1>
             <List sx={{ display: 'flex', color: '#818181', flexDirection: isSmallScreen ? 'column' : 'row' }}>
-                <ListItemButton sx={{ '&:hover': { color: '#fcfcfc' } }} disableRipple style={{ backgroundColor: 'transparent' }}>Me</ListItemButton>
-                <ListItemButton sx={{ '&:hover': { color: '#fcfcfc' } }} disableRipple style={{ backgroundColor: 'transparent' }}>Projects</ListItemButton>
-                <ListItemButton sx={{ '&:hover': { color: '#fcfcfc' } }} disableRipple style={{ backgroundColor: 'transparent' }}>User</ListItemButton>
-                <ListItemButton sx={{ '&:hover': { color: '#fcfcfc' } }} disableRipple style={{ backgroundColor: 'transparent' }}>Blog</ListItemButton>
-                <ListItemButton sx={{ '&:hover': { color: '#fcfcfc' } }} disableRipple style={{ backgroundColor: 'transparent' }}>Contact</ListItemButton>
+                <ListItemButton sx={{ '&:hover': { color: '#fcfcfc' } }} disableRipple style={{ backgroundColor: 'transparent' }}>me</ListItemButton>
+                <ListItemButton sx={{ '&:hover': { color: '#fcfcfc' } }} disableRipple style={{ backgroundColor: 'transparent' }}>projects</ListItemButton>
+                <ListItemButton sx={{ '&:hover': { color: '#fcfcfc' } }} disableRipple style={{ backgroundColor: 'transparent' }}>user</ListItemButton>
+                <ListItemButton sx={{ '&:hover': { color: '#fcfcfc' } }} disableRipple style={{ backgroundColor: 'transparent' }}>blog</ListItemButton>
+                <ListItemButton sx={{ '&:hover': { color: '#fcfcfc' } }} disableRipple style={{ backgroundColor: 'transparent' }}>contact</ListItemButton>
             </List>
         </Box>
     );
