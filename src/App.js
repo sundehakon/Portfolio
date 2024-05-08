@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     const fetchBlog = async () => { 
       try {
-          const response = await axios.get('http://localhost:8080/api/Blogs');
+          const response = await axios.get('https://portfolioapi-hysa.onrender.com/api/Blogs');
           setBlog(response.data);
       } catch (error) {
           console.error('Error fetching orders', error);
@@ -30,7 +30,7 @@ function App() {
     const fetchComment = async () => {
       try {
         if (user) {
-          const response = await axios.get('http://localhost:8080/api/Comments');
+          const response = await axios.get('https://portfolioapi-hysa.onrender.com/api/Comments');
           setComment(response.data);
         }
       } catch (error) {
@@ -51,7 +51,7 @@ function App() {
         setOpen(true);
         return;
       }
-      const response = await axios.post('http://localhost:8080/api/Comments', {
+      const response = await axios.post('https://portfolioapi-hysa.onrender.com/api/Comments', {
         postId: selectedBlog?._id,
         userId: user?.sub,
         userPicture: user?.picture,
