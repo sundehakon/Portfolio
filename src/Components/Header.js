@@ -1,4 +1,4 @@
-import { Box, List, ListItemButton, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, List, ListItemButton, useMediaQuery, useTheme } from '@mui/material';
 
 const Header = () => {
     const theme = useTheme();
