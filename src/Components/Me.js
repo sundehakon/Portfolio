@@ -2,8 +2,8 @@ import { Box, Typography, Link } from '@mui/material'
 
 const Me = () => {
     return (
-        <Box sx={{  display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center', padding: 10, paddingBottom: 24, textAlign: 'center' }}>
-        <Box sx={{ border: 'solid 2px white', borderRadius: '100%', padding: 20, backgroundColor: '#fcfcfc' }}>
+        <Box sx={{  display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center', textAlign: 'center' }}>
+        <Box sx={{ border: 'solid 2px white', padding: 10, backgroundColor: '#fcfcfc', width: '100%' }}>
             <Typography sx={{ fontWeight: 'bold' }} variant='h4'>
             Hi, there!
             </Typography>
@@ -11,7 +11,7 @@ const Me = () => {
             I'm a 16 year old developer from Norway
             </Typography>
             <Typography sx={{ marginTop: 2 }}>
-            Want to talk with me?: <Link href='mailto: hakon.su@gmail.com' underline='hover' color={'inherit'}>hakon.su@gmail.com</Link>
+            Want to talk with me?: <Link href='mailto: hakon.su@gmail.com' color={'inherit'}>hakon.su@gmail.com</Link>
             </Typography>
             <a href='https://github.com/sundehakon' target='_blank' rel='noreferrer'><img src='https://raw.githubusercontent.com/jmnote/z-icons/master/svg/github.svg' alt='GitHub logo' style={{ height: 50, marginTop: 20 }}/></a>
             <a href='https://twitter.com/lordsunde' target='_blank' rel='noreferrer'><img src='https://raw.githubusercontent.com/jmnote/z-icons/master/svg/twitter.svg' alt='Twitter logo' style={{ height: 50, marginTop: 20, marginLeft: 20 }}/></a>
