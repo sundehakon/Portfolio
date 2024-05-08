@@ -3,7 +3,7 @@ import { Box, List, ListItemButton } from '@mui/material';
 const Header = () => {
     return (
         <Box sx={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', padding: 3 }}>
-            <List sx={{ display: 'flex', color: '#818181' }}>
+            <List sx={{ display: 'flex', color: '#818181', border: 'solid 1px #818181', borderRadius: 5 }}>
                 <ListItemButton sx={{ '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }}>Me</ListItemButton>
                 <ListItemButton sx={{ '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }}>Projects</ListItemButton>
                 <ListItemButton sx={{ '&:hover': { color: 'black' } }} disableRipple style={{ backgroundColor: 'transparent' }}>User</ListItemButton>
