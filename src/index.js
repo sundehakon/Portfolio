@@ -4,11 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from '@auth0/auth0-react';
+import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 
-ReactDOM.render(
+if (process.env.NODE_ENV === 'production') disableReactDevTools();
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <Auth0Provider
     domain={domain}
     clientId={clientId}

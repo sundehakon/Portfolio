@@ -7,9 +7,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const axios = require('axios');
 const ManagementClient = require('auth0').ManagementClient;
-app.use(cors({
-    origin: ['https://sundehakon.netlify.app/', 'http://localhost:3000/']
-}));
+app.use(cors());
 app.use(bodyParser.json()); 
 
 mongoose.connect(process.env.MONGO_URI, {});
@@ -122,7 +120,7 @@ db.once('open', () => {
     console.log('MongoDB connected');
 });
 
-const PORT = 443;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`PORT: ${PORT}`);
 });
