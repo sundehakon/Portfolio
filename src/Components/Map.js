@@ -2,7 +2,7 @@ import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
 
 const Map = () => {
     const mapContainerStyle = {
-        width: '800px',
+        width: '600px',
         height: '400px',
     };
 
