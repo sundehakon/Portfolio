@@ -5,6 +5,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
 import CloseIcon from '@mui/icons-material/Close';
 import SendIcon from '@mui/icons-material/Send';
+import DeleteIcon from '@mui/icons-material/Delete'; 
 
 const Blog = () => {
     const { user } = useAuth0();
@@ -62,6 +63,15 @@ const Blog = () => {
             setCommentContent('');
         } catch (error) {
             console.error('Error submitting comment:', error);
+        }
+    };
+
+    const handleDeleteComment = async (commentId) => {
+        try {
+            await axios.delete(`https://portfolioapi-hysa.onrender.com/api/Comments/${commentId}`);
+            setComment(comments.filter(comment => comment._id !== commentId));
+        } catch (error) {
+            console.error('Error deleting comment:', error);
         }
     };
 
@@ -164,6 +174,11 @@ const Blog = () => {
                                         <Box>
                                             <Typography sx={{ fontWeight: 'bold' }}>{comment.userName}</Typography>
                                             <Typography>{comment.content}</Typography>
+                                            {user.sub === comment.userId && (
+                                                <IconButton onClick={() => handleDeleteComment(comment._id)}>
+                                                    <DeleteIcon />
+                                                </IconButton>
+                                            )}
                                         </Box>
                                     </Box>
                                 ))}
