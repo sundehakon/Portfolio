@@ -1,4 +1,4 @@
-import { GoogleMap, Marker, LoadScript } from 'react-google-maps/api';
+import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
 
 const Map = () => {
     const mapContainerStyle = {
@@ -7,16 +7,16 @@ const Map = () => {
     };
 
     const center = {
-        lat: 40.712776,
-        lng: -74.005974
+        lat: 59.95665920965943, 
+        lng: 11.050633426236235
     };
 
     return (
-        <LoadScript googleMapsApiKey={process.env.GOOGLE_API_TOKEN}>
+        <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_API_TOKEN}>
             <GoogleMap
                 mapContainerStyle={mapContainerStyle}
                 center={center}
-                zoom={10}
+                zoom={13}
             >
                 <Marker position={center} />
             </GoogleMap>

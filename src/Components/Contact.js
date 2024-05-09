@@ -1,4 +1,4 @@
-import 
+import Map from './Map';
 
 const Contact = () => {
     return (

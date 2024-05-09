@@ -6,6 +6,7 @@ import Header from './Components/Header';
 import Me from './Components/Me';
 import Blog from './Components/Blog';
 import User from './Components/User';
+import Contact from './Components/Contact';
 
 function App() {
   return (
