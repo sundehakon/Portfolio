@@ -5,6 +5,7 @@ import React from 'react';
 import Header from './Components/Header';
 import Me from './Components/Me';
 import Blog from './Components/Blog';
+import User from './Components/User';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
     <ThemeProvider theme={theme}>
         <Header />
         <Me />
+        <User />
         <Blog />
     </ThemeProvider>
     </div>
