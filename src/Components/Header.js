@@ -18,7 +18,7 @@ const Header = () => {
             <List sx={{ display: 'flex', color: '#818181', flexDirection: isSmallScreen ? 'column' : 'row' }}>
                 <ListItemButton sx={{ '&:hover': { color: '#151515' } }} disableRipple style={{ backgroundColor: 'transparent' }}>me</ListItemButton>
                 <ListItemButton sx={{ '&:hover': { color: '#151515' } }} disableRipple style={{ backgroundColor: 'transparent' }}>projects</ListItemButton>
-                <ListItemButton sx={{ '&:hover': { color: '#151515' } }} disableRipple style={{ backgroundColor: 'transparent' }}>user</ListItemButton>
+                <ListItemButton sx={{ '&:hover': { color: '#151515' } }} disableRipple style={{ backgroundColor: 'transparent' }}>auth0</ListItemButton>
                 <ListItemButton sx={{ '&:hover': { color: '#151515' } }} disableRipple style={{ backgroundColor: 'transparent' }}>blog</ListItemButton>
                 <ListItemButton sx={{ '&:hover': { color: '#151515' } }} disableRipple style={{ backgroundColor: 'transparent' }}>contact</ListItemButton>
             </List>

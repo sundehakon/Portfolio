@@ -1,4 +1,4 @@
-import { Typography, Box, Grid, Paper, List, ListItem } from "@mui/material";
+import { Typography, Box, Grid, Paper } from "@mui/material";
 import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from "../login";
 import LogoutButton from "../logout";
@@ -10,10 +10,13 @@ const User = () => {
     return (
         <Box sx={{ textAlign: 'center', marginTop: 4 }}>
             <Typography variant='h4'>
-                user
+                auth0
             </Typography>
             <Typography sx={{ marginTop: 2 }} variant='subtitle1'>
                 sign up with an account
+            </Typography>
+            <Typography sx={{ marginTop: 2 }} variant='subtitle1'>
+                which will work across most of my platforms
             </Typography>
             <Box sx={{ marginTop: 5 }}>
                 {!user &&
@@ -28,20 +31,20 @@ const User = () => {
                     <Grid item>
                         <Paper sx={{ padding: 6, marginTop: 4, marginBottom: 4, borderRadius: 5, boxShadow: 3 }}>
                             <Typography variant='h5'>
-                                you
+                                your profile
                             </Typography>
-                            <List sx={{ display: 'flex', flexDirection: 'column'}}>
-                                <ListItem><img src={user.picture} alt='User profile'/></ListItem>
-                                <ListItem><span style={{ fontWeight: 'bolder' }}>username.</span>&nbsp; {user.name}</ListItem>
-                                <ListItem><span style={{ fontWeight: 'bolder' }}>email.</span>&nbsp; {user.email}</ListItem>
-                                <ListItem><span style={{ fontWeight: 'bolder' }}>nickname.</span>&nbsp; {user.nickname}</ListItem>
+                            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2}}>
+                                <Typography><img src={user.picture} alt='User profile' style={{ borderRadius: '50%', height: 64, width: 64, marginTop: 20 }}/></Typography>
+                                <Typography><span style={{ fontWeight: 'bolder' }}>username.</span>&nbsp; {user.name}</Typography>
+                                <Typography><span style={{ fontWeight: 'bolder' }}>email.</span>&nbsp; {user.email}</Typography>
+                                <Typography><span style={{ fontWeight: 'bolder' }}>nickname.</span>&nbsp; {user.nickname}</Typography>
                                 {user.email_verified &&
-                                    <ListItem><span style={{ fontWeight: 'bolder' }}>email verified?.</span>&nbsp; ok</ListItem>
+                                    <Typography><span style={{ fontWeight: 'bolder' }}>email verified?.</span>&nbsp; ok</Typography>
                                 }
                                 {!user.email_verified &&
-                                    <ListItem><span style={{ fontWeight: 'bolder' }}>email verified?.</span>&nbsp; no</ListItem>
+                                    <Typography><span style={{ fontWeight: 'bolder' }}>email verified?.</span>&nbsp; no</Typography>
                                 }
-                            </List>
+                            </Box>
                         </Paper>
                     </Grid>
                 </Grid>
