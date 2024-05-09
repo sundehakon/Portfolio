@@ -15,6 +15,7 @@ function App() {
         <Me id="me"/>
         <User id="user"/>
         <Blog id="blog"/>
+        <Contact id="contact"/>
     </ThemeProvider>
     </div>
   );
