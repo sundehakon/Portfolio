@@ -1,11 +1,14 @@
 import { Box, Typography, Link } from '@mui/material';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Me = () => {
+    const { user } = useAuth0();
+
     return (
         <Box sx={{  display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center', textAlign: 'center' }}>
         <Box sx={{ padding: 10, backgroundColor: '#fcfcfc', width: '100%' }}>
             <Typography sx={{ fontWeight: 'bold' }} variant='h4'>
-            hi, there!
+            hi, there {user.nickname}!
             </Typography>
             <Typography sx={{ marginTop: 2 }}>
             my name is håkon sunde and i am
