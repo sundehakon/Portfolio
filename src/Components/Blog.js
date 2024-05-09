@@ -173,12 +173,14 @@ const Blog = () => {
                                         <img src={comment.userPicture} alt='Profile pic' style={{ width: 37, height: 37, borderRadius: '50%' }} />
                                         <Box>
                                             <Typography sx={{ fontWeight: 'bold' }}>{comment.userName}</Typography>
+                                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
                                             <Typography>{comment.content}</Typography>
                                             {user.sub === comment.userId && (
                                                 <IconButton onClick={() => handleDeleteComment(comment._id)}>
                                                     <DeleteIcon />
                                                 </IconButton>
                                             )}
+                                        </Box>
                                         </Box>
                                     </Box>
                                 ))}
