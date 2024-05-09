@@ -7,7 +7,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import SendIcon from '@mui/icons-material/Send';
 import DeleteIcon from '@mui/icons-material/Delete'; 
 
-const Blog = () => {
+const Blog = ({ id }) => {
     const { user } = useAuth0();
     const [blogs, setBlog] = useState([]);
     const [comments, setComment] = useState([]);
@@ -105,7 +105,7 @@ const Blog = () => {
     };
 
     return (
-        <div>
+        <div id={id}>
             <Box sx={{ backgroundColor: '#fcfcfc', width: '100%', marginTop: 5, marginBottom: 400 }}>
             <Box sx={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center' }}>
                 <Box sx={{ width: '90%', maxWidth: 1200 }}>

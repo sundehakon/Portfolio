@@ -12,9 +12,9 @@ function App() {
     <div>
     <ThemeProvider theme={theme}>
         <Header />
-        <Me />
-        <User />
-        <Blog />
+        <Me id="me"/>
+        <User id="user"/>
+        <Blog id="blog"/>
     </ThemeProvider>
     </div>
   );

@@ -4,54 +4,56 @@ import LoginButton from "../login";
 import LogoutButton from "../logout";
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
-const User = () => {
+const User = ({ id }) => {
     const { user } = useAuth0();
 
     return (
-        <Box sx={{ textAlign: 'center', marginTop: 4 }}>
-            <Typography variant='h4'>
-                auth0
-            </Typography>
-            <Typography sx={{ marginTop: 2 }} variant='subtitle1'>
-                sign up with an account
-            </Typography>
-            <Typography sx={{ marginTop: 2 }} variant='subtitle1'>
-                which will work across most of my platforms
-            </Typography>
-            <Box sx={{ marginTop: 5 }}>
-                {!user &&
-                    <LoginButton />
-                }
+        <div id={id}>
+            <Box sx={{ textAlign: 'center' }}>
+                <Typography variant='h4'>
+                    auth0
+                </Typography>
+                <Typography sx={{ marginTop: 2 }} variant='subtitle1'>
+                    sign up with an account
+                </Typography>
+                <Typography sx={{ marginTop: 2 }} variant='subtitle1'>
+                    which will work across most of my platforms
+                </Typography>
+                <Box sx={{ marginTop: 5 }}>
+                    {!user &&
+                        <LoginButton />
+                    }
+                    {user &&
+                        <LogoutButton />
+                    }
+                </Box>
                 {user &&
-                    <LogoutButton />
-                }
-            </Box>
-            {user &&
-                <Grid container spacing={3} justifyContent={'center'}>
-                    <Grid item>
-                        <Paper sx={{ padding: 6, marginTop: 4, marginBottom: 4, borderRadius: 5, boxShadow: 3 }}>
-                            <Typography variant='h5'>
-                                your profile
-                            </Typography>
-                            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2}}>
-                                <Typography><img src={user.picture} alt='User profile' style={{ borderRadius: '50%', height: 64, width: 64, marginTop: 20 }}/></Typography>
-                                <Typography><span style={{ fontWeight: 'bolder' }}>username.</span>&nbsp; {user.name}</Typography>
-                                <Typography><span style={{ fontWeight: 'bolder' }}>email.</span>&nbsp; {user.email}</Typography>
-                                <Typography><span style={{ fontWeight: 'bolder' }}>nickname.</span>&nbsp; {user.nickname}</Typography>
-                                {user.email_verified &&
-                                    <Typography><span style={{ fontWeight: 'bolder' }}>email verified?.</span>&nbsp; ok</Typography>
-                                }
-                                {!user.email_verified &&
-                                    <Typography><span style={{ fontWeight: 'bolder' }}>email verified?.</span>&nbsp; no</Typography>
-                                }
-                            </Box>
-                        </Paper>
+                    <Grid container spacing={3} justifyContent={'center'}>
+                        <Grid item>
+                            <Paper sx={{ padding: 6, marginTop: 4, marginBottom: 4, borderRadius: 5, boxShadow: 3 }}>
+                                <Typography variant='h5'>
+                                    your profile
+                                </Typography>
+                                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2}}>
+                                    <Typography><img src={user.picture} alt='User profile' style={{ borderRadius: '50%', height: 64, width: 64, marginTop: 20 }}/></Typography>
+                                    <Typography><span style={{ fontWeight: 'bolder' }}>username.</span>&nbsp; {user.name}</Typography>
+                                    <Typography><span style={{ fontWeight: 'bolder' }}>email.</span>&nbsp; {user.email}</Typography>
+                                    <Typography><span style={{ fontWeight: 'bolder' }}>nickname.</span>&nbsp; {user.nickname}</Typography>
+                                    {user.email_verified &&
+                                        <Typography><span style={{ fontWeight: 'bolder' }}>email verified?.</span>&nbsp; ok</Typography>
+                                    }
+                                    {!user.email_verified &&
+                                        <Typography><span style={{ fontWeight: 'bolder' }}>email verified?.</span>&nbsp; no</Typography>
+                                    }
+                                </Box>
+                            </Paper>
+                        </Grid>
                     </Grid>
-                </Grid>
-            }
-            <Typography sx={{ marginTop: 6 }}>use your account to write comments</Typography>
-            <ArrowDownwardIcon sx={{ marginTop: 3 }}/>
-        </Box>
+                }
+                <Typography sx={{ marginTop: 6 }}>use your account to write comments</Typography>
+                <ArrowDownwardIcon sx={{ marginTop: 3 }}/>
+            </Box>
+        </div>
     );
 };
 
