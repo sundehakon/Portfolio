@@ -3,7 +3,7 @@ import { Box, Typography, Link } from '@mui/material';
 const Me = ({ id }) => {
     return (
         <div id={id}>
-        <Box sx={{  display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center', textAlign: 'center', marginBottom: 4 }}>
+        <Box sx={{  display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center', textAlign: 'center' }}>
         <Box sx={{ padding: 10, backgroundColor: '#fcfcfc', width: '100%' }}>
             <Typography sx={{ fontWeight: 'bold' }} variant='h4'>
             hi, there!

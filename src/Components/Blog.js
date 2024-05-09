@@ -106,7 +106,7 @@ const Blog = ({ id }) => {
 
     return (
         <div id={id}>
-            <Box sx={{ backgroundColor: '#fcfcfc', width: '100%', marginTop: 5, marginBottom: 400 }}>
+            <Box sx={{ backgroundColor: '#fcfcfc', width: '100%', marginTop: 5, marginBottom: 30 }}>
             <Box sx={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center' }}>
                 <Box sx={{ width: '90%', maxWidth: 1200 }}>
                     <Typography sx={{ textAlign: 'center', paddingTop: 7, color: '#151515' }} variant='h4'>
@@ -123,6 +123,7 @@ const Blog = ({ id }) => {
                                         borderRadius: 10,
                                         display: 'flex',
                                         gap: 1,
+                                        marginBottom: 4,
                                         justifyContent: 'center',
                                         alignItems: 'center',
                                         transition: 'transform 0.2s',

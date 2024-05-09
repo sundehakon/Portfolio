@@ -9,6 +9,7 @@ const User = ({ id }) => {
 
     return (
         <div id={id}>
+            <Box sx={{ height: 50 }}></Box>
             <Box sx={{ textAlign: 'center' }}>
                 <Typography variant='h4'>
                     auth0
