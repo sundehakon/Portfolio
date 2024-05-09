@@ -31,7 +31,7 @@ const User = () => {
                                 you
                             </Typography>
                             <List sx={{ display: 'flex', flexDirection: 'column'}}>
-                                <ListItem><img src={user.picture}/></ListItem>
+                                <ListItem><img src={user.picture} alt='User profile'/></ListItem>
                                 <ListItem><span style={{ fontWeight: 'bolder' }}>username.</span>&nbsp; {user.name}</ListItem>
                                 <ListItem><span style={{ fontWeight: 'bolder' }}>email.</span>&nbsp; {user.email}</ListItem>
                                 <ListItem><span style={{ fontWeight: 'bolder' }}>nickname.</span>&nbsp; {user.nickname}</ListItem>
