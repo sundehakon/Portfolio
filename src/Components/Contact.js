@@ -1,11 +1,13 @@
 import Map from './Map';
-import { Typography, Box, Link, Paper } from '@mui/material';
+import { Typography, Box, Link, Paper, Grid } from '@mui/material';
 
 const Contact = ({ id }) => {
     return (
         <div id={id}>
             <Box sx={{ height: 70 }}></Box>
+            <Grid>
                 <Box sx={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
+                <Grid item>
                     <Paper sx={{ padding: 7, borderRadius: 7, boxShadow: 3 }}>
                     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
                         <Typography variant='h5' sx={{ marginBottom: 2 }}>contact info</Typography>
@@ -16,8 +18,12 @@ const Contact = ({ id }) => {
                         <Typography><span style={{ fontWeight: 'bolder' }}>instagram.</span> sunde.hakon</Typography>
                     </Box>
                     </Paper>
+                </Grid>
+                <Grid item>
                     <Map />
+                </Grid>
                 </Box>
+            </Grid>
             <Box sx={{ textAlign: 'center', marginTop: 5, marginBottom: 2 }}>
                 <Typography variant='caption'>Copyright Håkon Sunde 2024 ©</Typography>
             </Box>
