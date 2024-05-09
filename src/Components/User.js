@@ -13,7 +13,7 @@ const User = () => {
                 user
             </Typography>
             <Typography sx={{ marginTop: 2 }} variant='subtitle1'>
-                create your free user in my system
+                sign up with an account
             </Typography>
             <Box sx={{ marginTop: 5 }}>
                 {!user &&
@@ -26,11 +26,12 @@ const User = () => {
             {user &&
                 <Grid container spacing={3} justifyContent={'center'}>
                     <Grid item>
-                        <Paper sx={{ padding: 6, marginTop: 4, marginBottom: 4, borderRadius: 5 }}>
+                        <Paper sx={{ padding: 6, marginTop: 4, marginBottom: 4, borderRadius: 5, boxShadow: 3 }}>
                             <Typography variant='h5'>
                                 you
                             </Typography>
-                            <List>
+                            <List sx={{ display: 'flex', flexDirection: 'column'}}>
+                                <ListItem><img src={user.picture}/></ListItem>
                                 <ListItem><span style={{ fontWeight: 'bolder' }}>username.</span>&nbsp; {user.name}</ListItem>
                                 <ListItem><span style={{ fontWeight: 'bolder' }}>email.</span>&nbsp; {user.email}</ListItem>
                                 <ListItem><span style={{ fontWeight: 'bolder' }}>nickname.</span>&nbsp; {user.nickname}</ListItem>
@@ -45,7 +46,7 @@ const User = () => {
                     </Grid>
                 </Grid>
             }
-            <Typography sx={{ marginTop: 6 }}>use your account to write comments on blog posts</Typography>
+            <Typography sx={{ marginTop: 6 }}>use your account to write comments</Typography>
             <ArrowDownwardIcon sx={{ marginTop: 3 }}/>
         </Box>
     );
