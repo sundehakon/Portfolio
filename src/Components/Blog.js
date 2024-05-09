@@ -106,9 +106,10 @@ const Blog = () => {
 
     return (
         <div>
+            <Box sx={{ border: 'solid 2px white', backgroundColor: '#fcfcfc', width: '100%', marginTop: 5 }}>
             <Box sx={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center' }}>
                 <Box sx={{ width: '90%', maxWidth: 1200 }}>
-                    <Typography sx={{ textAlign: 'center', paddingTop: 4, color: '#151515' }} variant='h4'>
+                    <Typography sx={{ textAlign: 'center', paddingTop: 7, color: '#151515' }} variant='h4'>
                         blog
                     </Typography>
                     <Grid container spacing={3} sx={{ marginTop: 3, gap: 10 }} justifyContent={isMobile ? 'center' : 'center'}>
@@ -216,6 +217,7 @@ const Blog = () => {
                 message='You have reached the maximum comment limit'
                 action={confirmDelete}
             />
+        </Box>
         </div>
     );
 };

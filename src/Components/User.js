@@ -2,6 +2,7 @@ import { Typography, Box, Grid, Paper, List, ListItem } from "@mui/material";
 import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from "../login";
 import LogoutButton from "../logout";
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 const User = () => {
     const { user } = useAuth0();
@@ -44,6 +45,8 @@ const User = () => {
                     </Grid>
                 </Grid>
             }
+            <Typography sx={{ marginTop: 6 }}>use your account to write comments on blog posts</Typography>
+            <ArrowDownwardIcon sx={{ marginTop: 3 }}/>
         </Box>
     );
 };
