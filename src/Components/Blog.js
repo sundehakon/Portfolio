@@ -98,7 +98,7 @@ const Blog = () => {
         <div>
             <Box sx={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center' }}>
                 <Box sx={{ width: '90%', maxWidth: 1200 }}>
-                    <Typography sx={{ textAlign: 'center', paddingTop: 4, color: '#fcfcfc' }} variant='h4'>
+                    <Typography sx={{ textAlign: 'center', paddingTop: 4, color: '#151515' }} variant='h4'>
                         blog
                     </Typography>
                     <Grid container spacing={3} sx={{ marginTop: 3, gap: 10 }} justifyContent={isMobile ? 'center' : 'center'}>
@@ -106,13 +106,13 @@ const Blog = () => {
                             <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
                                 <Paper
                                     sx={{
-                                        width: '100%',
-                                        height: '100%',
+                                        width: '87%',
+                                        height: '50%',
                                         cursor: 'pointer',
-                                        padding: 3,
-                                        borderRadius: 20,
+                                        padding: 5,
+                                        borderRadius: 10,
                                         display: 'flex',
-                                        gap: 2,
+                                        gap: 1,
                                         justifyContent: 'center',
                                         alignItems: 'center',
                                         transition: 'transform 0.2s',
@@ -122,7 +122,7 @@ const Blog = () => {
                                     }}
                                     onClick={() => handleOpen(blog)}
                                 >
-                                    <Typography variant='h5'>{blog.title}</Typography>
+                                    <Typography variant='h6'>{blog.title}</Typography>
                                     <Typography>{blog.date}</Typography>
                                 </Paper>
                             </Grid>

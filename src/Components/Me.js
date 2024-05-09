@@ -5,13 +5,16 @@ const Me = () => {
         <Box sx={{  display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center', textAlign: 'center' }}>
         <Box sx={{ border: 'solid 2px white', padding: 10, backgroundColor: '#fcfcfc', width: '100%' }}>
             <Typography sx={{ fontWeight: 'bold' }} variant='h4'>
-            Hi, there!
+            hi, there!
             </Typography>
             <Typography sx={{ marginTop: 2 }}>
-            I'm a 16 year old developer from Norway
+            my name is håkon sunde and i am
             </Typography>
             <Typography sx={{ marginTop: 2 }}>
-            Want to talk with me?: <Link href='mailto: hakon.su@gmail.com' color={'inherit'}>hakon.su@gmail.com</Link>
+            a 16 year old developer from Norway
+            </Typography>
+            <Typography sx={{ marginTop: 2 }}>
+            want to talk with me?: <Link href='mailto: hakon.su@gmail.com' color={'inherit'}>hakon.su@gmail.com</Link>
             </Typography>
             <a href='https://github.com/sundehakon' target='_blank' rel='noreferrer'><img src='https://raw.githubusercontent.com/jmnote/z-icons/master/svg/github.svg' alt='GitHub logo' style={{ height: 50, marginTop: 20 }}/></a>
             <a href='https://twitter.com/lordsunde' target='_blank' rel='noreferrer'><img src='https://raw.githubusercontent.com/jmnote/z-icons/master/svg/twitter.svg' alt='Twitter logo' style={{ height: 50, marginTop: 20, marginLeft: 20 }}/></a>
