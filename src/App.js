@@ -7,6 +7,7 @@ import Me from './Components/Me';
 import Blog from './Components/Blog';
 import User from './Components/User';
 import Contact from './Components/Contact';
+import Projects from './Components/Projects';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
     <ThemeProvider theme={theme}>
         <Header />
         <Me id="me"/>
+        <Projects id="projects" />
         <User id="user"/>
         <Blog id="blog"/>
         <Contact id="contact"/>
