@@ -113,6 +113,7 @@ const Blog = ({ id }) => {
                         blog
                     </Typography>
                     <Grid container spacing={3} sx={{ marginTop: 3 }} justifyContent={isMobile ? 'center' : 'center'}>
+                    {blogs.length === 0 && <Typography variant='h6' sx={{ textAlign: 'center', marginTop: 10, marginBottom: 20, marginLeft: 4 }}>Loading...</Typography>}
                         {blogs.map((blog, index) => (
                             <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
                                 <Paper
