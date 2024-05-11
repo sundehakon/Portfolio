@@ -28,6 +28,7 @@ const Contact = ({ id }) => {
             <Box sx={{ textAlign: 'center', marginTop: 5 }}>
                 <Typography variant='caption'>Copyright Håkon Sunde 2024 ©</Typography>
             </Box>
+            <Box sx={{ backgroundColor: 'white', height: 10 }}></Box>
         </Box>
         </div>
     );
