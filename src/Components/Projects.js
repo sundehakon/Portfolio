@@ -16,7 +16,7 @@ function Projects(props)
     ]
 
     return (
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'white' }}>
         <Carousel sx={{ width: 500 }}>
             {
                 items.map( (item, i) => <Item key={i} item={item} /> )

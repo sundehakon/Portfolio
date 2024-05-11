@@ -9,8 +9,8 @@ const User = ({ id }) => {
 
     return (
         <div id={id}>
-            <Box sx={{ height: 50 }}></Box>
-            <Box sx={{ textAlign: 'center' }}>
+            <Box sx={{ height: 50, backgroundColor: 'white' }}></Box>
+            <Box sx={{ textAlign: 'center', backgroundColor: 'white' }}>
                 <Typography variant='h4'>
                     auth0
                 </Typography>
@@ -35,7 +35,7 @@ const User = ({ id }) => {
                                 <Typography variant='h5'>
                                     your profile
                                 </Typography>
-                                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2}}>
+                                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                                     <Typography><img src={user.picture} alt='User profile' style={{ borderRadius: '50%', height: 64, width: 64, marginTop: 20 }}/></Typography>
                                     <Typography><span style={{ fontWeight: 'bolder' }}>username.</span>&nbsp; {user.name}</Typography>
                                     <Typography><span style={{ fontWeight: 'bolder' }}>email.</span>&nbsp; {user.email}</Typography>
@@ -52,7 +52,7 @@ const User = ({ id }) => {
                     </Grid>
                 }
                 <Typography sx={{ marginTop: 6 }}>use your account to write comments</Typography>
-                <ArrowDownwardIcon sx={{ marginTop: 3 }}/>
+                <ArrowDownwardIcon sx={{ marginTop: 3, marginBottom: 4 }}/>
             </Box>
         </div>
     );

@@ -53,3 +53,18 @@ html {
     transform: rotate(360deg);
   }
 }
+
+.app-container {
+  position: relative;
+}
+
+.header-container {
+  position: relative;
+  z-index: 1; 
+}
+
+.content-container {
+  position: relative; 
+  z-index: 2; 
+}
+

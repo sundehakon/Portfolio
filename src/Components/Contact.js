@@ -4,7 +4,8 @@ import { Typography, Box, Link, Paper, Grid } from '@mui/material';
 const Contact = ({ id }) => {
     return (
         <div id={id}>
-            <Box sx={{ height: 70 }}></Box>
+            <Box sx={{ height: 70, backgroundColor: 'white' }}></Box>
+            <Box sx={{ backgroundColor: 'white' }}>
             <Grid>
                 <Box sx={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
                 <Grid item>
@@ -24,9 +25,10 @@ const Contact = ({ id }) => {
                 </Grid>
                 </Box>
             </Grid>
-            <Box sx={{ textAlign: 'center', marginTop: 5, marginBottom: 2 }}>
+            <Box sx={{ textAlign: 'center', marginTop: 5 }}>
                 <Typography variant='caption'>Copyright Håkon Sunde 2024 ©</Typography>
             </Box>
+        </Box>
         </div>
     );
 };
