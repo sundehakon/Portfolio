@@ -1,5 +1,4 @@
-import Map from './Map';
-import { Typography, Box, Link, Paper, Grid } from '@mui/material';
+import { Typography, Box, Link, Grid } from '@mui/material';
 
 const Contact = ({ id }) => {
     return (
@@ -9,8 +8,7 @@ const Contact = ({ id }) => {
             <Grid>
                 <Box sx={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
                 <Grid item>
-                    <Paper sx={{ padding: 7, borderRadius: 7, boxShadow: 3 }}>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, textAlign: 'center' }}>
                         <Typography variant='h5' sx={{ marginBottom: 2 }}>contact info</Typography>
                         <Typography><span style={{ fontWeight: 'bolder' }}>phone.</span> +47 960 42 872</Typography>
                         <Typography>
@@ -18,10 +16,6 @@ const Contact = ({ id }) => {
                         </Typography>
                         <Typography><span style={{ fontWeight: 'bolder' }}>instagram.</span> sunde.hakon</Typography>
                     </Box>
-                    </Paper>
-                </Grid>
-                <Grid item>
-                    <Map />
                 </Grid>
                 </Box>
             </Grid>
