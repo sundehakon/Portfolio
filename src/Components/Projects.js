@@ -22,7 +22,7 @@ const Projects = ({ id }) => {
         {
             name: 'SundeWeather',
             description: 'A simple weather application which uses an API provided by Norwegian state owned YR to fetch weather data. This project was created with ReactJS and helped teach me about fetching data from multiple APIs and making them work together.',
-            href: 'https://sundeweather.netlify.app/'
+            href: 'https://sundeweather.software/'
         }
     ];
 
