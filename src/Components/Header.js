@@ -23,11 +23,11 @@ const Header = () => {
                 }}
             >
                 <List sx={{ display: 'flex', color: '#818181', flexDirection: isSmallScreen ? 'column' : 'row' }}>
-                    <ListItemButton sx={{ '&:hover': { color: 'white' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={() => scrollToComponent('me')}>me</ListItemButton>
-                    <ListItemButton sx={{ '&:hover': { color: 'white' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={() => scrollToComponent('projects')}>projects</ListItemButton>
-                    <ListItemButton sx={{ '&:hover': { color: 'white' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={() => scrollToComponent('user')}>auth0</ListItemButton>
-                    <ListItemButton sx={{ '&:hover': { color: 'white' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={() => scrollToComponent('blog')}>blog</ListItemButton>
-                    <ListItemButton sx={{ '&:hover': { color: 'white' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={() => scrollToComponent('contact')}>contact</ListItemButton>
+                    <ListItemButton sx={{ '&:hover': { color: '#151515' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={() => scrollToComponent('me')}>me</ListItemButton>
+                    <ListItemButton sx={{ '&:hover': { color: '#151515' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={() => scrollToComponent('projects')}>projects</ListItemButton>
+                    <ListItemButton sx={{ '&:hover': { color: '#151515' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={() => scrollToComponent('user')}>auth0</ListItemButton>
+                    <ListItemButton sx={{ '&:hover': { color: '#151515' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={() => scrollToComponent('blog')}>blog</ListItemButton>
+                    <ListItemButton sx={{ '&:hover': { color: '#151515' } }} disableRipple style={{ backgroundColor: 'transparent' }} onClick={() => scrollToComponent('contact')}>contact</ListItemButton>
                 </List>
             </Box>
     );
