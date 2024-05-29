@@ -2,62 +2,42 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@auth0/auth0-react": "^2.2.4",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
-    "@fvilers/disable-react-devtools": "^1.3.0",
-    "@mui/icons-material": "^5.15.16",
-    "@mui/material": "^5.15.16",
-    "@react-google-maps/api": "^2.19.3",
-    "@splinetool/react-spline": "^2.2.6",
-    "@tsparticles/react": "^3.0.0",
-    "@tsparticles/slim": "^3.3.0",
-    "auth0": "^4.3.1",
-    "axios": "^1.6.8",
-    "cors": "^2.8.5",
-    "mongoose": "^8.3.3",
-    "react": "^18.3.0",
-    "react-dom": "^18.3.0",
-    "react-material-ui-carousel": "^3.4.2",
-    "react-slick": "^0.30.2",
-    "request": "^2.88.2",
-    "slick-carousel": "^1.8.1",
-    "spline": "^0.0.0"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d docs",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "core-js": "^3.8.3",
+    "vue": "^3.2.13"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.2.2",
-    "@testing-library/jest-dom": "^6.4.2",
-    "@testing-library/react": "^15.0.5",
-    "@testing-library/user-event": "^14.5.2",
-    "gh-pages": "^6.1.1",
-    "react-scripts": "^5.0.1",
-    "web-vitals": "^3.5.2"
-  }
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
 }
