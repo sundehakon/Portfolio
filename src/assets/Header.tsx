@@ -4,10 +4,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { ColorModeContext } from './ToggleColorMode'; 
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
-const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 function ColorMode() {
     const theme = useTheme();
@@ -23,10 +23,10 @@ function ColorMode() {
 }
 
 const Header = () => {
-    const [mobileOpen, setMobileOpening] = React.useState(false);
+    const [mobileOpen, setMobileOpen] = React.useState(false);
 
     const handleDrawerToggle = () => {
-        setMobileOpening((prevState) => !prevState);
+        setMobileOpen((prevState) => !prevState);
     };
 
     const drawer = (
@@ -39,7 +39,7 @@ const Header = () => {
                 {navItems.map((item) => (
                     <ListItem key={item} disablePadding>
                         <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primary={item}/>
+                            <ListItemText primary={item} />
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -74,8 +74,8 @@ const Header = () => {
                                 {item}
                             </Button>
                         ))}
+                        <ColorMode />
                     </Box>
-                    <ColorMode />
                 </Toolbar>
             </AppBar>
             <nav>

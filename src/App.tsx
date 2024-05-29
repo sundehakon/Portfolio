@@ -1,8 +1,11 @@
-import Header from './assets/Header';
+import React from 'react';
+import ToggleColorMode from './assets/ToggleColorMode';
 
 function App() {
   return (
-    <Header />
+    <React.StrictMode>
+      <ToggleColorMode />
+    </React.StrictMode>
   );
 }
 

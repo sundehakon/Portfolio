@@ -1,11 +1,15 @@
 import * as React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import App from '../App';
+import Header from './Header'; 
 
-const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
+interface ColorModeContextType {
+  toggleColorMode: () => void;
+}
+
+export const ColorModeContext = React.createContext<ColorModeContextType>({ toggleColorMode: () => {} });
 
 export default function ToggleColorMode() {
-  const [mode, setMode] = React.useState<'light' | 'dark'>('light');
+  const [mode, setMode] = React.useState<'dark' | 'light'>('dark');
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
@@ -28,7 +32,7 @@ export default function ToggleColorMode() {
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
-        <App />
+        <Header />
       </ThemeProvider>
     </ColorModeContext.Provider>
   );
