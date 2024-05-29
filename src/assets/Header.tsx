@@ -75,6 +75,7 @@ const Header = () => {
                             </Button>
                         ))}
                     </Box>
+                    <ColorMode />
                 </Toolbar>
             </AppBar>
             <nav>
