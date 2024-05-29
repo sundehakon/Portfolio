@@ -1,9 +1,26 @@
 import * as React from 'react';
 import { AppBar, Box, CssBaseline, Divider, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography, Button, Drawer } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useTheme } from '@mui/material/styles';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
+const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
+
+function ColorMode() {
+    const theme = useTheme();
+    const colorMode = React.useContext(ColorModeContext);
+
+    return (
+        <Box>
+            <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color='inherit'>
+                {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+            </IconButton>
+        </Box>
+    );
+}
 
 const Header = () => {
     const [mobileOpen, setMobileOpening] = React.useState(false);
