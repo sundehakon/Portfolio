@@ -1,10 +1,10 @@
 import './App.css';
-import { Box } from '@mui/material';
+import Header from './assets/Header';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 function App() {
   return (
-    <Box>
-    </Box>
+    <Header />
   );
 }
 
