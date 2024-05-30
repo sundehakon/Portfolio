@@ -2,6 +2,7 @@ import * as React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Header from './Header';
+import Main from './Main';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 interface ColorModeContextType {
@@ -42,6 +43,7 @@ export default function ToggleColorMode() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Header />
+        <Main />
       </ThemeProvider>
     </ColorModeContext.Provider>
   );
