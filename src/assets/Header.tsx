@@ -7,7 +7,20 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { ColorModeContext } from './ToggleColorMode'; 
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = [
+    {
+        name: 'Home', 
+        link: '/'
+    }, 
+    {
+        name: 'About',
+        link: '/about' 
+    },
+    {
+        name: 'Contact',
+        link: '/contact'
+    },
+];
 
 function ColorMode() {
     const theme = useTheme();
@@ -37,9 +50,9 @@ const Header = () => {
             <Divider />
             <List>
                 {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primary={item} />
+                    <ListItem key={item.name} disablePadding>
+                        <ListItemButton sx={{ textAlign: 'center' }} href={item.link}>
+                            <ListItemText primary={item.name} />
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -70,8 +83,8 @@ const Header = () => {
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
-                            <Button key={item} sx={{ color: '#fff' }}>
-                                {item}
+                            <Button key={item.name} sx={{ color: '#fff' }} href={item.link}>
+                                {item.name}
                             </Button>
                         ))}
                     </Box>
