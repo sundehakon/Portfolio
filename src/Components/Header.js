@@ -1,8 +1,13 @@
 import * as React from 'react';
-import { Box, CssBaseline, Modal, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography, Button, Paper } from '@mui/material';
+import { Box, CssBaseline, Modal, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography, Paper, Container } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Link } from 'react-router-dom'; 
 
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = [
+  { name: 'Home', link: '/' },
+  { name: 'About', link: '/about' },
+  { name: 'Contact', link: '/contact' }
+];
 
 function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -15,9 +20,9 @@ function Header() {
     <Box onClick={handleDrawerToggle}>
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton>
-              <ListItemText primary={item} />
+          <ListItem key={item.name} disablePadding>
+            <ListItemButton component={Link} to={item.link}>
+              <ListItemText primary={item.name} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -28,6 +33,7 @@ function Header() {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       <CssBaseline />
+      <Container maxWidth="lg">
         <Toolbar>
           <Typography
             variant="h6"
@@ -38,9 +44,14 @@ function Header() {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: 'rgba(0, 0, 0, 0.87)' }}>
-                {item}
-              </Button>
+              <Typography
+                key={item.name}
+                sx={{ color: 'rgba(0, 0, 0, 0.87)', textDecoration: 'none' }}
+                component={Link}
+                to={item.link}
+              >
+                {item.name}
+              </Typography>
             ))}
           </Box>
           <IconButton
@@ -53,21 +64,21 @@ function Header() {
             <MenuIcon />
           </IconButton>
         </Toolbar>
+      </Container>
       <nav>
         <Modal
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            sx={{ display: { sm: 'none' } }}
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
         >
-            <Paper sx={{ margin: 1 }}>
-                <Typography
-                    variant="h6"
-                    sx={{ padding: 2 }}
-                >
-                    Håkon Sunde
-                </Typography>
-                {drawer}
-            </Paper>
+          <Paper sx={{ margin: 1 }}>
+            <Typography
+              variant="h6"
+              sx={{ padding: 2 }}
+            >
+              Håkon Sunde
+            </Typography>
+            {drawer}
+          </Paper>
         </Modal>
       </nav>
     </Box>
