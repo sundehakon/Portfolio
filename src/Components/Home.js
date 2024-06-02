@@ -3,7 +3,7 @@ import { Typography, Container } from "@mui/material"
 const Home = () => {
     return (
         <Container>
-            <Typography>Home</Typography>
+            <Typography>Håkon Sunde</Typography>
         </Container>
     );
 };
