@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, CssBaseline, Modal, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography, Paper, Container } from '@mui/material';
+import { Box, CssBaseline, Modal, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography, Paper } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom'; 
 
@@ -33,12 +33,11 @@ function Header() {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       <CssBaseline />
-      <Container maxWidth="lg">
         <Toolbar>
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { sm: 'block' }, padding: 2 }}
+            sx={{ flexGrow: 1, display: { sm: 'block' } }}
           >
             Håkon Sunde
           </Typography>
@@ -46,7 +45,7 @@ function Header() {
             {navItems.map((item) => (
               <Typography
                 key={item.name}
-                sx={{ color: 'rgba(0, 0, 0, 0.87)', textDecoration: 'none' }}
+                sx={{ color: 'rgba(0, 0, 0, 0.87)', textDecoration: 'none', marginLeft: 3 }}
                 component={Link}
                 to={item.link}
               >
@@ -64,7 +63,6 @@ function Header() {
             <MenuIcon />
           </IconButton>
         </Toolbar>
-      </Container>
       <nav>
         <Modal
           open={mobileOpen}
