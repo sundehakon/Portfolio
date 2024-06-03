@@ -31,7 +31,7 @@ function Header() {
   );
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', zIndex: 3, position: 'relative' }}>
       <CssBaseline />
         <Toolbar>
           <Typography
