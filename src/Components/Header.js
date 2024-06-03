@@ -54,9 +54,9 @@ function Header() {
             ))}
           </Box>
           <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
+            color='inherit'
+            aria-label='open drawer'
+            edge='start'
             onClick={handleDrawerToggle}
             sx={{ ml: 'auto', display: { sm: 'none' } }}
           >

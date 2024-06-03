@@ -13,7 +13,6 @@ const Home = () => {
             }}>
                 <Typography variant='h2' sx={{ marginBottom: { xs: 2, sm: 0 } }}>Håkon Sunde</Typography>
                 <Box sx={{ 
-                    border: 1, 
                     borderRadius: '50%', 
                     overflow: 'hidden', 
                     height: 400, 
@@ -21,7 +20,8 @@ const Home = () => {
                     display: 'flex', 
                     justifyContent: 'center', 
                     alignItems: 'center',
-                    marginTop: { xs: 2, sm: 0 } 
+                    marginTop: { xs: 2, sm: 0 },
+                    background: 'linear-gradient(to bottom, #3f51b5, #2196f3)'
                 }}>
                     <img 
                         src='/me.png' 
