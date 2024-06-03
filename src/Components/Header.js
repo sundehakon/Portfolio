@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, CssBaseline, Modal, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography, Paper } from '@mui/material';
+import { Box, CssBaseline, Modal, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography, Paper, Divider } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom'; 
 
@@ -67,14 +67,16 @@ function Header() {
         <Modal
           open={mobileOpen}
           onClose={handleDrawerToggle}
+          sx={{ display: { sm: 'none' } }}
         >
-          <Paper sx={{ margin: 1 }}>
+          <Paper sx={{ margin: 1, display: { sm: 'none' } }}>
             <Typography
               variant="h6"
               sx={{ padding: 2 }}
             >
-              Håkon Sunde
+              sundehakon.tech
             </Typography>
+            <Divider />
             {drawer}
           </Paper>
         </Modal>
