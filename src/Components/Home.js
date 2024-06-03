@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Typography, Container, Box, Button, Grid } from "@mui/material";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
@@ -5,15 +6,19 @@ const skills = [
     { name: 'JavaScript', icon: '/skill-icons/js.png' },
     { name: 'React', icon: '/skill-icons/react.png' },
     { name: 'Node.js', icon: '/skill-icons/nodejs.png' },
+    { name: 'Express.js', icon: '/skill-icons/express.png' },
     { name: 'C#', icon: '/skill-icons/csharp.png' },
     { name: 'Python', icon: '/skill-icons/python.png' },
     { name: 'HTML', icon: '/skill-icons/html.png' },
     { name: 'CSS', icon: '/skill-icons/css.png' },
     { name: 'Git', icon: '/skill-icons/git.png' },
     { name: 'MongoDB', icon: '/skill-icons/mongodb.png' },
+    { name: 'Photoshop', icon: '/skill-icons/photoshop.png' },
+    { name: 'Adobe Xd', icon: '/skill-icons/adobexd.png' },
 ];
-
 const Home = () => {
+    const [hoveredSkill, setHoveredSkill] = useState(null);
+
     return (
         <div>
             <Box sx={{
@@ -45,11 +50,10 @@ const Home = () => {
                         gap: 2,
                         textAlign: 'center'
                     }}>
-                        {/* Change gradient color because its ugly rn */}
                         <Typography variant='h2' sx={{
                             marginBottom: { xs: 2, sm: 0 },
                             fontWeight: 'bolder',
-                            background: 'linear-gradient(133deg, rgba(28,28,31,1) 17%, rgba(182,182,183,1) 92%)',
+                            background: 'linear-gradient(167deg, rgba(45,45,45,0.7847732843137255) 44%, rgba(166,166,166,1) 100%)',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent'
                         }}>
@@ -85,13 +89,13 @@ const Home = () => {
                                 height: '100%',
                                 width: '100%',
                                 objectFit: 'cover',
-                                objectPosition: 'top'
+                                objectPosition: 'top',
                             }}
                         />
                     </Box>
                 </Box>
 
-                <Box sx={{ textAlign: 'center', marginTop: 20 }}>
+                <Box sx={{ textAlign: 'center', marginTop: 20, marginBottom: 20 }}>
                     <Typography variant='h4'>Skillset</Typography>
                     <Grid
                         container
@@ -100,22 +104,36 @@ const Home = () => {
                         alignItems='center'
                         sx={{ marginTop: 3 }}
                     >
-                        {skills.map((item, index) => ( 
-                            <Grid item key={index}> 
+                        {skills.map((item, index) => (
+                            <Grid item key={index}>
                                 <Box
                                     sx={{
                                         display: 'flex',
-                                        justifyContent: 'center',
+                                        flexDirection: 'column',
                                         alignItems: 'center',
-                                        '& img': { 
-                                            transition: 'transform 0.3s ease-in-out',
-                                        },
-                                        '& img:hover': { 
-                                            transform: 'translateY(-10px)', 
+                                        position: 'relative',
+                                        '&:hover': {
+                                            '& img': {
+                                                transform: 'translateY(-10px)',
+                                            },
+                                            '& .fade-in-text': {
+                                                opacity: 1,
+                                            },
                                         },
                                     }}
+                                    onMouseEnter={() => setHoveredSkill(item.name)}
+                                    onMouseLeave={() => setHoveredSkill(null)}
                                 >
-                                    <img src={item.icon} alt={item.name} style={{ height: 82, width: 82 }} />
+                                    <img src={item.icon} alt={item.name} style={{ height: 92, width: 92 }} />
+                                    <Typography variant="subtitle1" className="fade-in-text" sx={{
+                                        opacity: 0,
+                                        transition: 'opacity 0.3s ease-in-out',
+                                        position: 'absolute',
+                                        bottom: -25,
+                                        display: hoveredSkill === item.name ? 'visible' : 'hidden',
+                                    }}>
+                                        {item.name}
+                                    </Typography>
                                 </Box>
                             </Grid>
                         ))}
