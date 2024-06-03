@@ -37,7 +37,7 @@ function Header() {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { sm: 'block' } }}
+            sx={{ flexGrow: 1, display: { sm: 'block' }, color: 'rgba(0, 0, 0, 0.76)' }}
           >
             sundehakon.tech
           </Typography>
@@ -45,7 +45,7 @@ function Header() {
             {navItems.map((item) => (
               <Typography
                 key={item.name}
-                sx={{ color: 'rgba(0, 0, 0, 0.87)', textDecoration: 'none', marginLeft: 3 }}
+                sx={{ color: 'rgba(0, 0, 0, 0.76)', textDecoration: 'none', marginLeft: 3 }}
                 component={Link}
                 to={item.link}
               >

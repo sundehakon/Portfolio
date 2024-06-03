@@ -33,10 +33,18 @@ const Home = () => {
                         gap: 2, 
                         textAlign: 'center' 
                     }}>
-                        <Typography variant='h2' sx={{ marginBottom: { xs: 2, sm: 0 }, fontWeight: 'bolder' }}>Håkon Sunde</Typography>
+                        <Typography variant='h2' sx={{ 
+                            marginBottom: { xs: 2, sm: 0 }, 
+                            fontWeight: 'bolder',  
+                            background: 'linear-gradient(133deg, rgba(28,28,31,1) 17%, rgba(182,182,183,1) 92%)',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent' 
+                        }}>
+                            Håkon Sunde
+                        </Typography>
                         <Typography>16 year old student developer from Oslo, Norway</Typography>
                         <Box sx={{ display: 'flex', gap: 3, alignItems: 'center', justifyContent: 'center' }}>
-                            <Button variant='contained' endIcon={<NavigateNextIcon />} sx={{ backgroundColor: 'rgba(0, 0, 0, 0.76)', '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.73)' }, borderRadius: 20 }} disableRipple href='mailto:hakon.su@gmail.com'>
+                            <Button variant='contained' endIcon={<NavigateNextIcon />} sx={{ backgroundColor: 'rgba(0, 0, 0, 0.76)', '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.64)' }, borderRadius: 20 }} disableRipple href='mailto:hakon.su@gmail.com'>
                                 Contact Me
                             </Button>
                             <Button endIcon={<NavigateNextIcon />} sx={{ color: 'rgba(0, 0, 0, 0.87)' }} disableRipple style={{ backgroundColor: 'transparent' }} href='https://github.com/sundehakon' target='_blank'>
@@ -68,6 +76,9 @@ const Home = () => {
                             }}
                         />
                     </Box>
+                </Box>
+                <Box sx={{ textAlign: 'center' }}>
+                    <Typography variant='h4'>Skillset</Typography>
                 </Box>
             </Container>
         </div>
