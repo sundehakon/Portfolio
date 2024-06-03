@@ -3,8 +3,15 @@ import { Typography, Container, Box } from "@mui/material";
 const Home = () => {
     return (
         <Container>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <Typography>Håkon Sunde</Typography>
+            <Box sx={{ 
+                display: 'flex', 
+                justifyContent: 'space-between', 
+                alignItems: 'center', 
+                marginTop: 10,
+                flexDirection: { xs: 'column', sm: 'row' }, 
+                textAlign: { xs: 'center', sm: 'left' } 
+            }}>
+                <Typography variant='h2' sx={{ marginBottom: { xs: 2, sm: 0 } }}>Håkon Sunde</Typography>
                 <Box sx={{ 
                     border: 1, 
                     borderRadius: '50%', 
@@ -13,7 +20,8 @@ const Home = () => {
                     width: 400,
                     display: 'flex', 
                     justifyContent: 'center', 
-                    alignItems: 'center' 
+                    alignItems: 'center',
+                    marginTop: { xs: 2, sm: 0 } 
                 }}>
                     <img 
                         src='/me.png' 
@@ -32,3 +40,4 @@ const Home = () => {
 };
 
 export default Home;
+

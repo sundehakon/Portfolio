@@ -39,7 +39,7 @@ function Header() {
             component="div"
             sx={{ flexGrow: 1, display: { sm: 'block' } }}
           >
-            Håkon Sunde
+            sundehakon.tech
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
