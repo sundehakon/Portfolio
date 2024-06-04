@@ -1,6 +1,7 @@
 import { Typography, Container, Box, Button } from "@mui/material";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import Skillset from "./Skillset";
+import About from "./About";
 
 const Home = () => {
     return (
@@ -78,6 +79,7 @@ const Home = () => {
                     </Box>
                 </Box>
                 <Skillset />
+                <About />
             </Container>
         </div>
     );
