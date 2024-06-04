@@ -14,6 +14,7 @@ const skills = [
     { name: 'MongoDB', icon: '/skill-icons/mongodb.png' },
     { name: 'Photoshop', icon: '/skill-icons/photoshop.png' },
     { name: 'Adobe Xd', icon: '/skill-icons/adobexd.png' },
+    { name: 'InDesign', icon: '/skill-icons/indesign.png' },
     { name: 'Blazor', icon: '/skill-icons/blazor.png' },
 ];
 
@@ -25,7 +26,7 @@ const Skillset = () => {
             <Typography variant='h4'>Skillset</Typography>
             <Grid
                 container
-                spacing={5}
+                spacing={7}
                 justifyContent='center'
                 alignItems='center'
                 sx={{ marginTop: 3 }}
@@ -60,7 +61,7 @@ const Skillset = () => {
                             }}>
                                 {item.name}
                             </Typography>
-                        </Box>
+                        </Box>                
                     </Grid>
                 ))}
             </Grid>
