@@ -15,7 +15,7 @@ const About = () => {
                     <Typography variant='h6' sx={{ marginBottom: 2, marginTop: 1 }}>Development</Typography>
                     <Typography>
                         As most developers I am quite fond of using a variety of operating systems for development of projects. 
-                        At the moment I am using a MacBook Pro and Visual Studio Code for most of my projects. I have experience
+                        At the moment I am using a MacBook Pro and Visual Studio Code for most of my work. I have experience
                         however in the likes of both Linux and Windows.    
                     </Typography>
                 </Grid>
