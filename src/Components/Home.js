@@ -65,10 +65,10 @@ const Home = () => {
                             background: 'linear-gradient(167deg, rgba(45,45,45,0.7847732843137255) 44%, rgba(166,166,166,1) 100%)',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent'
-                        }}>
-                            Håkon Sundebergsten Haakonsen
+                        }}> 
+                            Håkon Sunde
                         </Typography>
-                        <Typography>16 year old student developer from Sandvika, Norway</Typography>
+                        <Typography>16 year old student developer from Oslo, Norway</Typography>
                         <Box sx={{ display: 'flex', gap: 3, alignItems: 'center', justifyContent: 'center' }}>
                             <Button variant='contained' endIcon={<NavigateNextIcon />} sx={{ backgroundColor: 'rgba(0, 0, 0, 0.76)', '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.64)' }, borderRadius: 20 }} disableRipple href='mailto:hakon.su@gmail.com'>
                                 Contact Me

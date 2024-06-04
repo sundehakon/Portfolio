@@ -55,7 +55,7 @@ const About = () => {
                         My History
                     </Typography>
                     <Typography>
-                        I was born on November 16, 2006, in Oslo, Norway. I've lived in Lillestrøm, Ekelundsstien 25 most of my life, a medium-sized city just outside Oslo. I started programming a few years ago, influenced by school and my uncle. Now, I code every week for school!
+                        I was born on November 16, 2007, in Oslo, Norway. I've lived in Lillestrøm most of my life, a medium-sized city just outside Oslo. I started programming a few years ago, influenced by school and social media. Now, I code every day for school!
                     </Typography>
                 </Grid>
                 {isSmallScreen && <Grid item xs={12} sx={{ height: 16 }} />}
