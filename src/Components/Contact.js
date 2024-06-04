@@ -3,7 +3,7 @@ import { Typography, Container } from "@mui/material"
 const Contact = () => {
     return (
         <Container>
-            <Typography>Contact</Typography>
+            <Typography>Coming soon...</Typography>
         </Container>
     );
 };
