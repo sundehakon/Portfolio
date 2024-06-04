@@ -9,7 +9,7 @@ const About = () => {
 
     return (
         <Box>
-            <Typography variant='h4' sx={{ textAlign: 'center', marginBottom: 8 }}>
+            <Typography variant='h4' sx={{ textAlign: 'center', marginBottom: 6 }}>
                 About
             </Typography>
             <Grid container spacing={3} justifyContent="center" sx={{ marginBottom: 10 }}>
