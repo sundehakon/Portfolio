@@ -63,7 +63,58 @@ const Projects = () => {
                     </Box>
                 </Box>
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flex: 1 }}>
-                    <img src='/screenshots/sundeweather.png' alt='Weather Application' style={{ maxHeight: 400, maxWidth: '100%', objectFit: 'cover', borderRadius: 20, padding: 10 }} />
+                    <img src='/screenshots/sundeweather.png' alt='Screenshot of SundeWeather' style={{ maxHeight: 400, maxWidth: '100%', objectFit: 'cover', borderRadius: 20, padding: 10 }} />
+                </Box>
+            </Box>
+            <Box sx={{
+                border: 1,
+                borderColor: 'divider',
+                borderRadius: 2,
+                boxShadow: 3,
+                display: 'flex',
+                flexDirection: { xs: 'column', md: 'row' },
+                backgroundColor: 'rgba(0, 0, 0, 0.04)',
+                overflow: 'hidden',
+                mb: 4,
+                marginTop: 4
+            }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
+                    <Typography variant='h4' sx={{ padding: 3 }}>
+                        SundeAI
+                    </Typography>
+                    <Typography sx={{ padding: 3, flexGrow: 1 }}>
+                        Console based application for generating AI images based on a text search query by the user. The project uses a Stability AI API, and their engine to generate, but handles UI and the request sent to the generator.
+                        <br /><br />
+                        <strong>Key features:</strong>
+                        <List>
+                            <ListItem>
+                                <ListItemIcon>
+                                    <ArrowForwardIcon />
+                                </ListItemIcon>
+                                API fetch from state of the art AI image engine.
+                            </ListItem>
+                            <ListItem>
+                                <ListItemIcon>
+                                    <ArrowForwardIcon />
+                                </ListItemIcon>
+                                Customizable fetch queries for the user.
+                            </ListItem>
+                            <ListItem>
+                                <ListItemIcon>
+                                    <ArrowForwardIcon />
+                                </ListItemIcon>
+                                Quick generating speeds.
+                            </ListItem>
+                        </List>
+                    </Typography>
+                    <Box sx={{ display: 'flex', padding: 2, gap: 2 }}>
+                        <Button endIcon={<GitHubIcon />} sx={{ color: 'rgba(0, 0, 0, 0.87)' }} style={{ backgroundColor: 'transparent' }} disableRipple href='https://github.com/sundehakon/SundeAI' target='_blank'>
+                            Github
+                        </Button>
+                    </Box>
+                </Box>
+                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flex: 1 }}>
+                    <img src='/screenshots/sundeai.png' alt='Human and polar bear hug' style={{ maxHeight: 400, maxWidth: '100%', objectFit: 'cover', borderRadius: 20, padding: 10 }} />
                 </Box>
             </Box>
         </Container>
