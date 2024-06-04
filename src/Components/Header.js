@@ -36,8 +36,9 @@ function Header() {
         <Toolbar>
           <Typography
             variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { sm: 'block' }, color: 'rgba(0, 0, 0, 0.76)' }}
+            component={Link}
+            to={'/'}
+            sx={{ flexGrow: 1, display: { sm: 'block' }, color: 'rgba(0, 0, 0, 0.76)', textDecoration: 'none' }}
           >
             sundehakon.tech
           </Typography>
