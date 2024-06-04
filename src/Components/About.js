@@ -78,7 +78,7 @@ const About = () => {
                         Projects
                     </Typography>
                     <Typography>
-                        Building projects is one of my favorite ways to learn to code. Over the years, I've created weather applications using APIs, a hotel webpage, and a console-based application for generating AI-based images using the Stability API. Check out my projects!
+                        Building projects is one of my favorite ways to learn to code. Over the years, I've created weather applications using APIs, a hotel webpage, and a console-based application for generating AI-based images using Stability AI. Check out my projects!
                     </Typography>
                 </Grid>
             </Grid>
