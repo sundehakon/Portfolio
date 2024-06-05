@@ -78,7 +78,7 @@ const Home = () => {
                             </Button>
                         </Box>
                     </Box>
-                </Box>
+                </Box> 
                 <Skillset />
                 <About />
                 <Footer />

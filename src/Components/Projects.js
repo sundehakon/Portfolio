@@ -1,7 +1,8 @@
-import { Typography, Container, Box, Button, List, ListItem, ListItemIcon } from "@mui/material";
+import { Typography, Container, Box, Button, List, ListItem, ListItemIcon, Divider } from "@mui/material";
 import LanguageIcon from '@mui/icons-material/Language';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import Footer from "./Footer";
 
 const Projects = () => {
     return (
@@ -134,7 +135,7 @@ const Projects = () => {
                         Hotel "Havblikk"
                     </Typography>
                     <Typography sx={{ padding: 3, flexGrow: 1 }}>
-                        Console based application for generating AI images based on a text search query by the user. The project uses a Stability AI API, and their engine to generate, but handles UI and the request sent to the generator.
+                        Website created for a fictional hotel in Norway. The website provides functionality for both the staff at the hotel and visitors. Users can rent rooms, and staff can check incoming reservations. This project was created because of a school project, using React and Material UI for a sleek and modern design. 
                         <br /><br />
                         <strong>Key features:</strong>
                         <List>
@@ -142,24 +143,30 @@ const Projects = () => {
                                 <ListItemIcon>
                                     <ArrowForwardIcon />
                                 </ListItemIcon>
-                                API fetch from state of the art AI image engine.
+                                Room reservations and overview of orders.
                             </ListItem>
                             <ListItem>
                                 <ListItemIcon>
                                     <ArrowForwardIcon />
                                 </ListItemIcon>
-                                Customizable fetch queries for the user.
+                                Modern design which showcases the fictional hotel.
                             </ListItem>
                             <ListItem>
                                 <ListItemIcon>
                                     <ArrowForwardIcon />
                                 </ListItemIcon>
-                                Quick generating speeds.
+                                3D model of hotel room.
+                            </ListItem>
+                            <ListItem>
+                                <ListItemIcon>
+                                    <ArrowForwardIcon />
+                                </ListItemIcon>
+                                User authentication with Auth0.
                             </ListItem>
                         </List>
                     </Typography>
                     <Box sx={{ display: 'flex', padding: 2, gap: 2 }}>
-                        <Button endIcon={<GitHubIcon />} sx={{ color: 'rgba(0, 0, 0, 0.87)' }} style={{ backgroundColor: 'transparent' }} disableRipple href='https://github.com/sundehakon/SundeAI' target='_blank'>
+                        <Button endIcon={<GitHubIcon />} sx={{ color: 'rgba(0, 0, 0, 0.87)' }} style={{ backgroundColor: 'transparent' }} disableRipple href='https://github.com/sundehakon/Hotell-React' target='_blank'>
                             Github
                         </Button>
                     </Box>
@@ -168,6 +175,8 @@ const Projects = () => {
                     <img src='/screenshots/sundeai.png' alt='Human and polar bear hug' style={{ maxHeight: 400, maxWidth: '100%', objectFit: 'cover', borderRadius: 20, padding: 10 }} />
                 </Box>
             </Box>
+            <Divider />
+            <Footer />
         </Container>
     );
 };

@@ -1,7 +1,8 @@
-import { Typography, Container, Box, TextField, Button } from '@mui/material';
+import { Typography, Container, Box, TextField, Button, Divider } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import Footer from './Footer';
 
 const Contact = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -50,11 +51,12 @@ const Contact = () => {
                     justifyContent: 'center', 
                     alignItems: 'center', 
                     marginTop: 20,
+                    marginBottom: 20,
                     width: { xs: '90%', sm: '80%', md: '60%', lg: '50%' },
                     mx: 'auto' 
                 }}
             >
-                <Typography variant="h4" align="center">Contact</Typography>
+                <Typography variant="h4" align="center" sx={{ marginBottom: 3 }}>Contact</Typography>
                 <TextField 
                     label="Name" 
                     name="from_name" 
@@ -93,6 +95,8 @@ const Contact = () => {
                 </Button>
                 {stateMessage && <Typography variant="body1" color="textSecondary" align="center">{stateMessage}</Typography>}
             </Box>
+            <Divider />
+            <Footer />
         </Container>
     );
 };
