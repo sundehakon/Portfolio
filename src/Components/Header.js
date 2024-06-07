@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 const navItems = [
   { name: 'Home', link: '/' },
   { name: 'Projects', link: '/projects' },
-  { name: 'Blog', link: '/blog' },
   { name: 'Contact', link: '/contact' }
 ];
 
