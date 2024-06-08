@@ -50,7 +50,7 @@ const Contact = () => {
                     gap: 2, 
                     justifyContent: 'center', 
                     alignItems: 'center', 
-                    marginTop: 20,
+                    marginTop: 15,
                     marginBottom: 20,
                     width: { xs: '90%', sm: '80%', md: '60%', lg: '50%' },
                     mx: 'auto' 
