@@ -51,7 +51,7 @@ const Contact = () => {
                     justifyContent: 'center', 
                     alignItems: 'center', 
                     marginTop: 15,
-                    marginBottom: 20,
+                    marginBottom: 30,
                     width: { xs: '90%', sm: '80%', md: '60%', lg: '50%' },
                     mx: 'auto' 
                 }}
