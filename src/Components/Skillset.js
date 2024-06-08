@@ -22,50 +22,52 @@ const Skillset = () => {
     const [hoveredSkill, setHoveredSkill] = useState(null);
 
     return (
-        <Box sx={{ textAlign: 'center', marginTop: 20, marginBottom: 20 }}>
-            <Typography variant='h4'>Skillset</Typography>
-            <Grid
-                container
-                spacing={7}
-                justifyContent='center'
-                alignItems='center'
-                sx={{ marginTop: 3 }}
-            >
-                {skills.map((item, index) => (
-                    <Grid item key={index}>
-                        <Box
-                            sx={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center',
-                                position: 'relative',
-                                '&:hover': {
-                                    '& img': {
-                                        transform: 'translateY(-10px)',
+        <Box sx={{ display: 'flex', flexDirection: 'column', marginBottom: 10 }}>
+            <Box sx={{ textAlign: 'center', marginTop: 20, marginBottom: 10 }}>
+                <Typography variant='h4'>Skillset</Typography>
+                <Grid
+                    container
+                    spacing={7}
+                    justifyContent='center'
+                    alignItems='center'
+                    sx={{ marginTop: 3 }}
+                >
+                    {skills.map((item, index) => (
+                        <Grid item key={index}>
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    position: 'relative',
+                                    '&:hover': {
+                                        '& img': {
+                                            transform: 'translateY(-10px)',
+                                        },
+                                        '& .fade-in-text': {
+                                            opacity: 1,
+                                        },
                                     },
-                                    '& .fade-in-text': {
-                                        opacity: 1,
-                                    },
-                                },
-                            }}
-                            onMouseEnter={() => setHoveredSkill(item.name)}
-                            onMouseLeave={() => setHoveredSkill(null)}
-                        >
-                            <img src={item.icon} alt={item.name} style={{ height: 92, width: 92 }} />
-                            <Typography variant="subtitle1" className="fade-in-text" sx={{
-                                opacity: 0,
-                                transition: 'opacity 0.3s ease-in-out',
-                                position: 'absolute',
-                                bottom: -25,
-                                display: hoveredSkill === item.name ? 'visible' : 'hidden',
-                            }}>
-                                {item.name}
-                            </Typography>
-                        </Box>                
-                    </Grid>
-                ))}
-            </Grid>
-            <Divider orientation='vertical'/>
+                                }}
+                                onMouseEnter={() => setHoveredSkill(item.name)}
+                                onMouseLeave={() => setHoveredSkill(null)}
+                            >
+                                <img src={item.icon} alt={item.name} style={{ height: 92, width: 92 }} />
+                                <Typography variant="subtitle1" className="fade-in-text" sx={{
+                                    opacity: 0,
+                                    transition: 'opacity 0.3s ease-in-out',
+                                    position: 'absolute',
+                                    bottom: -25,
+                                    display: hoveredSkill === item.name ? 'visible' : 'hidden',
+                                }}>
+                                    {item.name}
+                                </Typography>
+                            </Box>                
+                        </Grid>
+                    ))}
+                </Grid>
+            </Box>
+            <p style={{ alignSelf: 'center' }}><img src="https://github-readme-stats.vercel.app/api/top-langs?username=sundehakon&show_icons=true&locale=en&layout=compact" alt="sundehakon" /></p>
         </Box>
     );
 };
