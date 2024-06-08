@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Typography, Box, Grid, Divider } from '@mui/material';
+import { Typography, Box, Grid } from '@mui/material';
 
 const skills = [
     { name: 'JavaScript', icon: '/skill-icons/js.png' },
