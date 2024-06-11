@@ -14,8 +14,8 @@ const skills = [
     { name: 'MongoDB', icon: '/skill-icons/mongodb.png' },
     { name: 'Photoshop', icon: '/skill-icons/photoshop.png' },
     { name: 'Adobe Xd', icon: '/skill-icons/adobexd.png' },
-    { name: 'InDesign', icon: '/skill-icons/indesign.png' },
     { name: 'Blazor', icon: '/skill-icons/blazor.png' },
+    { name: 'Ruby', icon: '/skill-icons/ruby.png' },
 ];
 
 const Skillset = () => {
@@ -52,7 +52,7 @@ const Skillset = () => {
                                 onMouseEnter={() => setHoveredSkill(item.name)}
                                 onMouseLeave={() => setHoveredSkill(null)}
                             >
-                                <img src={item.icon} alt={item.name} style={{ height: 92, width: 92 }} />
+                                <img src={item.icon} alt={item.name} style={{ height: 90, width: 90 }} />
                                 <Typography variant="subtitle1" className="fade-in-text" sx={{
                                     opacity: 0,
                                     transition: 'opacity 0.3s ease-in-out',
@@ -67,7 +67,6 @@ const Skillset = () => {
                     ))}
                 </Grid>
             </Box>
-            <p style={{ alignSelf: 'center' }}><img src="https://github-readme-stats.vercel.app/api/top-langs?username=sundehakon&show_icons=true&locale=en&layout=compact" alt="sundehakon" /></p>
         </Box>
     );
 };
