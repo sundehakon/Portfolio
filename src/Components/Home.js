@@ -3,6 +3,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import Skillset from "./Skillset";
 import About from "./About";
 import Footer from "./Footer";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 const Home = () => {
     return (
@@ -70,7 +71,7 @@ const Home = () => {
                         </Typography>
                         <Typography>16 year old student developer from Oslo, Norway</Typography>
                         <Box sx={{ display: 'flex', gap: 3, alignItems: 'center', justifyContent: 'center' }}>
-                            <Button variant='contained' endIcon={<NavigateNextIcon />} sx={{ backgroundColor: 'rgba(0, 0, 0, 0.76)', '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.64)' }, borderRadius: 20 }} disableRipple href='/contact'>
+                            <Button variant='contained' endIcon={<NavigateNextIcon />} sx={{ backgroundColor: 'rgba(0, 0, 0, 0.76)', '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.64)' }, borderRadius: 20 }} disableRipple component={Link} to='/contact'>
                                 Contact Me
                             </Button>
                             <Button endIcon={<NavigateNextIcon />} sx={{ color: 'rgba(0, 0, 0, 0.87)' }} disableRipple style={{ backgroundColor: 'transparent' }} href='https://github.com/sundehakon' target='_blank'>
