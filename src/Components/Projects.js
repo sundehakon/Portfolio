@@ -132,6 +132,57 @@ const Projects = () => {
             }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
                     <Typography variant='h4' sx={{ padding: 3 }}>
+                        RubyCaesar
+                    </Typography>
+                    <Typography sx={{ padding: 3, flexGrow: 1 }}>
+                        One of my first Ruby projects. It's a console based application which works as a mini app where you can add a string which is then encrypted using the caesar cipher. From the built in menu you can see the encrypted message, or view the decrypted message that you just wrote in. It is not intended to store passwords and such just a fun application where the user can see the encryption for themselves.
+                        <br /><br />
+                        <strong>Key features:</strong>
+                        <List>
+                            <ListItem>
+                                <ListItemIcon>
+                                    <ArrowForwardIcon />
+                                </ListItemIcon>
+                                Caesar cipher encryption
+                            </ListItem>
+                            <ListItem>
+                                <ListItemIcon>
+                                    <ArrowForwardIcon />
+                                </ListItemIcon>
+                                User input for custom strings
+                            </ListItem>
+                            <ListItem>
+                                <ListItemIcon>
+                                    <ArrowForwardIcon />
+                                </ListItemIcon>
+                                Decryption of the encrypted string
+                            </ListItem>
+                        </List>
+                    </Typography>
+                    <Box sx={{ display: 'flex', padding: 2, gap: 2 }}>
+                        <Button endIcon={<GitHubIcon />} sx={{ color: 'rgba(0, 0, 0, 0.87)' }} style={{ backgroundColor: 'transparent' }} disableRipple href='https://github.com/sundehakon/Caesar' target='_blank'>
+                            Github
+                        </Button>
+                    </Box>
+                </Box>
+                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flex: 1 }}>
+                    <img src='/screenshots/rubycaesar.png' alt='CLI screenshot' style={{ maxHeight: 400, maxWidth: '100%', objectFit: 'cover', borderRadius: 20, padding: 10 }} />
+                </Box>
+            </Box>
+            <Box sx={{
+                border: 1,
+                borderColor: 'divider',
+                borderRadius: 2,
+                boxShadow: 3,
+                display: 'flex',
+                flexDirection: { xs: 'column', md: 'row' },
+                backgroundColor: 'rgba(0, 0, 0, 0.04)',
+                overflow: 'hidden',
+                mb: 4,
+                marginTop: 4
+            }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
+                    <Typography variant='h4' sx={{ padding: 3 }}>
                         Hotel "Havblikk"
                     </Typography>
                     <Typography sx={{ padding: 3, flexGrow: 1 }}>
