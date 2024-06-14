@@ -39,7 +39,7 @@ const Home = () => {
                         justifyContent: 'center',
                         alignItems: 'center',
                         marginTop: { xs: 2, sm: 0 },
-                        background: 'linear-gradient(133deg, rgba(28,28,31,1) 17%, rgba(182,182,183,1) 92%)',
+                        background: 'linear-gradient(133deg, rgba(49,92,138,1) 17%, rgba(91,162,240,1) 92%)',
                     }}>
                         <img
                             src='/me.png'
@@ -63,7 +63,7 @@ const Home = () => {
                         <Typography variant='h1' sx={{
                             marginBottom: { xs: 2, sm: 0 },
                             fontWeight: 'bolder',
-                            background: 'linear-gradient(167deg, rgba(45,45,45,0.7847732843137255) 44%, rgba(166,166,166,1) 100%)',
+                            background: 'linear-gradient(167deg, rgba(24,78,137,0.78) 44%, rgba(91,162,240,1) 100%)',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent'
                         }}> 
