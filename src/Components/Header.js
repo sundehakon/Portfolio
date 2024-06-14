@@ -38,7 +38,7 @@ function Header() {
             variant="h6"
             component={Link}
             to={'/'}
-            sx={{ flexGrow: 1, display: { sm: 'block' }, color: 'rgba(0, 0, 0, 0.76)', textDecoration: 'none' }}
+            sx={{ flexGrow: 1, display: { sm: 'block' }, color: 'rgba(0, 0, 0, 0.76)', textDecoration: 'none', '&:hover': { fontWeight: 'bolder' } }}
           >
             sundehakon.tech
           </Typography>
@@ -46,7 +46,7 @@ function Header() {
             {navItems.map((item) => (
               <Typography
                 key={item.name}
-                sx={{ color: 'rgba(0, 0, 0, 0.76)', textDecoration: 'none', marginLeft: 3 }}
+                sx={{ color: 'rgba(0, 0, 0, 0.76)', textDecoration: 'none', marginLeft: 3, '&:hover': { fontWeight: 'bolder' } }}
                 component={Link}
                 to={item.link}
               >
