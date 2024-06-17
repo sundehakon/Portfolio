@@ -8,6 +8,7 @@ import Contact from './Components/Contact';
 import NotFound from './Components/NotFound';
 
 function App() {
+  console.log('If you see this, send me an email at: hakon.su@gmail.com');
   return (
     <Router>
       <CssBaseline />
