@@ -40,7 +40,7 @@ function Header() {
             to={'/'}
             sx={{ flexGrow: 1, display: { sm: 'block' }, color: 'rgba(0, 0, 0, 0.76)', textDecoration: 'none', '&:hover': { fontWeight: 'bolder' } }}
           >
-            sundehakon.tech
+            sundehakon
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
