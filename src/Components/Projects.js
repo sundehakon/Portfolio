@@ -1,8 +1,7 @@
-import { Typography, Container, Box, Button, List, ListItem, ListItemIcon, Divider } from "@mui/material";
+import { Typography, Container, Box, Button, List, ListItem, ListItemIcon } from "@mui/material";
 import LanguageIcon from '@mui/icons-material/Language';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import Footer from "./Footer";
 
 const Projects = () => {
     return (
@@ -328,8 +327,6 @@ const Projects = () => {
                     <img src='/screenshots/catchtheball.png' alt='Minigame screenshot' style={{ maxHeight: 400, maxWidth: '100%', objectFit: 'cover', borderRadius: 20, padding: 10 }} />
                 </Box>
             </Box>
-            <Divider />
-            <Footer />
         </Container>
     );
 };

@@ -4,9 +4,17 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Footer = () => {
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>
+        <Box 
+            sx={{ 
+                width: '100%', 
+                display: 'flex', 
+                flexDirection: 'column', 
+                backgroundColor: 'white',
+                position: 'relative',  
+            }}
+        >
             <CssBaseline />
-                <Toolbar>
+            <Toolbar>
                 <Typography
                     sx={{ flexGrow: 1, display: { sm: 'flex' }, color: 'rgba(0, 0, 0, 0.76)' }}
                 >
@@ -20,7 +28,7 @@ const Footer = () => {
                         <InstagramIcon />
                     </IconButton>
                 </Box>
-                </Toolbar>
+            </Toolbar>
         </Box>
     );
 };

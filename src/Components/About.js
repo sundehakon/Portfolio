@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography, Box, useMediaQuery, Divider } from '@mui/material';
+import { Grid, Typography, Box, useMediaQuery } from '@mui/material';
 import AppleIcon from '@mui/icons-material/Apple';
 import FingerprintIcon from '@mui/icons-material/Fingerprint';
 import FolderIcon from '@mui/icons-material/Folder';
@@ -82,7 +82,6 @@ const About = () => {
                     </Typography>
                 </Grid>
             </Grid>
-            <Divider />
         </Box>
     );
 };
