@@ -10,7 +10,7 @@ import NotFound from './Components/NotFound';
 import Footer from './Components/Footer';  
 
 function App() {
-  console.log('If you see this, send me an email at: hakon.su@gmail.com');
+  console.log('Checking out my code? Send me an email at: hakon.su@gmail.com');
 
   return (
     <Router>
@@ -23,8 +23,8 @@ function App() {
           minHeight: '100vh',  
         }}
       >
-        <Header />
         <Container component="main" sx={{ flexGrow: 1, py: 2 }}>
+        <Header />
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
@@ -33,7 +33,9 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Container>
-        <Footer />
+        <Container maxWidth='lg'>
+          <Footer />
+        </Container>
       </Box>
     </Router>
   );
