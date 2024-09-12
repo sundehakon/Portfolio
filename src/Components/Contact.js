@@ -97,8 +97,8 @@ const Contact = () => {
                         variant="contained" 
                         endIcon={<SendIcon />} 
                         sx={{ 
-                            backgroundColor: 'rgba(0, 0, 0, 0.76)', 
-                            '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.64)' }, 
+                            backgroundColor: 'linear-gradient(133deg, rgba(49,92,138,1) 17%, rgba(91,162,240,1) 92%)', 
+                            '&:hover': { backgroundColor: '#2e4975' },
                             borderRadius: 20, 
                             width: { xs: '100%', sm: 200 } 
                         }} 

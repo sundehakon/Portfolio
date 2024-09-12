@@ -64,7 +64,7 @@ const Projects = () => {
                             </List>
                         </Typography>
                         <Box sx={{ display: 'flex', padding: 2, gap: 2 }}>
-                            <Button variant='contained' endIcon={<LanguageIcon />} sx={{ backgroundColor: 'rgba(0, 0, 0, 0.76)', '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.64)' }, borderRadius: 20 }} disableRipple href='https://sundeweather.software/' target='_blank'>
+                            <Button variant='contained' endIcon={<LanguageIcon />} sx={{  backgroundColor: 'linear-gradient(133deg, rgba(49,92,138,1) 17%, rgba(91,162,240,1) 92%)', '&:hover': { backgroundColor: '#2e4975' }, borderRadius: 20 }} disableRipple href='https://sundeweather.software/' target='_blank'>
                                 Website
                             </Button>
                             <Button endIcon={<GitHubIcon />} sx={{ color: 'rgba(0, 0, 0, 0.87)' }} style={{ backgroundColor: 'transparent' }} disableRipple href='https://github.com/sundehakon/SundeWeather' target='_blank'>
