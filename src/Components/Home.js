@@ -1,5 +1,6 @@
 import { Typography, Container, Box, Button } from "@mui/material";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import Skillset from "./Skillset";
 import About from "./About";
 import { Link } from "react-router-dom"; 
@@ -73,7 +74,7 @@ const Home = () => {
                             <Button variant='contained' endIcon={<NavigateNextIcon />} sx={{ backgroundColor: 'linear-gradient(133deg, rgba(49,92,138,1) 17%, rgba(91,162,240,1) 92%)', '&:hover': { backgroundColor: '#2e4975' }, borderRadius: 20 }} disableRipple component={Link} to='/contact'>
                                 Contact Me
                             </Button>
-                            <Button endIcon={<NavigateNextIcon />} sx={{ color: 'rgba(0, 0, 0, 0.87)' }} disableRipple style={{ backgroundColor: 'transparent' }} href='https://github.com/sundehakon' target='_blank'>
+                            <Button endIcon={<GitHubIcon />} sx={{ color: 'rgba(0, 0, 0, 0.87)' }} disableRipple style={{ backgroundColor: 'transparent' }} href='https://github.com/sundehakon' target='_blank'>
                                 Github
                             </Button>
                         </Box>
