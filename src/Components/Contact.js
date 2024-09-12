@@ -39,67 +39,78 @@ const Contact = () => {
     };
 
     return (
-        <Container
-            sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                minHeight: '80vh',  
-            }}
-        >
-            <Box 
-                component="form" 
-                onSubmit={sendEmail} 
-                sx={{ 
-                    display: 'flex', 
-                    flexDirection: 'column', 
-                    gap: 2, 
-                    justifyContent: 'center', 
-                    alignItems: 'center', 
-                    width: { xs: '90%', sm: '80%', md: '60%', lg: '50%' },
-                    mx: 'auto'  
+        <div>
+            <Box sx={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                background: 'linear-gradient(167deg, rgba(21,21,21,0) 0%, rgba(91,162,240,0.2889749649859944) 22%, rgba(91,162,240,0.3702074579831933) 41%, rgba(21,21,21,0) 56%)',
+                zIndex: -1
+            }} />
+            <Container
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    minHeight: '80vh',  
                 }}
             >
-                <Typography variant="h4" align="center" sx={{ marginBottom: 3 }}>Contact</Typography>
-                <TextField 
-                    label="Name" 
-                    name="from_name" 
-                    required 
-                    fullWidth
-                />
-                <TextField 
-                    label="Email" 
-                    name="reply_to" 
-                    type="email" 
-                    required 
-                    fullWidth
-                />
-                <TextField 
-                    label="Message" 
-                    name="message" 
-                    multiline 
-                    rows={4} 
-                    required 
-                    fullWidth
-                />
-                <Button 
-                    type="submit"
-                    variant="contained" 
-                    endIcon={<SendIcon />} 
+                <Box 
+                    component="form" 
+                    onSubmit={sendEmail} 
                     sx={{ 
-                        backgroundColor: 'rgba(0, 0, 0, 0.76)', 
-                        '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.64)' }, 
-                        borderRadius: 20, 
-                        width: { xs: '100%', sm: 200 } 
-                    }} 
-                    disableRipple
-                    disabled={isSubmitting}
+                        display: 'flex', 
+                        flexDirection: 'column', 
+                        gap: 2, 
+                        justifyContent: 'center', 
+                        alignItems: 'center', 
+                        width: { xs: '90%', sm: '80%', md: '60%', lg: '50%' },
+                        mx: 'auto'  
+                    }}
                 >
-                    Send
-                </Button>
-                {stateMessage && <Typography variant="body1" color="textSecondary" align="center">{stateMessage}</Typography>}
-            </Box>
-        </Container>
+                    <Typography variant="h4" align="center" sx={{ marginBottom: 3 }}>Send me an E-Mail!</Typography>
+                    <TextField 
+                        label="Name" 
+                        name="from_name" 
+                        required 
+                        fullWidth
+                    />
+                    <TextField 
+                        label="Email" 
+                        name="reply_to" 
+                        type="email" 
+                        required 
+                        fullWidth
+                    />
+                    <TextField 
+                        label="Message" 
+                        name="message" 
+                        multiline 
+                        rows={4} 
+                        required 
+                        fullWidth
+                    />
+                    <Button 
+                        type="submit"
+                        variant="contained" 
+                        endIcon={<SendIcon />} 
+                        sx={{ 
+                            backgroundColor: 'rgba(0, 0, 0, 0.76)', 
+                            '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.64)' }, 
+                            borderRadius: 20, 
+                            width: { xs: '100%', sm: 200 } 
+                        }} 
+                        disableRipple
+                        disabled={isSubmitting}
+                    >
+                        Send
+                    </Button>
+                    {stateMessage && <Typography variant="body1" color="textSecondary" align="center">{stateMessage}</Typography>}
+                </Box>
+            </Container>
+        </div>
     );
 };
 
