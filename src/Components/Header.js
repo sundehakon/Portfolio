@@ -75,7 +75,7 @@ function Header() {
               variant="h6"
               sx={{ padding: 2 }}
             >
-              sundehakon.tech
+              sundehakon
             </Typography>
             <Divider />
             {drawer}
