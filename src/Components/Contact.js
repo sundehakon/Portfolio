@@ -39,7 +39,14 @@ const Contact = () => {
     };
 
     return (
-        <Container>
+        <Container
+            sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                minHeight: '80vh',  
+            }}
+        >
             <Box 
                 component="form" 
                 onSubmit={sendEmail} 
@@ -49,10 +56,8 @@ const Contact = () => {
                     gap: 2, 
                     justifyContent: 'center', 
                     alignItems: 'center', 
-                    marginTop: 15,
-                    marginBottom: 30,
                     width: { xs: '90%', sm: '80%', md: '60%', lg: '50%' },
-                    mx: 'auto' 
+                    mx: 'auto'  
                 }}
             >
                 <Typography variant="h4" align="center" sx={{ marginBottom: 3 }}>Contact</Typography>
