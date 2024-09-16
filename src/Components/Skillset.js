@@ -13,7 +13,7 @@ const skills = [
     { name: 'Git', icon: '/skill-icons/git.png' },
     { name: 'MongoDB', icon: '/skill-icons/mongodb.png' },
     { name: 'Photoshop', icon: '/skill-icons/photoshop.png' },
-    { name: 'Adobe Xd', icon: '/skill-icons/adobexd.png' },
+    { name: 'Rust', icon: '/skill-icons/rust.png' },
     { name: 'Blazor', icon: '/skill-icons/blazor.png' },
     { name: 'Ruby', icon: '/skill-icons/ruby.png' },
 ];
