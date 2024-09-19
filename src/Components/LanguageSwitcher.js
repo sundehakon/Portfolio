@@ -10,12 +10,15 @@ const LanguageSwitcher = () => {
         i18n.changeLanguage(language);
     }, [language, i18n]);
 
-    const changeLanguage = (lng) => {
+    const changeLanguage = (lng, event) => {
+        if (event) {
+            event.stopPropagation();
+        }
         setLanguage(lng);
     };
 
     return (
-        <div style={{ marginRight: 10 }}>
+        <div onClick={(e) => e.stopPropagation()}>
             {language === 'en' ? (
                 <img onClick={() => changeLanguage('no')} alt='United States Flag' src='/images/usa.png' style={{ height: 32, width: 32 }}/>
             ) : language === 'no' ? (

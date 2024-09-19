@@ -8,7 +8,8 @@ const navItems = [
   { name: 'Home', link: '/' },
   { name: 'Projects', link: '/projects' },
   { name: 'Contact', link: '/contact' },
-  { name: 'Auth', link: '/auth' }
+  { name: 'Auth', link: '/auth' },
+  { component: <LanguageSwitcher /> }, 
 ];
 
 function Header() {
@@ -21,11 +22,15 @@ function Header() {
   const drawer = (
     <Box onClick={handleDrawerToggle}>
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item.name} disablePadding>
-            <ListItemButton component={Link} to={item.link}>
-              <ListItemText primary={item.name} />
-            </ListItemButton>
+        {navItems.map((item, index) => (
+          <ListItem key={index} disablePadding>
+            {item.link ? (
+              <ListItemButton component={Link} to={item.link}>
+                <ListItemText primary={item.name} />
+              </ListItemButton>
+            ) : (
+              <Box sx={{ padding: 2 }}>{item.component}</Box>
+            )}
           </ListItem>
         ))}
       </List>
@@ -44,17 +49,22 @@ function Header() {
           >
             sundehakon
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            <LanguageSwitcher />
-            {navItems.map((item) => (
-              <Typography
-                key={item.name}
-                sx={{ color: 'rgba(0, 0, 0, 0.76)', textDecoration: 'none', marginLeft: 3, '&:hover': { fontWeight: 'bolder' } }}
-                component={Link}
-                to={item.link}
-              >
-                {item.name}
-              </Typography>
+          <Box sx={{ display: { xs: 'none', sm: 'flex' }, alignItems: 'center' }}>
+            {navItems.map((item, index) => (
+              item.link ? (
+                <Typography
+                  key={index}
+                  sx={{ color: 'rgba(0, 0, 0, 0.76)', textDecoration: 'none', marginLeft: 3, '&:hover': { fontWeight: 'bolder' } }}
+                  component={Link}
+                  to={item.link}
+                >
+                  {item.name}
+                </Typography>
+              ) : (
+                <Box key={index} sx={{ display: 'flex', alignItems: 'center', marginLeft: 3 }}>
+                  {item.component}
+                </Box>
+              )
             ))}
           </Box>
           <IconButton
