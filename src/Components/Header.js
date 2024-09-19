@@ -2,11 +2,13 @@ import * as React from 'react';
 import { Box, CssBaseline, Modal, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography, Paper, Divider } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom'; 
+import LanguageSwitcher from './LanguageSwitcher';
 
 const navItems = [
   { name: 'Home', link: '/' },
   { name: 'Projects', link: '/projects' },
-  { name: 'Contact', link: '/contact' }
+  { name: 'Contact', link: '/contact' },
+  { name: 'Auth', link: '/auth' }
 ];
 
 function Header() {
@@ -43,6 +45,7 @@ function Header() {
             sundehakon
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+            <LanguageSwitcher />
             {navItems.map((item) => (
               <Typography
                 key={item.name}

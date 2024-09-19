@@ -3,6 +3,7 @@ import { CssBaseline, Container, Box } from '@mui/material';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Components/Header';
 import Home from './Components/Home';
+import Auth from './Components/Auth';
 import Projects from './Components/Projects';
 import Contact from './Components/Contact';
 import Development from './Components/Development';
@@ -29,6 +30,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/auth" element={<Auth />} />
             <Route path="/development" element={<Development />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
