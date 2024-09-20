@@ -2,8 +2,11 @@ import { Typography, Container, Box, Button, List, ListItem, ListItemIcon } from
 import LanguageIcon from '@mui/icons-material/Language';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { useTranslation } from 'react-i18next';
 
 const Projects = () => {
+    const { t } = useTranslation();
+
     return (
         <div>
             <Box sx={{
@@ -33,39 +36,39 @@ const Projects = () => {
                             SundeWeather
                         </Typography>
                         <Typography sx={{ padding: 3, flexGrow: 1 }}>
-                            Website created using React which utilizes APIs from Yr and OpenCage to bring weather data for the user based on a search query. The website also offers an interactive map solution where the user can input their location on the map, or use their own and receive the weather data for that location almost immediately. 
+                            {t('sundeweatherbio')}
                             <br /><br />
-                            <strong>Key features:</strong>
+                            <strong>{t('keyfeatures')}</strong>
                             <List>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    Real-time weather updates based on user queries
+                                    {t('sundeweatherkeyfeature1')}
                                 </ListItem>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    Interactive map for location-based weather information
+                                    {t('sundeweatherkeyfeature2')}
                                 </ListItem>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    Responsive design for optimal viewing on all devices
+                                    {t('sundeweatherkeyfeature3')}
                                 </ListItem>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    Accurate geocoding using OpenCage API
+                                    {t('sundeweatherkeyfeature4')}
                                 </ListItem>
                             </List>
                         </Typography>
                         <Box sx={{ display: 'flex', padding: 2, gap: 2 }}>
                             <Button variant='contained' endIcon={<LanguageIcon />} sx={{  backgroundColor: 'linear-gradient(133deg, rgba(49,92,138,1) 17%, rgba(91,162,240,1) 92%)', '&:hover': { backgroundColor: '#2e4975' }, borderRadius: 20 }} disableRipple href='https://sundeweather.software/' target='_blank'>
-                                Website
+                                {t('website')}
                             </Button>
                             <Button endIcon={<GitHubIcon />} sx={{ color: 'rgba(0, 0, 0, 0.87)' }} style={{ backgroundColor: 'transparent' }} disableRipple href='https://github.com/sundehakon/SundeWeather' target='_blank'>
                                 Github
@@ -93,27 +96,27 @@ const Projects = () => {
                             TODO-CLI
                         </Typography>
                         <Typography sx={{ padding: 3, flexGrow: 1 }}>
-                            A simple CLI todo list application. The application allows the user to add, remove, and list tasks. The tasks are stored in a JSON file, and the application is built using the Rust programming language. The program also has a motivational feature which fetches a random quote to help the user on it's journey to finish their daily chores.
+                            {t('todoclibio')}
                             <br /><br />
-                            <strong>Key features:</strong>
+                            <strong>{t('keyfeatures')}</strong>
                             <List>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    Add, remove, and list tasks
+                                    {t('todoclikeyfeature1')}
                                 </ListItem>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    JSON file storage for tasks
+                                    {t('todoclikeyfeature2')}
                                 </ListItem>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    Motivational quotes for the user
+                                    {t('todoclikeyfeature3')}
                                 </ListItem>
                             </List>
                         </Typography>
@@ -144,27 +147,27 @@ const Projects = () => {
                             SundeAI
                         </Typography>
                         <Typography sx={{ padding: 3, flexGrow: 1 }}>
-                            Console based application for generating AI images based on a text search query by the user. The project uses a Stability AI API, and their engine to generate, but handles UI and the request sent to the generator.
+                            {t('sundeaibio')}
                             <br /><br />
-                            <strong>Key features:</strong>
+                            <strong>{t('keyfeatures')}</strong>
                             <List>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    API fetch from state of the art AI image engine
+                                    {t('sundeaikeyfeature1')}
                                 </ListItem>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    Customizable fetch queries for the user
+                                    {t('sundeaikeyfeature2')}
                                 </ListItem>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    Quick generating speeds
+                                    {t('sundeaikeyfeature3')}
                                 </ListItem>
                             </List>
                         </Typography>
@@ -195,27 +198,27 @@ const Projects = () => {
                             RubyCaesar
                         </Typography>
                         <Typography sx={{ padding: 3, flexGrow: 1 }}>
-                            One of my first Ruby projects. It's a console based application which works as a mini app where you can add a string which is then encrypted using the caesar cipher. From the built in menu you can see the encrypted message, or view the decrypted message that you just wrote in. It is not intended to store passwords and such just a fun application where the user can see the encryption for themselves.
+                            {t('rubyceasarbio')}
                             <br /><br />
-                            <strong>Key features:</strong>
+                            <strong>{t('keyfeatures')}</strong>
                             <List>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    Caesar cipher encryption
+                                    {t('rubyceasarkeyfeature1')}
                                 </ListItem>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    User input for custom strings
+                                    {t('rubyceasarkeyfeature2')}
                                 </ListItem>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    Decryption of the encrypted string
+                                    {t('rubyceasarkeyfeature3')}
                                 </ListItem>
                             </List>
                         </Typography>
@@ -246,33 +249,33 @@ const Projects = () => {
                             Hotel "Havblikk"
                         </Typography>
                         <Typography sx={{ padding: 3, flexGrow: 1 }}>
-                            Website created for a fictional hotel in Norway. The website provides functionality for both the staff at the hotel and visitors. Users can rent rooms, and staff can check incoming reservations. This project was created because of a school project, using React and Material UI for a sleek and modern design. 
+                            {t('havblikkbio')}
                             <br /><br />
-                            <strong>Key features:</strong>
+                            <strong>{t('keyfeatures')}</strong>
                             <List>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    Room reservations and overview of orders
+                                    {t('havblikkkeyfeature1')}
                                 </ListItem>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    Modern design which showcases the fictional hotel
+                                    {t('havblikkkeyfeature2')}
                                 </ListItem>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    3D model of hotel room
+                                    {t('havblikkkeyfeature3')}
                                 </ListItem>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    User authentication with Auth0
+                                    {t('havblikkkeyfeature4')}
                                 </ListItem>
                             </List>
                         </Typography>
@@ -303,27 +306,27 @@ const Projects = () => {
                             Catch The Ball!
                         </Typography>
                         <Typography sx={{ padding: 3, flexGrow: 1 }}>
-                            Small minigame which was created as a math class project. It uses Pygame with Python to create a simple game where the player has to catch the ball with a paddle. The game has a scoring system and a high score system, and the player can play until they lose by reaching a minimum, or win if they hit the maximum.
+                            {t('catchtheballbio')}
                             <br /><br />
-                            <strong>Key features:</strong>
+                            <strong>{t('keyfeatures')}</strong>
                             <List>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    Point system with win and lose screens
+                                    {t('catchtheballkeyfeature1')}
                                 </ListItem>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    Engaging backgroud and UI
+                                    {t('catchtheballkeyfeature2')}
                                 </ListItem>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    Easily understandable controls
+                                    {t('catchtheballkeyfeature3')}
                                 </ListItem>
                             </List>
                         </Typography>

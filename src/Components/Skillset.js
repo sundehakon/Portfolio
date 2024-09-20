@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Typography, Box, Grid } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 const skills = [
     { name: 'JavaScript', icon: '/skill-icons/js.png' },
@@ -20,11 +21,12 @@ const skills = [
 
 const Skillset = () => {
     const [hoveredSkill, setHoveredSkill] = useState(null);
+    const { t } = useTranslation();
 
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', marginBottom: 10 }}>
             <Box sx={{ textAlign: 'center', marginTop: 20, marginBottom: 10 }}>
-                <Typography variant='h4'>Skillset</Typography>
+                <Typography variant='h4'>{t('skillset')}</Typography>
                 <Grid
                     container
                     spacing={7}

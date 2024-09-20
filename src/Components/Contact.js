@@ -2,10 +2,12 @@ import { Typography, Container, Box, TextField, Button } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [stateMessage, setStateMessage] = useState(null);
+    const { t } = useTranslation();
 
     const sendEmail = (e) => {
         e.preventDefault();

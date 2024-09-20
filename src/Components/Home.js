@@ -4,8 +4,11 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import Skillset from "./Skillset";
 import About from "./About";
 import { Link } from "react-router-dom"; 
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
+    const { t } = useTranslation();
+
     return (
         <div>
             <Box sx={{
@@ -69,10 +72,10 @@ const Home = () => {
                         }}> 
                             Håkon Sunde
                         </Typography>
-                        <Typography>16 year old student developer from Oslo, Norway</Typography>
+                        <Typography>{t('bio')}</Typography>
                         <Box sx={{ display: 'flex', gap: 3, alignItems: 'center', justifyContent: 'center' }}>
                             <Button variant='contained' endIcon={<NavigateNextIcon />} sx={{ backgroundColor: 'linear-gradient(133deg, rgba(49,92,138,1) 17%, rgba(91,162,240,1) 92%)', '&:hover': { backgroundColor: '#2e4975' }, borderRadius: 20 }} disableRipple component={Link} to='/contact'>
-                                Contact Me
+                                {t('contact')}
                             </Button>
                             <Button endIcon={<GitHubIcon />} sx={{ color: 'rgba(0, 0, 0, 0.87)' }} disableRipple style={{ backgroundColor: 'transparent' }} href='https://github.com/sundehakon' target='_blank'>
                                 Github
