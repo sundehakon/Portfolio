@@ -72,22 +72,22 @@ const Contact = () => {
                         mx: 'auto'  
                     }}
                 >
-                    <Typography variant="h4" align="center" sx={{ marginBottom: 3 }}>Send me an E-Mail!</Typography>
+                    <Typography variant="h4" align="center" sx={{ marginBottom: 3 }}>{t('emailtitle')}</Typography>
                     <TextField 
-                        label="Name" 
+                        label={t('name')}
                         name="from_name" 
                         required 
                         fullWidth
                     />
                     <TextField 
-                        label="Email" 
+                        label={t('email')}
                         name="reply_to" 
                         type="email" 
                         required 
                         fullWidth
                     />
                     <TextField 
-                        label="Message" 
+                        label={t('message')}
                         name="message" 
                         multiline 
                         rows={4} 
@@ -107,7 +107,7 @@ const Contact = () => {
                         disableRipple
                         disabled={isSubmitting}
                     >
-                        Send
+                        {t('send')}
                     </Button>
                     {stateMessage && <Typography variant="body1" color="textSecondary" align="center">{stateMessage}</Typography>}
                 </Box>
