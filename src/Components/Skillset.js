@@ -25,7 +25,7 @@ const Skillset = () => {
 
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', marginBottom: 10 }}>
-            <Box sx={{ textAlign: 'center', marginTop: 20, marginBottom: 10 }}>
+            <Box sx={{ textAlign: 'center', marginTop: 21, marginBottom: 10 }}>
                 <Typography variant='h4'>{t('skillset')}</Typography>
                 <Grid
                     container
