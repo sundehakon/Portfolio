@@ -3,21 +3,25 @@ import { Box, CssBaseline, Modal, IconButton, List, ListItem, ListItemButton, Li
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom'; 
 import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
 
-const navItems = [
-  { name: 'Home', link: '/' },
-  { name: 'Projects', link: '/projects' },
-  { name: 'Contact', link: '/contact' },
+const getNavItems = (t) => [
+  { name: t('home'), link: '/' },
+  { name: t('projects'), link: '/projects' },
+  { name: t('contactheader'), link: '/contact' },
   { name: 'Auth', link: '/auth' },
   { component: <LanguageSwitcher /> }, 
 ];
 
 function Header() {
+  const { t } = useTranslation(); 
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
+  const navItems = getNavItems(t); 
 
   const drawer = (
     <Box onClick={handleDrawerToggle}>
@@ -40,43 +44,43 @@ function Header() {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', zIndex: 3, position: 'relative' }}>
       <CssBaseline />
-        <Toolbar>
-          <Typography
-            variant="h6"
-            component={Link}
-            to={'/'}
-            sx={{ flexGrow: 1, display: { sm: 'block' }, color: 'rgba(0, 0, 0, 0.76)', textDecoration: 'none', '&:hover': { fontWeight: 'bolder' } }}
-          >
-            sundehakon
-          </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'flex' }, alignItems: 'center' }}>
-            {navItems.map((item, index) => (
-              item.link ? (
-                <Typography
-                  key={index}
-                  sx={{ color: 'rgba(0, 0, 0, 0.76)', textDecoration: 'none', marginLeft: 3, '&:hover': { fontWeight: 'bolder' } }}
-                  component={Link}
-                  to={item.link}
-                >
-                  {item.name}
-                </Typography>
-              ) : (
-                <Box key={index} sx={{ display: 'flex', alignItems: 'center', marginLeft: 3 }}>
-                  {item.component}
-                </Box>
-              )
-            ))}
-          </Box>
-          <IconButton
-            color='inherit'
-            aria-label='open drawer'
-            edge='start'
-            onClick={handleDrawerToggle}
-            sx={{ ml: 'auto', display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
+      <Toolbar>
+        <Typography
+          variant="h6"
+          component={Link}
+          to={'/'}
+          sx={{ flexGrow: 1, display: { sm: 'block' }, color: 'rgba(0, 0, 0, 0.76)', textDecoration: 'none', '&:hover': { fontWeight: 'bolder' } }}
+        >
+          sundehakon
+        </Typography>
+        <Box sx={{ display: { xs: 'none', sm: 'flex' }, alignItems: 'center' }}>
+          {navItems.map((item, index) => (
+            item.link ? (
+              <Typography
+                key={index}
+                sx={{ color: 'rgba(0, 0, 0, 0.76)', textDecoration: 'none', marginLeft: 3, '&:hover': { fontWeight: 'bolder' } }}
+                component={Link}
+                to={item.link}
+              >
+                {item.name}
+              </Typography>
+            ) : (
+              <Box key={index} sx={{ display: 'flex', alignItems: 'center', marginLeft: 3 }}>
+                {item.component}
+              </Box>
+            )
+          ))}
+        </Box>
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          edge="start"
+          onClick={handleDrawerToggle}
+          sx={{ ml: 'auto', display: { sm: 'none' } }}
+        >
+          <MenuIcon />
+        </IconButton>
+      </Toolbar>
       <nav>
         <Modal
           open={mobileOpen}
