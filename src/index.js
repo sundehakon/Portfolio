@@ -14,7 +14,7 @@ root.render(
   <Auth0Provider
     domain={domain}
     clientId={clientId}
-    redirectUri='https://sundehakon.tech/login/callback'
+    redirectUri={window.location.origin}
     cacheLocation='localstorage'
   >
     <App />
