@@ -3,6 +3,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Skillset from "./Skillset";
 import About from "./About";
+import InfoIcon from '@mui/icons-material/Info';
 import { Link } from "react-router-dom"; 
 import { useTranslation } from 'react-i18next';
 
@@ -80,6 +81,10 @@ const Home = () => {
                             <Button endIcon={<GitHubIcon />} sx={{ color: 'rgba(0, 0, 0, 0.87)' }} disableRipple style={{ backgroundColor: 'transparent' }} href='https://github.com/sundehakon' target='_blank'>
                                 Github
                             </Button>
+                        </Box>
+                        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center', flexDirection: 'row', gap: 1, marginTop: 5 }}>
+                            <InfoIcon />
+                            <Typography>Website translations are still a work in progress, some components might not have translations.</Typography>
                         </Box>
                     </Box>
                 </Box> 
