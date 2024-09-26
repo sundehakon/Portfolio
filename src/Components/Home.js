@@ -85,7 +85,7 @@ const Home = () => {
                         </Box>
                         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center', flexDirection: 'row', gap: 1, marginTop: 5 }}>
                             <InfoIcon />
-                            <Typography>Website translations are still a work in progress, some components might not have translations.</Typography>
+                            <Typography>Website translations are still a work in progress, some components might not have translations yet.</Typography>
                         </Box>
                     </Box>
                 </Box> 
