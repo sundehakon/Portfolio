@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography, Box, useMediaQuery } from '@mui/material';
+import { Grid, Typography, Box, useMediaQuery, IconButton } from '@mui/material';
 import AppleIcon from '@mui/icons-material/Apple';
 import FingerprintIcon from '@mui/icons-material/Fingerprint';
 import FolderIcon from '@mui/icons-material/Folder';
@@ -28,7 +28,9 @@ const About = () => {
                             justifyContent: 'center',
                         }}
                     >
-                        <AppleIcon sx={{ height: 32, width: 32 }} />
+                        <IconButton href='https://support.apple.com/en-us/111869' target='_blank'>
+                            <AppleIcon sx={{ height: 32, width: 32 }} />
+                        </IconButton>
                     </Box>
                     <Typography variant='h6' sx={{ marginBottom: 2, marginTop: 1 }}>
                         {t('development')}
@@ -74,7 +76,9 @@ const About = () => {
                             justifyContent: 'center',
                         }}
                     >
-                        <FolderIcon sx={{ height: 32, width: 32 }} />
+                        <IconButton href='/projects'> 
+                            <FolderIcon sx={{ height: 32, width: 32 }} />
+                        </IconButton>
                     </Box>
                     <Typography variant='h6' sx={{ marginBottom: 2, marginTop: 1 }}>
                         {t('projects')}
