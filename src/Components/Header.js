@@ -10,6 +10,7 @@ const getNavItems = (t) => [
   { name: t('projects'), link: '/projects' },
   { name: t('contactheader'), link: '/contact' },
   { name: 'Auth', link: '/auth' },
+  { name: 'Policy', link: '/policy' },
   { component: <LanguageSwitcher /> }, 
 ];
 

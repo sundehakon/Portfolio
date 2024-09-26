@@ -9,6 +9,7 @@ import Contact from './Components/Contact';
 import Development from './Components/Development';
 import NotFound from './Components/NotFound';
 import Footer from './Components/Footer';  
+import Policy from './Components/Policy';
 
 function App() {
   console.log('Checking out my code? Send me an email at: hakon.su@gmail.com');
@@ -31,6 +32,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/auth" element={<Auth />} />
+            <Route path="/policy" element={<Policy />} />
             <Route path="/development" element={<Development />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
