@@ -48,7 +48,7 @@ const Auth = () => {
                 }
 
                 {isAuthenticated &&
-                    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', position: 'relative', mt: 2 }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', position: 'relative', mt: 2, marginBottom: 10 }}>
                         <LogoutButton />
                         <Paper sx={{ 
                             width: { xs: 250, sm: 300, md: 350 }, 
