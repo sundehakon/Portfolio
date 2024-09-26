@@ -24,9 +24,12 @@ const Auth = () => {
     });
     return (
         <Container>
-            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', marginTop: 10 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', marginTop: 7 }}>
                 <Typography variant='h4' sx={{ textAlign: 'center', fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' } }}>
                     {t('authtitle')}
+                </Typography>
+                <Typography sx={{ textAlign: 'center', width: { md: 500, sm: 400, xs: 300 }, marginTop: 2 }}>
+                    {t('authdescription')}
                 </Typography>
                 
                 {!isAuthenticated &&

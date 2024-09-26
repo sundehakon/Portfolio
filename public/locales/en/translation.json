@@ -45,6 +45,7 @@
     "message": "Message",
     "send": "Send",
     "authtitle": "Authentication",
+    "authdescription": "Some of my projects use authentication to provide a more personalized experience. You can log in here to access more features and content.",
     "login": "Log In",
     "logout": "Log Out"
 }
