@@ -35,7 +35,6 @@ const Auth = () => {
                 {!isAuthenticated &&
                     <Box sx={{ textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 2 }}>
                         <LoginButton />
-                        <Typography sx={{ fontSize: { xs: '1rem', sm: '1.2rem' } }}>Login to view profile card</Typography>
                     </Box>
                 }
 
