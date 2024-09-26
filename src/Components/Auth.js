@@ -1,4 +1,4 @@
-import { Container, Typography, Box } from "@mui/material";
+import { Container, Typography, Box, Paper } from "@mui/material";
 import LoginButton from "./Login";
 import LogoutButton from "./Logout";
 import { useTranslation } from 'react-i18next';
@@ -19,7 +19,12 @@ const Auth = () => {
                     </Box>
                 }
                 {isAuthenticated &&
-                    <LogoutButton />
+                    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+                        <LogoutButton />
+                        <Paper sx={{ width: 300, height: 400, textAlign: 'center' }} elevation={2}>
+                            <Typography>Profile Card</Typography>
+                        </Paper>
+                    </Box>
                 }
             </Box>
         </Container>
