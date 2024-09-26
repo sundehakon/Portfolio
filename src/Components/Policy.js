@@ -188,6 +188,7 @@ const Policy = () => {
             <p>If you have any questions about this Privacy Policy, You can contact us:</p>
             <ul>
             <li>By email: sunde.haakon@gmail.com</li>
+            <li>Or through the websites contact form: <a href="https://sundehakon.tech/contact">sundehakon.tech/contact</a></li>
             </ul>
             <p>Thank you kindly for reading.</p>
         </Container>
