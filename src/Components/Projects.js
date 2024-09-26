@@ -144,10 +144,10 @@ const Projects = () => {
                 }}>
                     <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
                         <Typography variant='h4' sx={{ padding: 3 }}>
-                            SundeAI
+                            SundeWeather 2.0
                         </Typography>
                         <Typography sx={{ padding: 3, flexGrow: 1 }}>
-                            {t('sundeaibio')}
+                            A spin on one of my first projects SundeWeather. This version is console based and is made using the Rust programming language. It fetches fresh weather data from OpenWeatherMap API, and displays the info in a informative string of text. 
                             <br /><br />
                             <strong>{t('keyfeatures')}</strong>
                             <List>
@@ -155,19 +155,19 @@ const Projects = () => {
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    {t('sundeaikeyfeature1')}
+                                    Accurate weather data
                                 </ListItem>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    {t('sundeaikeyfeature2')}
+                                    Console application
                                 </ListItem>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    {t('sundeaikeyfeature3')}
+                                    Quick fetching speeds
                                 </ListItem>
                             </List>
                         </Typography>
@@ -178,7 +178,7 @@ const Projects = () => {
                         </Box>
                     </Box>
                     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flex: 1 }}>
-                        <img src='/screenshots/sundeai.png' alt='Human and polar bear hug' style={{ maxHeight: 400, maxWidth: '100%', objectFit: 'cover', borderRadius: 20, padding: 10 }} />
+                        <img src='/screenshots/rustweather_finished.png' alt='Console text from weather app' style={{ maxHeight: 400, maxWidth: '100%', objectFit: 'cover', borderRadius: 20, padding: 10 }} />
                     </Box>
                 </Box>
                 <Box sx={{
