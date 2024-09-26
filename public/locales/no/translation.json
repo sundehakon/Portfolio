@@ -44,7 +44,7 @@
     "email": "E-post",
     "message": "Melding",
     "send": "Send",
-    "authtitle": "Autentisering på alle plattformene mine",
+    "authtitle": "Autentisering",
     "login": "Logg inn",
     "logout": "Logg ut"
 }

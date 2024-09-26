@@ -44,7 +44,7 @@
     "email": "Email",
     "message": "Message",
     "send": "Send",
-    "authtitle": "Authentication across all my platforms",
+    "authtitle": "Authentication",
     "login": "Log In",
     "logout": "Log Out"
 }

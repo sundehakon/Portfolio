@@ -44,7 +44,7 @@
     "email": "Email",
     "message": "Message",
     "send": "Envoyer",
-    "authtitle": "Authentification sur toutes mes plateformes",
+    "authtitle": "Authentification",
     "login": "Connexion",
     "logout": "Déconnexion"
 }
