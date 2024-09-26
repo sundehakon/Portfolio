@@ -24,6 +24,15 @@ const Auth = () => {
     });
     return (
         <Container>
+            <Box sx={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                background: 'linear-gradient(167deg, rgba(21,21,21,0) 0%, rgba(91,162,240,0.2889749649859944) 22%, rgba(91,162,240,0.3702074579831933) 41%, rgba(21,21,21,0) 56%)',
+                zIndex: -1
+            }} />
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', marginTop: 7 }}>
                 <Typography variant='h4' sx={{ textAlign: 'center', fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' } }}>
                     {t('authtitle')}
