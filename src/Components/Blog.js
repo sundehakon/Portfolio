@@ -61,7 +61,7 @@ const Blog = () => {
                                     overflow: 'hidden', 
                                     margin: 3,
                                 }}>
-                                    <Typography>{blog.content}</Typography>
+                                    <Typography sx={{ wordBreak: 'break-word' }}>{blog.content}</Typography>
                                 </Box>
                                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                     <Button onClick={() => toggleExpand(index)} sx={{ margin: 2 }}>
