@@ -9,6 +9,7 @@ const getNavItems = (t) => [
   { name: t('home'), link: '/' },
   { name: t('projects'), link: '/projects' },
   { name: t('contactheader'), link: '/contact' },
+  { name: 'Blog', link: '/blog' },
   { name: 'Auth', link: '/auth' },
   { name: 'API', link: 'https://api.sundehakon.tech', external: true },
   { name: 'Policy', link: '/policy' },

@@ -10,6 +10,7 @@ import Development from './Components/Development';
 import NotFound from './Components/NotFound';
 import Footer from './Components/Footer';  
 import Policy from './Components/Policy';
+import Blog from './Components/Blog';
 
 function App() {
   console.log('Checking out my code? Send me an email at: hakon.su@gmail.com');
@@ -34,6 +35,7 @@ function App() {
             <Route path="/auth" element={<Auth />} />
             <Route path="/policy" element={<Policy />} />
             <Route path="/development" element={<Development />} />
+            <Route path="/blog" element={<Blog />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Container>

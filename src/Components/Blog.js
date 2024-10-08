@@ -26,7 +26,6 @@ const Blog = () => {
 
     return (
         <Container>
-            <Typography variant="h4" sx={{ textAlign: 'center', marginBottom: 5, fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' } }}>Blog</Typography>
             <Box sx={{ 
                 display: 'flex', 
                 justifyContent: 'center', 

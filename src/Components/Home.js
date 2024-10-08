@@ -2,7 +2,6 @@ import { Typography, Container, Box, Button } from "@mui/material";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Skillset from "./Skillset";
-import Blog from "./Blog";
 import About from "./About";
 import InfoIcon from '@mui/icons-material/Info';
 import { Link } from "react-router-dom"; 
@@ -91,7 +90,6 @@ const Home = () => {
                 </Box> 
                 <Skillset />
                 <About />
-                <Blog />
             </Container>
         </div>
     );
