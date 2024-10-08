@@ -246,10 +246,10 @@ const Projects = () => {
                 }}>
                     <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
                         <Typography variant='h4' sx={{ padding: 3 }}>
-                            Hotel "Havblikk"
+                            Blog-Editor
                         </Typography>
                         <Typography sx={{ padding: 3, flexGrow: 1 }}>
-                            {t('havblikkbio')}
+                            Rust program designed as a terminal based editor for my blog which is published on my personal website. This allows me to make quick changes to the PortfolioAPI with easy log in logic for POST requests. It can also handle GET request for displaying active blog posts and allow DELETE requests for you know, deleting blog posts. The program has a working CLI which allows the user to easily choose between actions. 
                             <br /><br />
                             <strong>{t('keyfeatures')}</strong>
                             <List>
@@ -257,36 +257,36 @@ const Projects = () => {
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    {t('havblikkkeyfeature1')}
+                                    Built-in logic for the express-basic-auth PortfolioAPI uses for POST requests
                                 </ListItem>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    {t('havblikkkeyfeature2')}
+                                    Terminal-based CLI
                                 </ListItem>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    {t('havblikkkeyfeature3')}
+                                    Fast and efficient handling of GET and DELETE requests
                                 </ListItem>
                                 <ListItem>
                                     <ListItemIcon>
                                         <ArrowForwardIcon />
                                     </ListItemIcon>
-                                    {t('havblikkkeyfeature4')}
+                                    Feature for hiding password input
                                 </ListItem>
                             </List>
                         </Typography>
                         <Box sx={{ display: 'flex', padding: 2, gap: 2 }}>
-                            <Button endIcon={<GitHubIcon />} sx={{ color: 'rgba(0, 0, 0, 0.87)' }} style={{ backgroundColor: 'transparent' }} disableRipple href='https://github.com/sundehakon/Hotell-React' target='_blank'>
+                            <Button endIcon={<GitHubIcon />} sx={{ color: 'rgba(0, 0, 0, 0.87)' }} style={{ backgroundColor: 'transparent' }} disableRipple href='https://github.com/sundehakon/Blog-Editor' target='_blank'>
                                 Github
                             </Button>
                         </Box>
                     </Box>
                     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flex: 1 }}>
-                        <img src='/screenshots/hotellreact.png' alt='Hotel website screenshot' style={{ maxHeight: 400, maxWidth: '100%', objectFit: 'cover', borderRadius: 20, padding: 10 }} />
+                        <img src='/screenshots/blog-editor.png' alt='Screenshot of code' style={{ maxHeight: 400, maxWidth: '100%', objectFit: 'cover', borderRadius: 20, padding: 10 }} />
                     </Box>
                 </Box>
                 <Box sx={{
