@@ -61,7 +61,16 @@ function Header() {
             item.link ? (
               <Typography
                 key={index}
-                sx={{ color: 'rgba(0, 0, 0, 0.76)', textDecoration: 'none', marginLeft: 3, '&:hover': { fontWeight: 'bolder' } }}
+                sx={{
+                  color: 'rgba(0, 0, 0, 0.76)',
+                  textDecoration: 'none',
+                  marginLeft: 3,
+                  padding: '10px 0',
+                  borderBottom: '2px solid transparent', 
+                  '&:hover': {
+                    borderBottom: '2px solid rgba(0, 0, 0, 0.76)', 
+                  },
+                }}
                 component={Link}
                 to={item.link}
               >
@@ -74,6 +83,7 @@ function Header() {
             )
           ))}
         </Box>
+
         <IconButton
           color="inherit"
           aria-label="open drawer"
