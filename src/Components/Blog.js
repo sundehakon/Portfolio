@@ -1,8 +1,10 @@
-import { Typography, Container, Box, Paper, Divider, CircularProgress, Button, IconButton, Modal } from "@mui/material";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { ArrowDownward, ArrowUpward } from "@mui/icons-material";
+import { Typography, Container, Box, Paper, Divider, CircularProgress, Button, IconButton, Modal, Avatar } from '@mui/material';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { ArrowDownward, ArrowUpward } from '@mui/icons-material';
 import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined';
+import { useAuth0 } from '@auth0/auth0-react';
+import LoginButton from './Login';
 
 const Blog = () => {
     const [blogs, setBlogs] = useState([]);
@@ -11,6 +13,7 @@ const Blog = () => {
     const [open, setOpen] = useState(false);
     const openCommentModal = () => setOpen(true);
     const closeCommentModal = () => setOpen(false);
+    const { isAuthenticated, user } = useAuth0();
 
     useEffect(() => {
         const fetchBlogs = async () => {
@@ -108,7 +111,7 @@ const Blog = () => {
                 ) : (
                     <CircularProgress />
                 )}
-                {comments.length > 0 ? (
+                {isAuthenticated && comments.length > 0 ? (
                     comments.map((comment, index) => (
                         <Modal 
                             open={open} 
@@ -118,13 +121,27 @@ const Blog = () => {
                             <Paper sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: 300, width: 300, borderRadius: 3 }}>
                                 <Typography variant='h5'>Comments</Typography>
                                 <Box key={index}>
+                                    <Avatar src={user.picture} />
                                     <Typography>{comment.content}</Typography>
                                 </Box>
                             </Paper>
                         </Modal>
                     ))
                     ) : (
-                        <CircularProgress />
+                        <Modal
+                            open={open}
+                            onClose={closeCommentModal}
+                            sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                        >
+                            <Paper sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', gap: 3, height: 300, width: 300, borderRadius: 3 }}>
+                                <Typography variant='h5'>Comments</Typography>
+                                {isAuthenticated ? (
+                                    <CircularProgress />
+                                ) : (
+                                    <LoginButton />
+                                )}
+                            </Paper>
+                        </Modal>
                     )}
             </Box>
         </Container>
