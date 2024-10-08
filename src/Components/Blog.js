@@ -1,23 +1,38 @@
-import { Typography, Container, Box, Paper, Divider, CircularProgress, Button } from "@mui/material";
+import { Typography, Container, Box, Paper, Divider, CircularProgress, Button, IconButton, Modal } from "@mui/material";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { ArrowDownward, ArrowUpward } from "@mui/icons-material";
+import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined';
 
 const Blog = () => {
     const [blogs, setBlogs] = useState([]);
+    const [comments, setComments] = useState([]);
     const [expandedIndex, setExpandedIndex] = useState(null);
+    const [open, setOpen] = useState(false);
+    const openCommentModal = () => setOpen(true);
+    const closeCommentModal = () => setOpen(false);
 
     useEffect(() => {
         const fetchBlogs = async () => {
             try {
-                const response = await axios.get('https://portfolioapi-hysa.onrender.com/Blogs');
+                const response = await axios.get('https://api.sundehakon.tech/Blogs');
                 setBlogs(response.data);
             } catch (error) {
                 console.error('Error fetching blogs', error);
             }
         };
 
+        const fetchComments = async () => {
+            try {
+                const response = await axios.get('https://api.sundehakon.tech/Comments');
+                setComments(response.data);
+            } catch (error) {
+                console.error('Error fetching comments', error);
+            }
+        };
+
         fetchBlogs();
+        fetchComments();
     }, []);
 
     const toggleExpand = (index) => {
@@ -65,6 +80,9 @@ const Blog = () => {
                                         <Typography sx={{ color: 'white', fontSize: { xs: '1.2rem', sm: '1.5rem', md: '2rem' } }}>{blog.title}</Typography>
                                         <Typography sx={{ color: 'white', fontSize: { xs: '0.9rem', sm: '1rem', md: '1.2rem' } }}>- {blog.author}</Typography>
                                         <Typography sx={{ color: 'white', fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem' } }}>{blog.date}</Typography>
+                                        <IconButton onClick={openCommentModal}>
+                                            <CommentOutlinedIcon sx={{ color: 'white' }}/>
+                                        </IconButton>
                                     </Box>
                                 </Box>
                                 <Divider />
@@ -90,6 +108,24 @@ const Blog = () => {
                 ) : (
                     <CircularProgress />
                 )}
+                {comments.length > 0 ? (
+                    comments.map((comment, index) => (
+                        <Modal 
+                            open={open} 
+                            onClose={closeCommentModal}
+                            sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                        >
+                            <Paper sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: 300, width: 300, borderRadius: 3 }}>
+                                <Typography variant='h5'>Comments</Typography>
+                                <Box key={index}>
+                                    <Typography>{comment.content}</Typography>
+                                </Box>
+                            </Paper>
+                        </Modal>
+                    ))
+                    ) : (
+                        <CircularProgress />
+                    )}
             </Box>
         </Container>
     );
