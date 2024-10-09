@@ -11,7 +11,12 @@ const Blog = () => {
     const [comments, setComments] = useState([]);
     const [expandedIndex, setExpandedIndex] = useState(null);
     const [open, setOpen] = useState(false);
-    const openCommentModal = () => setOpen(true);
+    const [selectedBlog, setSelectedBlog] = useState(null); 
+
+    const openCommentModal = (blog) => {
+        setSelectedBlog(blog);
+        setOpen(true);
+    };
     const closeCommentModal = () => setOpen(false);
     const { isAuthenticated, user } = useAuth0();
 
@@ -83,7 +88,7 @@ const Blog = () => {
                                         <Typography sx={{ color: 'white', fontSize: { xs: '1.2rem', sm: '1.5rem', md: '2rem' } }}>{blog.title}</Typography>
                                         <Typography sx={{ color: 'white', fontSize: { xs: '0.9rem', sm: '1rem', md: '1.2rem' } }}>- {blog.author}</Typography>
                                         <Typography sx={{ color: 'white', fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem' } }}>{blog.date}</Typography>
-                                        <IconButton onClick={openCommentModal}>
+                                        <IconButton onClick={() => openCommentModal(blog)}>
                                             <CommentOutlinedIcon sx={{ color: 'white' }}/>
                                         </IconButton>
                                     </Box>
@@ -113,38 +118,36 @@ const Blog = () => {
                         <CircularProgress />
                     </Box>
                 )}
-                {isAuthenticated && comments.length > 0 ? (
-                    comments.map((comment, index) => (
-                        <Modal 
-                            open={open} 
-                            onClose={closeCommentModal}
-                            sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-                        >
-                            <Paper sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: 300, width: 300, borderRadius: 3 }}>
-                                <Typography variant='h5'>Comments</Typography>
-                                <Box key={index}>
-                                    <Avatar src={user.picture} />
-                                    <Typography>{comment.content}</Typography>
-                                </Box>
-                            </Paper>
-                        </Modal>
-                    ))
-                    ) : (
-                        <Modal
-                            open={open}
-                            onClose={closeCommentModal}
-                            sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-                        >
-                            <Paper sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', gap: 3, height: 300, width: 300, borderRadius: 3 }}>
-                                <Typography variant='h5'>Comments</Typography>
-                                {isAuthenticated ? (
-                                    <CircularProgress />
+                {selectedBlog && (
+                    <Modal 
+                        open={open} 
+                        onClose={closeCommentModal}
+                        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                    >
+                        <Paper sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', height: 500, width: 400, borderRadius: 3, padding: 5, gap: 3 }}>
+                            <Typography variant='h5'>Comments</Typography>
+                            {isAuthenticated ? (
+                                comments.length > 0 ? (
+                                    comments
+                                        .filter(comment => comment.post_id === selectedBlog._id)
+                                        .map((comment, index) => (
+                                            <Box key={index} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 4, alignSelf: 'flex-start' }}>
+                                                <Avatar src={user.picture} />
+                                                <Box>
+                                                    <Typography sx={{ fontWeight: 'bold' }}>{comment.user_name}</Typography>
+                                                    <Typography>{comment.content}</Typography>
+                                                </Box>
+                                            </Box>
+                                        ))
                                 ) : (
-                                    <LoginButton />
-                                )}
-                            </Paper>
-                        </Modal>
-                    )}
+                                    <Typography>No comments found.</Typography>
+                                )
+                            ) : (
+                                <LoginButton />
+                            )}
+                        </Paper>
+                    </Modal>
+                )}
             </Box>
         </Container>
     );
