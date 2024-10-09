@@ -6,6 +6,7 @@ import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined';
 import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from './Login';
 import SendIcon from '@mui/icons-material/Send';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 const Blog = () => {
     const [blogs, setBlogs] = useState([]);
@@ -49,7 +50,7 @@ const Blog = () => {
         try {
             const userComments = comments.filter(comment => comment.userId === user?.sub);
             const maxCommentsPerUser = 10;
-            
+
             if (userComments.length >= maxCommentsPerUser) {
                 console.log('You have reached the maximum comment limit.');
                 setOpen(true);
@@ -72,9 +73,24 @@ const Blog = () => {
         }
     };
 
+    const handleDeleteComment = async (commentId) => {
+        try {
+            await axios.delete(`https://api.sundehakon.tech/Comments/${commentId}`);
+            setComments(comments.filter(comment => comment._id !== commentId));
+        } catch (error) {
+            console.error('Error deleting comment:', error);
+        }
+    };
+
     const toggleExpand = (index) => {
         setExpandedIndex(expandedIndex === index ? null : index);
     };
+
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        return date.toISOString().split('T')[0]; 
+    };
+    
 
     return (
         <Container>
@@ -153,28 +169,36 @@ const Blog = () => {
                         onClose={closeCommentModal}
                         sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
                     >
-                        <Paper sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', height: 500, width: 400, borderRadius: 3, padding: 5, gap: 3 }}>
+                        <Paper sx={{ display: 'flex', flexDirection: 'column', height: 500, width: 400, borderRadius: 3, padding: 5, gap: 4 }}>
                             <Typography variant='h5'>Comments</Typography>
-                            {isAuthenticated ? (
-                                comments.filter(comment => comment.post_id === selectedBlog._id).length > 0 ? (
-                                    comments
-                                        .filter(comment => comment.post_id === selectedBlog._id)
-                                        .map((comment, index) => (
-                                            <Box key={index} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 4, alignSelf: 'flex-start' }}>
-                                                <Avatar src={comment.user_picture} />
-                                                <Box>
-                                                    <Typography sx={{ fontWeight: 'bold' }}>{comment.user_name}</Typography>
-                                                    <Typography>{comment.content}</Typography>
+                            <Box sx={{ flexGrow: 1, overflowY: 'auto', marginBottom: 2 }}>
+                                {isAuthenticated ? (
+                                    comments.filter(comment => comment.post_id === selectedBlog._id).length > 0 ? (
+                                        comments
+                                            .filter(comment => comment.post_id === selectedBlog._id)
+                                            .map((comment, index) => (
+                                                <Box key={index} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 2, marginBottom: 3 }}>
+                                                    <Avatar src={comment.user_picture} />
+                                                    <Box>
+                                                        <Typography sx={{ fontWeight: 'bold' }}>{comment.user_name}</Typography>
+                                                        <Typography>{comment.content}</Typography>
+                                                        <Typography sx={{ fontWeight: 'light' }}>{formatDate(comment.date)}</Typography>
+                                                    </Box>
+                                                    {comment.user_id === user?.sub && ( 
+                                                        <IconButton onClick={() => handleDeleteComment(comment._id)} sx={{ marginLeft: 'auto' }}>
+                                                            <DeleteOutlineIcon />
+                                                        </IconButton>
+                                                    )}
                                                 </Box>
-                                            </Box>
-                                        ))
+                                            ))
+                                    ) : (
+                                        <Typography>No comments found. Be the first to comment!</Typography>
+                                    )
                                 ) : (
-                                    <Typography>No comments found.</Typography>
-                                )
-                            ) : (
-                                <LoginButton />
-                            )}
-                            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, width: '100%', marginTop: 2 }}>
+                                    <LoginButton />
+                                )}
+                            </Box>
+                            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                                 <TextField
                                     variant='outlined'
                                     label='Write comment'
@@ -187,7 +211,7 @@ const Blog = () => {
                                 </IconButton>
                             </Box>
                         </Paper>
-                    </Modal>
+                    </Modal>                        
                 )}
             </Box>
         </Container>
