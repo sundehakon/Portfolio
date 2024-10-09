@@ -188,6 +188,7 @@ const Blog = () => {
                                         comments
                                             .filter(comment => comment.post_id === selectedBlog._id)
                                             .map((comment, index) => (
+                                                <Box>
                                                 <Box key={index} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 2, marginBottom: 3 }}>
                                                     <Avatar src={comment.user_picture} />
                                                     <Box>
@@ -200,6 +201,8 @@ const Blog = () => {
                                                             <DeleteOutlineIcon />
                                                         </IconButton>
                                                     )}
+                                                </Box>
+                                                <Divider sx={{ margin: 2 }}/>
                                                 </Box>
                                             ))
                                     ) : (
