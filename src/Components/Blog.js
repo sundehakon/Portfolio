@@ -180,7 +180,7 @@ const Blog = () => {
                         onClose={closeCommentModal}
                         sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
                     >
-                        <Paper sx={{ display: 'flex', flexDirection: 'column', height: 500, width: 400, borderRadius: 3, padding: 5, gap: 4 }}>
+                        <Paper sx={{ display: 'flex', flexDirection: 'column', height: 500, width: 450, borderRadius: 3, padding: 5, gap: 4 }}>
                             <Typography variant='h5' sx={{ textAlign: 'center' }}>Comments</Typography>
                             <Box sx={{ flexGrow: 1, overflowY: 'auto', marginBottom: 2 }}>
                                 {isAuthenticated && (
@@ -189,7 +189,7 @@ const Blog = () => {
                                             .filter(comment => comment.post_id === selectedBlog._id)
                                             .map((comment, index) => (
                                                 <Box>
-                                                <Box key={index} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 2, marginBottom: 3 }}>
+                                                <Box key={index} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 2, marginBottom: 3, marginRight: 3 }}>
                                                     <Avatar src={comment.user_picture} />
                                                     <Box>
                                                         <Typography sx={{ fontWeight: 'bold' }}>{comment.user_name}</Typography>
@@ -197,9 +197,11 @@ const Blog = () => {
                                                         <Typography sx={{ fontWeight: 'light' }}>{formatDate(comment.date)}</Typography>
                                                     </Box>
                                                     {comment.user_id === user?.sub && ( 
-                                                        <IconButton onClick={() => handleDeleteComment(comment._id)} sx={{ marginLeft: 'auto', color: 'red' }}>
-                                                            <DeleteOutlineIcon />
-                                                        </IconButton>
+                                                        <Tooltip title='Delete'>
+                                                            <IconButton onClick={() => handleDeleteComment(comment._id)} sx={{ marginLeft: 'auto', color: 'red' }}>
+                                                                <DeleteOutlineIcon />
+                                                            </IconButton>
+                                                        </Tooltip>
                                                     )}
                                                 </Box>
                                                 <Divider sx={{ margin: 2 }}/>
@@ -218,9 +220,11 @@ const Blog = () => {
                                     value={commentContent}
                                     onChange={(e) => setCommentContent(e.target.value)}
                                 />
-                                <IconButton onClick={handleSubmitComment}>
-                                    <SendIcon />
-                                </IconButton>
+                                <Tooltip title='Send'>
+                                    <IconButton onClick={handleSubmitComment}>
+                                        <SendIcon />
+                                    </IconButton>
+                                </Tooltip>
                             </Box>
                         </Paper>
                     </Modal>                        
