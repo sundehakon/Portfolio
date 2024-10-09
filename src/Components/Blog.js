@@ -134,13 +134,19 @@ const Blog = () => {
                                         <Typography sx={{ color: 'white', fontSize: { xs: '1.2rem', sm: '1.5rem', md: '2rem' } }}>{blog.title}</Typography>
                                         <Typography sx={{ color: 'white', fontSize: { xs: '0.9rem', sm: '1rem', md: '1.2rem' } }}>- {blog.author}</Typography>
                                         <Typography sx={{ color: 'white', fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem' } }}>{blog.date}</Typography>
-                                        <Tooltip title="Log in to view comments">
-                                            <span>
-                                                <IconButton onClick={() => openCommentModal(blog)} disabled={!isAuthenticated}>
-                                                    <CommentOutlinedIcon sx={{ color: 'white' }}/>
-                                                </IconButton>
-                                            </span>
-                                        </Tooltip>
+                                        {isAuthenticated ? (
+                                            <IconButton onClick={() => openCommentModal(blog)}>
+                                                <CommentOutlinedIcon sx={{ color: 'white' }} />
+                                            </IconButton>
+                                        ) : (
+                                            <Tooltip title="Log in to view comments">
+                                                <span>
+                                                    <IconButton onClick={() => openCommentModal(blog)} disabled={!isAuthenticated}>
+                                                        <CommentOutlinedIcon sx={{ color: 'white' }} />
+                                                    </IconButton>
+                                                </span>
+                                            </Tooltip>
+                                        )}
                                     </Box>
                                 </Box>
                                 <Divider />
