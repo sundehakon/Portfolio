@@ -163,7 +163,7 @@ const Blog = () => {
                                 </Box>
                                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                     <Button onClick={() => toggleExpand(index)} sx={{ margin: 2 }}>
-                                        {expandedIndex === index ? <ArrowUpward /> : <ArrowDownward />}
+                                        {expandedIndex === index ? <Tooltip title='Collapse'><ArrowUpward /></Tooltip> : <Tooltip title='Expand'><ArrowDownward /></Tooltip>}
                                     </Button>
                                 </Box>
                             </Paper>
