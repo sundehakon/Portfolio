@@ -1,17 +1,19 @@
-import { Typography, Container, Box, Paper, Divider, CircularProgress, Button, IconButton, Modal, Avatar } from '@mui/material';
+import { Typography, Container, Box, Paper, Divider, CircularProgress, Button, IconButton, Modal, Avatar, TextField } from '@mui/material';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { ArrowDownward, ArrowUpward } from '@mui/icons-material';
 import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined';
 import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from './Login';
+import SendIcon from '@mui/icons-material/Send';
 
 const Blog = () => {
     const [blogs, setBlogs] = useState([]);
     const [comments, setComments] = useState([]);
+    const [commentContent, setCommentContent] = useState('');
     const [expandedIndex, setExpandedIndex] = useState(null);
     const [open, setOpen] = useState(false);
-    const [selectedBlog, setSelectedBlog] = useState(null); 
+    const [selectedBlog, setSelectedBlog] = useState(null);
 
     const openCommentModal = (blog) => {
         setSelectedBlog(blog);
@@ -42,6 +44,33 @@ const Blog = () => {
         fetchBlogs();
         fetchComments();
     }, []);
+
+    const handleSubmitComment = async () => {
+        try {
+            const userComments = comments.filter(comment => comment.userId === user?.sub);
+            const maxCommentsPerUser = 10;
+            
+            if (userComments.length >= maxCommentsPerUser) {
+                console.log('You have reached the maximum comment limit.');
+                setOpen(true);
+                return;
+            }
+
+            const response = await axios.post('https://api.sundehakon.tech/Comments', {
+                post_id: selectedBlog._id,
+                user_id: user.sub,
+                user_picture: user.picture,
+                user_name: user.nickname,
+                content: commentContent,
+                date: new Date().toISOString(),
+            });
+
+            setComments([...comments, response.data]);
+            setCommentContent('');
+        } catch (error) {
+            console.error('Error submitting comment:', error);
+        }
+    };
 
     const toggleExpand = (index) => {
         setExpandedIndex(expandedIndex === index ? null : index);
@@ -127,12 +156,12 @@ const Blog = () => {
                         <Paper sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', height: 500, width: 400, borderRadius: 3, padding: 5, gap: 3 }}>
                             <Typography variant='h5'>Comments</Typography>
                             {isAuthenticated ? (
-                                comments.length > 0 ? (
+                                comments.filter(comment => comment.post_id === selectedBlog._id).length > 0 ? (
                                     comments
                                         .filter(comment => comment.post_id === selectedBlog._id)
                                         .map((comment, index) => (
                                             <Box key={index} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 4, alignSelf: 'flex-start' }}>
-                                                <Avatar src={user.picture} />
+                                                <Avatar src={comment.user_picture} />
                                                 <Box>
                                                     <Typography sx={{ fontWeight: 'bold' }}>{comment.user_name}</Typography>
                                                     <Typography>{comment.content}</Typography>
@@ -145,6 +174,18 @@ const Blog = () => {
                             ) : (
                                 <LoginButton />
                             )}
+                            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, width: '100%', marginTop: 2 }}>
+                                <TextField
+                                    variant='outlined'
+                                    label='Write comment'
+                                    fullWidth
+                                    value={commentContent}
+                                    onChange={(e) => setCommentContent(e.target.value)}
+                                />
+                                <IconButton onClick={handleSubmitComment}>
+                                    <SendIcon />
+                                </IconButton>
+                            </Box>
                         </Paper>
                     </Modal>
                 )}
