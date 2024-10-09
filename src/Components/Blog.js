@@ -208,7 +208,7 @@ const Blog = () => {
                                                 </Box>
                                             ))
                                     ) : (
-                                        <Typography>No comments found. Be the first to comment!</Typography>
+                                        <Typography sx={{ textAlign: 'center' }}>No comments found. Be the first to comment!</Typography>
                                     )
                                 )}
                             </Box>
