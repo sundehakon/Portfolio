@@ -1,10 +1,9 @@
-import { Typography, Container, Box, Paper, Divider, CircularProgress, Button, IconButton, Modal, Avatar, TextField } from '@mui/material';
+import { Typography, Container, Box, Paper, Divider, CircularProgress, Button, IconButton, Modal, Avatar, TextField, Tooltip } from '@mui/material';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { ArrowDownward, ArrowUpward } from '@mui/icons-material';
 import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined';
 import { useAuth0 } from '@auth0/auth0-react';
-import LoginButton from './Login';
 import SendIcon from '@mui/icons-material/Send';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
@@ -17,9 +16,12 @@ const Blog = () => {
     const [selectedBlog, setSelectedBlog] = useState(null);
 
     const openCommentModal = (blog) => {
-        setSelectedBlog(blog);
-        setOpen(true);
+        if (isAuthenticated) {
+            setSelectedBlog(blog);
+            setOpen(true);
+        }
     };
+    
     const closeCommentModal = () => setOpen(false);
     const { isAuthenticated, user } = useAuth0();
 
@@ -48,7 +50,7 @@ const Blog = () => {
 
     const handleSubmitComment = async () => {
         try {
-            const userComments = comments.filter(comment => comment.userId === user?.sub);
+            const userComments = comments.filter(comment => comment.user_id === user?.sub);
             const maxCommentsPerUser = 10;
 
             if (userComments.length >= maxCommentsPerUser) {
@@ -90,7 +92,6 @@ const Blog = () => {
         const date = new Date(dateString);
         return date.toISOString().split('T')[0]; 
     };
-    
 
     return (
         <Container>
@@ -133,9 +134,13 @@ const Blog = () => {
                                         <Typography sx={{ color: 'white', fontSize: { xs: '1.2rem', sm: '1.5rem', md: '2rem' } }}>{blog.title}</Typography>
                                         <Typography sx={{ color: 'white', fontSize: { xs: '0.9rem', sm: '1rem', md: '1.2rem' } }}>- {blog.author}</Typography>
                                         <Typography sx={{ color: 'white', fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem' } }}>{blog.date}</Typography>
-                                        <IconButton onClick={() => openCommentModal(blog)}>
-                                            <CommentOutlinedIcon sx={{ color: 'white' }}/>
-                                        </IconButton>
+                                        <Tooltip title="Log in to view comments">
+                                            <span>
+                                                <IconButton onClick={() => openCommentModal(blog)} disabled={!isAuthenticated}>
+                                                    <CommentOutlinedIcon sx={{ color: 'white' }}/>
+                                                </IconButton>
+                                            </span>
+                                        </Tooltip>
                                     </Box>
                                 </Box>
                                 <Divider />
@@ -172,7 +177,7 @@ const Blog = () => {
                         <Paper sx={{ display: 'flex', flexDirection: 'column', height: 500, width: 400, borderRadius: 3, padding: 5, gap: 4 }}>
                             <Typography variant='h5'>Comments</Typography>
                             <Box sx={{ flexGrow: 1, overflowY: 'auto', marginBottom: 2 }}>
-                                {isAuthenticated ? (
+                                {isAuthenticated && (
                                     comments.filter(comment => comment.post_id === selectedBlog._id).length > 0 ? (
                                         comments
                                             .filter(comment => comment.post_id === selectedBlog._id)
@@ -194,8 +199,6 @@ const Blog = () => {
                                     ) : (
                                         <Typography>No comments found. Be the first to comment!</Typography>
                                     )
-                                ) : (
-                                    <LoginButton />
                                 )}
                             </Box>
                             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
