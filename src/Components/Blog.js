@@ -181,7 +181,7 @@ const Blog = () => {
                         sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
                     >
                         <Paper sx={{ display: 'flex', flexDirection: 'column', height: 500, width: 400, borderRadius: 3, padding: 5, gap: 4 }}>
-                            <Typography variant='h5'>Comments</Typography>
+                            <Typography variant='h5' sx={{ textAlign: 'center' }}>Comments</Typography>
                             <Box sx={{ flexGrow: 1, overflowY: 'auto', marginBottom: 2 }}>
                                 {isAuthenticated && (
                                     comments.filter(comment => comment.post_id === selectedBlog._id).length > 0 ? (
@@ -197,7 +197,7 @@ const Blog = () => {
                                                         <Typography sx={{ fontWeight: 'light' }}>{formatDate(comment.date)}</Typography>
                                                     </Box>
                                                     {comment.user_id === user?.sub && ( 
-                                                        <IconButton onClick={() => handleDeleteComment(comment._id)} sx={{ marginLeft: 'auto' }}>
+                                                        <IconButton onClick={() => handleDeleteComment(comment._id)} sx={{ marginLeft: 'auto', color: 'red' }}>
                                                             <DeleteOutlineIcon />
                                                         </IconButton>
                                                     )}
