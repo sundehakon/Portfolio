@@ -12,6 +12,7 @@ const getNavItems = (t) => [
   { name: 'Blog', link: '/blog' },
   { name: 'Auth', link: '/auth' },
   { name: 'API', link: 'https://api.sundehakon.tech', external: true },
+  { name: 'Docs', link: 'https://sundehakon.notion.site/Portfolio-904bce7e7a0e408eaf61f7d657c6740a', external: true },
   { name: 'Policy', link: '/policy' },
   { component: <LanguageSwitcher /> }, 
 ];
