@@ -16,6 +16,13 @@ function App() {
   const theme = createTheme();
   console.log('Checking out my code? Send me an email at: hakon.su@gmail.com');
 
+  React.useEffect(() => {
+    var _mtm = window._mtm = window._mtm || [];
+    _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://cdn.matomo.cloud/sundehakontech.matomo.cloud/container_gahhNsSt.js'; s.parentNode.insertBefore(g,s);
+   }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <Router>
