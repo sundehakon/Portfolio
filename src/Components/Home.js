@@ -6,6 +6,7 @@ import About from "./About";
 import InfoIcon from '@mui/icons-material/Info';
 import { Link } from "react-router-dom"; 
 import { useTranslation } from 'react-i18next';
+import TimelineComponent from "./TimelineComponent";
 
 const Home = () => {
     const { t } = useTranslation();
@@ -90,6 +91,7 @@ const Home = () => {
                 </Box> 
                 <Skillset />
                 <About />
+                <TimelineComponent />
             </Container>
         </div>
     );
