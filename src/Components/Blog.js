@@ -193,7 +193,7 @@ const Blog = () => {
                                             <Typography sx={{ color: 'white', fontSize: { xs: '0.9rem', sm: '1rem', md: '1.2rem' } }}>- {blog.author}</Typography>
                                             <Typography sx={{ color: 'white', fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem' } }}>{blog.date}</Typography>
                                             {isAuthenticated ? (
-                                                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
+                                                <Box>
                                                     <IconButton onClick={() => openCommentModal(blog)}>
                                                         <CommentOutlinedIcon sx={{ color: 'white' }} />
                                                     </IconButton>
