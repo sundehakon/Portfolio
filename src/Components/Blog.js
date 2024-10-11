@@ -7,6 +7,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import SendIcon from '@mui/icons-material/Send';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 
 const Blog = () => {
     const [blogs, setBlogs] = useState([]);
@@ -102,7 +103,8 @@ const Blog = () => {
             }
     
             const response = await axios.put(`https://api.sundehakon.tech/Blogs/${blogId}/upvote`);
-    
+            
+            console.log(response.upvoters);
             setBlogs((prevBlogs) =>
                 prevBlogs.map((blog) =>
                     blog._id === blogId ? { ...blog, upvotes: response.data.upvotes } : blog
@@ -112,8 +114,11 @@ const Blog = () => {
             console.error('Error updating upvote count:', error);
         }
     };
-    
 
+    const hasUserUpvoted = (blog) => {
+        return blog.upvoters && blog.upvoters.includes(user.sub);
+    };
+    
     return (
         <div>
             <Box sx={{
@@ -166,17 +171,25 @@ const Blog = () => {
                                             <Typography sx={{ color: 'white', fontSize: { xs: '0.9rem', sm: '1rem', md: '1.2rem' } }}>- {blog.author}</Typography>
                                             <Typography sx={{ color: 'white', fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem' } }}>{blog.date}</Typography>
                                             {isAuthenticated ? (
-                                                <Box>
+                                                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
                                                     <IconButton onClick={() => openCommentModal(blog)}>
                                                         <CommentOutlinedIcon sx={{ color: 'white' }} />
                                                     </IconButton>
-                                                    <IconButton onClick={() => handleLike(blog._id)}>
-                                                        <ThumbUpIcon />
+                                                    <IconButton onClick={() => handleLike(blog._id)} sx={{ gap: 1 }}>
+                                                        {hasUserUpvoted(blog) ? (
+                                                            <Tooltip title='You have already liked'>
+                                                                <ThumbUpIcon color='primary' /> 
+                                                            </Tooltip>
+                                                        ) : (
+                                                            <Tooltip title='Like'>
+                                                                <ThumbUpOffAltIcon />
+                                                            </Tooltip>
+                                                        )}
                                                         <Typography>{blog.upvotes}</Typography>
                                                     </IconButton>
                                                 </Box>
                                             ) : (
-                                                <Tooltip title="Log in to view comments">
+                                                <Tooltip title='Log in to view comments'>
                                                     <span>
                                                         <IconButton onClick={() => openCommentModal(blog)} disabled={!isAuthenticated}>
                                                             <CommentOutlinedIcon sx={{ color: 'white' }} />
