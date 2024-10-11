@@ -100,22 +100,42 @@ const Blog = () => {
             if (!isAuthenticated) {
                 console.log('You need to log in to like a post.');
                 return;
-            }
+            };
     
-            const response = await axios.put(`https://api.sundehakon.tech/Blogs/${blogId}/upvote`, {
-                user_id: user.sub, 
-            });
-            
             setBlogs((prevBlogs) =>
                 prevBlogs.map((blog) =>
-                    blog._id === blogId ? { ...blog, upvotes: response.data.upvotes } : blog
+                    blog._id === blogId
+                        ? { 
+                            ...blog, 
+                            upvotes: blog.upvotes + 1, 
+                            upvoters: [...(blog.upvoters || []), user.sub] 
+                          }
+                        : blog
                 )
             );
+    
+            const response = await axios.put(`https://api.sundehakon.tech/Blogs/${blogId}/upvote`, {
+                user_id: user.sub,
+            });
+    
+            if (response.status !== 200) {
+                setBlogs((prevBlogs) =>
+                    prevBlogs.map((blog) =>
+                        blog._id === blogId
+                            ? { 
+                                ...blog, 
+                                upvotes: blog.upvotes - 1, 
+                                upvoters: blog.upvoters.filter(upvoter => upvoter !== user.sub) 
+                              }
+                            : blog
+                    )
+                );
+            }
+    
         } catch (error) {
             console.error('Error updating upvote count:', error);
         }
     };
-    
 
     const hasUserUpvoted = (blog) => {
         return blog.upvoters && blog.upvoters.includes(user.sub);
