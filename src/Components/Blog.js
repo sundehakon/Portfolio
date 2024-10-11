@@ -6,6 +6,7 @@ import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined';
 import { useAuth0 } from '@auth0/auth0-react';
 import SendIcon from '@mui/icons-material/Send';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 
 const Blog = () => {
     const [blogs, setBlogs] = useState([]);
@@ -93,6 +94,26 @@ const Blog = () => {
         return date.toISOString().split('T')[0]; 
     };
 
+    const handleLike = async (blogId) => {
+        try {
+            if (!isAuthenticated) {
+                console.log('You need to log in to like a post.');
+                return;
+            }
+    
+            const response = await axios.put(`https://api.sundehakon.tech/Blogs/${blogId}/upvote`);
+    
+            setBlogs((prevBlogs) =>
+                prevBlogs.map((blog) =>
+                    blog._id === blogId ? { ...blog, upvotes: response.data.upvotes } : blog
+                )
+            );
+        } catch (error) {
+            console.error('Error updating upvote count:', error);
+        }
+    };
+    
+
     return (
         <div>
             <Box sx={{
@@ -145,9 +166,15 @@ const Blog = () => {
                                             <Typography sx={{ color: 'white', fontSize: { xs: '0.9rem', sm: '1rem', md: '1.2rem' } }}>- {blog.author}</Typography>
                                             <Typography sx={{ color: 'white', fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem' } }}>{blog.date}</Typography>
                                             {isAuthenticated ? (
-                                                <IconButton onClick={() => openCommentModal(blog)}>
-                                                    <CommentOutlinedIcon sx={{ color: 'white' }} />
-                                                </IconButton>
+                                                <Box>
+                                                    <IconButton onClick={() => openCommentModal(blog)}>
+                                                        <CommentOutlinedIcon sx={{ color: 'white' }} />
+                                                    </IconButton>
+                                                    <IconButton onClick={() => handleLike(blog._id)}>
+                                                        <ThumbUpIcon />
+                                                        <Typography>{blog.upvotes}</Typography>
+                                                    </IconButton>
+                                                </Box>
                                             ) : (
                                                 <Tooltip title="Log in to view comments">
                                                     <span>
