@@ -197,9 +197,9 @@ const Blog = () => {
                                                     <IconButton onClick={() => openCommentModal(blog)}>
                                                         <CommentOutlinedIcon sx={{ color: 'white' }} />
                                                     </IconButton>
-                                                    <IconButton onClick={() => handleLike(blog._id)} sx={{ gap: 1 }}>
+                                                    <IconButton onClick={() => handleLike(blog._id)} sx={{ gap: 1 }} disabled={hasUserUpvoted(blog)}>
                                                         {hasUserUpvoted(blog) ? (
-                                                            <Tooltip title='You have already liked' disabled='true'>
+                                                            <Tooltip title='You have already liked'>
                                                                 <ThumbUpIcon /> 
                                                             </Tooltip>
                                                         ) : (
