@@ -199,8 +199,8 @@ const Blog = () => {
                                                     </IconButton>
                                                     <IconButton onClick={() => handleLike(blog._id)} sx={{ gap: 1 }}>
                                                         {hasUserUpvoted(blog) ? (
-                                                            <Tooltip title='You have already liked'>
-                                                                <ThumbUpIcon color='primary' /> 
+                                                            <Tooltip title='You have already liked' disabled='true'>
+                                                                <ThumbUpIcon /> 
                                                             </Tooltip>
                                                         ) : (
                                                             <Tooltip title='Like'>
