@@ -260,8 +260,8 @@ const Blog = () => {
                                             comments
                                                 .filter(comment => comment.post_id === selectedBlog._id)
                                                 .map((comment, index) => (
-                                                    <Box>
-                                                    <Box key={index} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 2, marginBottom: 3, marginRight: 3 }}>
+                                                    <Box sx={{ marginBottom: 3, marginRight: 3 }}>
+                                                    <Box key={index} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 2 }}>
                                                         <Avatar src={comment.user_picture} />
                                                         <Box>
                                                             <Typography sx={{ fontWeight: 'bold' }}>{comment.user_name}</Typography>
