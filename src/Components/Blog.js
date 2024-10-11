@@ -102,9 +102,10 @@ const Blog = () => {
                 return;
             }
     
-            const response = await axios.put(`https://api.sundehakon.tech/Blogs/${blogId}/upvote`);
+            const response = await axios.put(`https://api.sundehakon.tech/Blogs/${blogId}/upvote`, {
+                user_id: user.sub, 
+            });
             
-            console.log(response.upvoters);
             setBlogs((prevBlogs) =>
                 prevBlogs.map((blog) =>
                     blog._id === blogId ? { ...blog, upvotes: response.data.upvotes } : blog
@@ -114,6 +115,7 @@ const Blog = () => {
             console.error('Error updating upvote count:', error);
         }
     };
+    
 
     const hasUserUpvoted = (blog) => {
         return blog.upvoters && blog.upvoters.includes(user.sub);
