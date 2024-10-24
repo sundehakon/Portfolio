@@ -144,6 +144,60 @@ const Projects = () => {
                 }}>
                     <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
                         <Typography variant='h4' sx={{ padding: 3 }}>
+                            Image Compressor
+                        </Typography>
+                        <Typography sx={{ padding: 3, flexGrow: 1 }}>
+                            I was interested in learning Rust with WebAssembly, so I started working on this very simple image compressing project. It uses an image compressor cargo crate for backend operations with Rust, and then HTML and JavaScript for rendering it on the web. Design is standard HTML with no thought behind it. 
+                            <br /><br />
+                            <strong>{t('keyfeatures')}</strong>
+                            <List>
+                                <ListItem>
+                                    <ListItemIcon>
+                                        <ArrowForwardIcon />
+                                    </ListItemIcon>
+                                    Displays original image and compressed image byte size
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemIcon>
+                                        <ArrowForwardIcon />
+                                    </ListItemIcon>
+                                    Quick compressing speeds
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemIcon>
+                                        <ArrowForwardIcon />
+                                    </ListItemIcon>
+                                    Hosted online using Github Pages
+                                </ListItem>
+                            </List>
+                        </Typography>
+                        <Box sx={{ display: 'flex', padding: 2, gap: 2 }}>
+                        <Button variant='contained' endIcon={<LanguageIcon />} sx={{  backgroundColor: 'linear-gradient(133deg, rgba(49,92,138,1) 17%, rgba(91,162,240,1) 92%)', '&:hover': { backgroundColor: '#2e4975' }, borderRadius: 20 }} disableRipple href='https://sundehakon.github.io/Compressor/' target='_blank'>
+                                {t('website')}
+                            </Button>
+                            <Button endIcon={<GitHubIcon />} sx={{ color: 'rgba(0, 0, 0, 0.87)' }} style={{ backgroundColor: 'transparent' }} disableRipple href='https://github.com/sundehakon/Compressor' target='_blank'>
+                                Github
+                            </Button>
+                        </Box>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flex: 1 }}>
+                        <img src='/screenshots/compressor.png' alt='Web interface of a compressor' style={{ maxHeight: 400, maxWidth: '100%', objectFit: 'cover', borderRadius: 20, padding: 10 }} />
+                    </Box>
+                </Box>
+                <Box sx={{
+                    border: 1,
+                    borderColor: 'divider',
+                    borderRadius: 2,
+                    boxShadow: 3,
+                    display: 'flex',
+                    flexDirection: { xs: 'column', md: 'row' },
+                    backgroundColor: 'rgba(0, 0, 0, 0.04)',
+                    overflow: 'hidden',
+                    mb: 4,
+                    marginTop: 4
+                }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
+                        <Typography variant='h4' sx={{ padding: 3 }}>
                             SundeWeather 2.0
                         </Typography>
                         <Typography sx={{ padding: 3, flexGrow: 1 }}>
