@@ -70,7 +70,7 @@ const Home = () => {
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent'
                         }}> 
-                            Håkon Sunde
+                            Håkon Haugen Sunde
                         </Typography>
                         <Typography>{t('bio')}</Typography>
                         <Box sx={{ display: 'flex', gap: 3, alignItems: 'center', justifyContent: 'center' }}>
