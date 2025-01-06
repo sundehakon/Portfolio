@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 const getNavItems = (t) => [
   { name: t('home'), link: '/' },
   { name: t('projects'), link: '/projects' },
+  { name: 'Career', link: '/career' },
   { name: t('contactheader'), link: '/contact' },
   { name: 'Blog', link: '/blog' },
   { name: 'Auth', link: '/auth' },
