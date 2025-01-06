@@ -18,7 +18,7 @@ const Footer = () => {
                 <Typography
                     sx={{ flexGrow: 1, display: { sm: 'flex' }, color: 'rgba(0, 0, 0, 0.76)' }}
                 >
-                    © Håkon Sunde 2024
+                    © Håkon Haugen Sunde 2024
                 </Typography>
                 <Box sx={{ display: { sm: 'flex' } }}>
                     <IconButton href='https://x.com/lordsunde' target='_blank' disableRipple sx={{ backgroundColor: 'transparent' }}>
