@@ -1,5 +1,6 @@
 import { Typography, Container, Button, CircularProgress, Box } from '@mui/material';
 import { useState } from 'react';
+import CareerList from './CareerList';
 
 const Development = () => {
     const [state, setState] = useState(true);
@@ -24,6 +25,7 @@ const Development = () => {
             {state === false &&        
                 <Button onClick={handleActivate}>Activate</Button>
             }
+            <CareerList />
         </Container>
     );
 };
