@@ -7,13 +7,13 @@ const CareerList = () => {
         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
             <ListItem alignItems='flex-start'>
                 <ListItemAvatar>
-                    <Avatar>
-                        <SchoolIcon />
+                    <Avatar sx={{ bgcolor: 'white' }}>
+                        <WorkIcon color='primary'/>
                     </Avatar>
                 </ListItemAvatar>
                 <ListItemText
-                    primary='Sophie Radich Skole'
-                    secondary='2020 - 2023'
+                    primary='Eksportfinansiering Norge'
+                    secondary='2024 - Now'
                 />
             </ListItem>
             <Divider variant='inset' component='li' />
@@ -31,13 +31,13 @@ const CareerList = () => {
             <Divider variant='inset' component='li' />
             <ListItem alignItems='flex-start'>
                 <ListItemAvatar>
-                    <Avatar sx={{ bgcolor: 'white' }}>
-                        <WorkIcon color='primary'/>
+                    <Avatar>
+                        <SchoolIcon />
                     </Avatar>
                 </ListItemAvatar>
                 <ListItemText
-                    primary='Eksportfinansiering Norge'
-                    secondary='2024 - Now'
+                    primary='Sophie Radich Skole'
+                    secondary='2020 - 2023'
                 />
             </ListItem>
         </List>
