@@ -12,6 +12,7 @@ import Footer from './Components/Footer';
 import Policy from './Components/Policy';
 import Blog from './Components/Blog';
 import CareerList from './Components/CareerList';
+import Tools from './Components/Tools/Tools';
 
 function App() {
   const theme = createTheme();
@@ -34,6 +35,7 @@ function App() {
               <Route exact path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/tools" element={<Tools />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/policy" element={<Policy />} />
               <Route path="/development" element={<Development />} />
