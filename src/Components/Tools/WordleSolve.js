@@ -20,13 +20,13 @@ const WordleSolve = () => {
   useEffect(() => {
     const fetchData = async (date) => {
       try {
-        const response = await axios.get(`https://www.nytimes.com/svc/wordle/v2/${date}.json`);
-        console.log('API Response:', response.data); // Debugging log
+        const response = await axios.get(`https://wordle.bludood.com/api/wordles`);
+        console.log('API Response:', response.data); 
         setWordleData(response.data);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
-        setWordleData(null); // Clear data on error
+        setWordleData(null); 
         setLoading(false);
       }
     };
