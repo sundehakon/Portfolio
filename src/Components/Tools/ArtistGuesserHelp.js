@@ -25,6 +25,8 @@ const ArtistGuesserHelp = () => {
     const [members, setMembers] = useState('');
     const [minDebut, setMinDebut] = useState('');
     const [maxDebut, setMaxDebut] = useState('');
+    const [minPopularity, setMinPopularity] = useState('');
+    const [maxPopularity, setMaxPopularity] = useState('');
     const [error, setError] = useState('');
     const [artists, setArtists] = useState([]);
 
@@ -58,6 +60,14 @@ const ArtistGuesserHelp = () => {
         setMaxDebut(event.target.value);
     };
 
+    const handleMinPopularityChange = (event) => {
+        setMinPopularity(event.target.value);
+    };
+
+    const handleMaxPopularityChange = (event) => {
+        setMaxPopularity(event.target.value);
+    };
+
     const validateFields = () => {
         const selectedGenresArray = Object.values(selectedGenres);
         const selectedGendersArray = Object.values(selectedGenders);
@@ -66,7 +76,8 @@ const ArtistGuesserHelp = () => {
             !selectedGenresArray.includes(true) || 
             !selectedGendersArray.includes(true) || 
             !members || 
-            (!minDebut && !maxDebut)
+            (!minDebut && !maxDebut) ||
+            (!minPopularity && !maxPopularity)
         ) {
             setError('More Information Needed!');
             return false;
@@ -88,7 +99,7 @@ const ArtistGuesserHelp = () => {
                 try {
                     const genreQuery = selectedGenresArray.join(',');
                     const genderQuery = selectedGendersArray.join(',');
-                    const response = await axios.get(`http://localhost:8080/ArtistData?api_key=${process.env.REACT_APP_ARTIST_DATA_API_KEY}&genres=${genreQuery}&country=${countryCode}&members=${members}&gender=${genderQuery}&minDebut=${minDebut}&maxDebut=${maxDebut}`);
+                    const response = await axios.get(`http://localhost:8080/ArtistData?api_key=${process.env.REACT_APP_ARTIST_DATA_API_KEY}&genres=${genreQuery}&country=${countryCode}&members=${members}&gender=${genderQuery}&minDebut=${minDebut}&maxDebut=${maxDebut}&minPopularity=${minPopularity}&maxPopularity=${maxPopularity}`);
                     setArtists(response.data);
                 } catch (error) {
                     console.error('Error fetching genres:', error);
@@ -97,7 +108,7 @@ const ArtistGuesserHelp = () => {
         };
 
         fetchGenres();
-    }, [selectedGenres, countryCode, members, selectedGenders, minDebut, maxDebut]);
+    }, [selectedGenres, countryCode, members, selectedGenders, minDebut, maxDebut, minPopularity, maxPopularity]);
 
     return (
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh', textAlign: 'center' }}>
@@ -233,6 +244,34 @@ const ArtistGuesserHelp = () => {
                             alignItems: 'center',
                         }}>
                             <FormHelperText>Maximum Debut Year, Icon:</FormHelperText><KeyboardArrowDownIcon />
+                        </Box>
+                    </FormControl>
+                    <FormControl>
+                        <TextField
+                            label='Minimum Popularity'
+                            variant='outlined'
+                            value={minPopularity}
+                            onChange={handleMinPopularityChange} 
+                        />
+                        <Box sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                        }}>
+                            <FormHelperText>Minimum Popularity, Icon:</FormHelperText><KeyboardArrowUpIcon />
+                        </Box>
+                    </FormControl>
+                    <FormControl>
+                        <TextField
+                            label='Maximum Popularity'
+                            variant='outlined'
+                            value={maxPopularity}
+                            onChange={handleMaxPopularityChange} 
+                        />
+                        <Box sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                        }}>
+                            <FormHelperText>Maximum Popularity, Icon:</FormHelperText><KeyboardArrowDownIcon />
                         </Box>
                     </FormControl>
                     {error && <Typography color='error'>{error}</Typography>}
