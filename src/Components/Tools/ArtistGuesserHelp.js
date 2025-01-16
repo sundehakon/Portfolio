@@ -90,6 +90,7 @@ const ArtistGuesserHelp = () => {
                 <Typography variant='h4'>Artist Guesser Help</Typography>
                 <Button variant='outlined' onClick={handleOpen}>Open</Button>
                 <Typography>Cheating tool for the 'Artist Guesser' minigame on Soundmap</Typography>
+                <Typography>STILL UNDER DEVELOPMENT!</Typography>
             </Paper>
             <Modal
                 open={open}
