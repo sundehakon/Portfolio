@@ -23,6 +23,8 @@ const ArtistGuesserHelp = () => {
     const [countryCode, setCountryCode] = useState('');
     const [members, setMembers] = useState('');
     const [minDebut, setMinDebut] = useState('');
+    const [error, setError] = useState('');
+    const [artists, setArtists] = useState([]);
 
     const handleGenreChange = (event) => {
         setSelectedGenres({
@@ -50,8 +52,19 @@ const ArtistGuesserHelp = () => {
         setMinDebut(event.target.value);
     };
 
+    const validateFields = () => {
+        if (!selectedGenres || !members || !minDebut) {
+            setError('More information needed!');
+            return false;
+        }
+        setError('');
+        return true;
+    };
+
     useEffect(() => {
         const fetchGenres = async () => {
+            if (!validateFields()) return;
+
             const selectedGenresArray = Object.keys(selectedGenres).filter(genre => selectedGenres[genre]);
             const selectedGendersArray = Object.keys(selectedGenders).filter(genre => selectedGenders[genre]);
 
@@ -60,7 +73,7 @@ const ArtistGuesserHelp = () => {
                     const genreQuery = selectedGenresArray.join(',');
                     const genderQuery = selectedGendersArray.join(',');
                     const response = await axios.get(`http://localhost:8080/ArtistData?api_key=${process.env.REACT_APP_ARTIST_DATA_API_KEY}&genres=${genreQuery}&country=${countryCode}&members=${members}&gender=${genderQuery}&minDebut=${minDebut}`);
-                    console.log(response.data);
+                    setArtists(response.data);
                 } catch (error) {
                     console.error('Error fetching genres:', error);
                 }
@@ -189,6 +202,23 @@ const ArtistGuesserHelp = () => {
                             <FormHelperText>Minimum Debut Year, Icon:</FormHelperText><KeyboardArrowUpIcon />
                         </Box>
                     </FormControl>
+                    {error && <Typography color='error'>{error}</Typography>}
+                    {!error && (
+                        <>
+                            <Typography variant="h6">Possible Solutions:</Typography>
+                            <Box>
+                                {artists.length > 0 ? (
+                                    artists.map((artist, index) => (
+                                        <Box key={index} sx={{ padding: 1 }}>
+                                            <Typography>{artist.NAME}</Typography>
+                                        </Box>
+                                    ))
+                                ) : (
+                                    <Typography>No artists found.</Typography>
+                                )}
+                            </Box>
+                        </>
+                    )}
                 </Box>
             </Modal>
         </Box>
