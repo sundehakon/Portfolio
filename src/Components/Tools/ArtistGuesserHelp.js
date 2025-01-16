@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Button, Modal, Paper, Typography, FormControl, FormLabel, FormGroup, FormControlLabel, Checkbox, FormHelperText, TextField, Select, MenuItem, InputLabel } from '@mui/material';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import axios from 'axios';
 
 const ArtistGuesserHelp = () => {
@@ -21,6 +22,7 @@ const ArtistGuesserHelp = () => {
     });
     const [countryCode, setCountryCode] = useState('');
     const [members, setMembers] = useState('');
+    const [minDebut, setMinDebut] = useState('');
 
     const handleGenreChange = (event) => {
         setSelectedGenres({
@@ -44,14 +46,20 @@ const ArtistGuesserHelp = () => {
         setMembers(event.target.value);
     };
 
+    const handleMinDebutChange = (event) => {
+        setMinDebut(event.target.value);
+    };
+
     useEffect(() => {
         const fetchGenres = async () => {
             const selectedGenresArray = Object.keys(selectedGenres).filter(genre => selectedGenres[genre]);
+            const selectedGendersArray = Object.keys(selectedGenders).filter(genre => selectedGenders[genre]);
 
             if (selectedGenresArray.length > 0) {
                 try {
                     const genreQuery = selectedGenresArray.join(',');
-                    const response = await axios.get(`http://localhost:8080/ArtistData?api_key=${process.env.REACT_APP_ARTIST_DATA_API_KEY}&genres=${genreQuery}&country=${countryCode}&members=${members}`);
+                    const genderQuery = selectedGendersArray.join(',');
+                    const response = await axios.get(`http://localhost:8080/ArtistData?api_key=${process.env.REACT_APP_ARTIST_DATA_API_KEY}&genres=${genreQuery}&country=${countryCode}&members=${members}&gender=${genderQuery}&minDebut=${minDebut}`);
                     console.log(response.data);
                 } catch (error) {
                     console.error('Error fetching genres:', error);
@@ -60,7 +68,7 @@ const ArtistGuesserHelp = () => {
         };
 
         fetchGenres();
-    }, [selectedGenres, countryCode, members]);
+    }, [selectedGenres, countryCode, members, selectedGenders, minDebut]);
 
     return (
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh', textAlign: 'center' }}>
@@ -166,6 +174,20 @@ const ArtistGuesserHelp = () => {
                             <MenuItem value={'Solo'}>Solo</MenuItem>
                             <MenuItem value={'Group'}>Group</MenuItem>
                         </Select>
+                    </FormControl>
+                    <FormControl>
+                        <TextField
+                            label='Minimum Debut'
+                            variant='outlined'
+                            value={minDebut}
+                            onChange={handleMinDebutChange} 
+                        />
+                        <Box sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                        }}>
+                            <FormHelperText>Minimum Debut Year, Icon:</FormHelperText><KeyboardArrowUpIcon />
+                        </Box>
                     </FormControl>
                 </Box>
             </Modal>
