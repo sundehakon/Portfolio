@@ -1,11 +1,20 @@
 import { Box, Typography } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import WorldleSolve from './WorldleSolve';
+import ArtistGuesserHelp from './ArtistGuesserHelp';
 
 const Tools = () => {
     return (
         <Box>
             <Typography variant='h4' sx={{ textAlign: 'center', p: 4 }}>Tools</Typography>
-            <WorldleSolve />
+            <Grid container spacing={4} justifyContent="center">
+                <Grid item xs={12} md={6}>
+                    <WorldleSolve />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    <ArtistGuesserHelp />
+                </Grid>
+            </Grid>
         </Box>
     );
 };
