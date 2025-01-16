@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Box, Button, Modal, Paper, Typography, FormControl, FormLabel, FormGroup, FormControlLabel, Checkbox, FormHelperText, TextField, Select, MenuItem, InputLabel } from '@mui/material';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import axios from 'axios';
 
 const ArtistGuesserHelp = () => {
@@ -23,6 +24,7 @@ const ArtistGuesserHelp = () => {
     const [countryCode, setCountryCode] = useState('');
     const [members, setMembers] = useState('');
     const [minDebut, setMinDebut] = useState('');
+    const [maxDebut, setMaxDebut] = useState('');
     const [error, setError] = useState('');
     const [artists, setArtists] = useState([]);
 
@@ -52,15 +54,29 @@ const ArtistGuesserHelp = () => {
         setMinDebut(event.target.value);
     };
 
+    const handleMaxDebutChange = (event) => {
+        setMaxDebut(event.target.value);
+    };
+
     const validateFields = () => {
-        if (!selectedGenres || !members || !minDebut) {
-            setError('More information needed!');
+        const selectedGenresArray = Object.values(selectedGenres);
+        const selectedGendersArray = Object.values(selectedGenders);
+    
+        if (
+            !selectedGenresArray.includes(true) || 
+            !selectedGendersArray.includes(true) || 
+            !members || 
+            (!minDebut && !maxDebut)
+        ) {
+            setError('More Information Needed!');
             return false;
         }
+    
         setError('');
         return true;
     };
-
+    
+    
     useEffect(() => {
         const fetchGenres = async () => {
             if (!validateFields()) return;
@@ -72,7 +88,7 @@ const ArtistGuesserHelp = () => {
                 try {
                     const genreQuery = selectedGenresArray.join(',');
                     const genderQuery = selectedGendersArray.join(',');
-                    const response = await axios.get(`http://localhost:8080/ArtistData?api_key=${process.env.REACT_APP_ARTIST_DATA_API_KEY}&genres=${genreQuery}&country=${countryCode}&members=${members}&gender=${genderQuery}&minDebut=${minDebut}`);
+                    const response = await axios.get(`http://localhost:8080/ArtistData?api_key=${process.env.REACT_APP_ARTIST_DATA_API_KEY}&genres=${genreQuery}&country=${countryCode}&members=${members}&gender=${genderQuery}&minDebut=${minDebut}&maxDebut=${maxDebut}`);
                     setArtists(response.data);
                 } catch (error) {
                     console.error('Error fetching genres:', error);
@@ -81,7 +97,7 @@ const ArtistGuesserHelp = () => {
         };
 
         fetchGenres();
-    }, [selectedGenres, countryCode, members, selectedGenders, minDebut]);
+    }, [selectedGenres, countryCode, members, selectedGenders, minDebut, maxDebut]);
 
     return (
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh', textAlign: 'center' }}>
@@ -105,12 +121,14 @@ const ArtistGuesserHelp = () => {
                     left: '50%',
                     transform: 'translate(-50%, -50%)',
                     width: 400,
+                    maxHeight: '80vh',
+                    overflowY: 'auto',
                     bgcolor: 'background.paper',
                     p: 4,
                     gap: 3,
                 }}>
                     <FormControl>
-                        <FormLabel component='legend'>Choose Genre</FormLabel>
+                        <FormLabel required>Choose Genre</FormLabel>
                         <FormGroup>
                             <FormControlLabel
                                 control={
@@ -145,7 +163,7 @@ const ArtistGuesserHelp = () => {
                         </FormGroup>
                         <FormHelperText>Check genres that can be correct</FormHelperText>
                     </FormControl>
-                    <FormControl>
+                    <FormControl required>
                         <FormLabel component='legend'>Choose Gender</FormLabel>
                         <FormGroup>
                             <FormControlLabel
@@ -178,7 +196,7 @@ const ArtistGuesserHelp = () => {
                         />
                         <FormHelperText>Enter Correct Country Code e.g. 'US'</FormHelperText>
                     </FormControl>
-                    <FormControl>
+                    <FormControl required>
                         <InputLabel>Members</InputLabel>
                         <Select
                             value={members}
@@ -201,6 +219,20 @@ const ArtistGuesserHelp = () => {
                             alignItems: 'center',
                         }}>
                             <FormHelperText>Minimum Debut Year, Icon:</FormHelperText><KeyboardArrowUpIcon />
+                        </Box>
+                    </FormControl>
+                    <FormControl>
+                        <TextField
+                            label='Maximum Debut'
+                            variant='outlined'
+                            value={maxDebut}
+                            onChange={handleMaxDebutChange} 
+                        />
+                        <Box sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                        }}>
+                            <FormHelperText>Maximum Debut Year, Icon:</FormHelperText><KeyboardArrowDownIcon />
                         </Box>
                     </FormControl>
                     {error && <Typography color='error'>{error}</Typography>}
