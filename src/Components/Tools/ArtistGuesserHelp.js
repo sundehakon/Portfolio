@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Box, Button, Modal, Paper, Typography, FormControl, FormLabel, FormGroup, FormControlLabel, Checkbox, FormHelperText, TextField, Select, MenuItem, InputLabel } from '@mui/material';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
@@ -68,7 +68,7 @@ const ArtistGuesserHelp = () => {
         setMaxPopularity(event.target.value);
     };
 
-    const validateFields = () => {
+    const validateFields = useCallback(() => {
         const selectedGenresArray = Object.values(selectedGenres);
         const selectedGendersArray = Object.values(selectedGenders);
     
@@ -85,8 +85,7 @@ const ArtistGuesserHelp = () => {
     
         setError('');
         return true;
-    };
-    
+    }, [selectedGenres, selectedGenders, members, minDebut, maxDebut, minPopularity, maxPopularity]);
     
     useEffect(() => {
         const fetchGenres = async () => {
@@ -108,7 +107,7 @@ const ArtistGuesserHelp = () => {
         };
 
         fetchGenres();
-    }, [selectedGenres, countryCode, members, selectedGenders, minDebut, maxDebut, minPopularity, maxPopularity]);
+    }, [validateFields, selectedGenres, countryCode, members, selectedGenders, minDebut, maxDebut, minPopularity, maxPopularity]);
 
     return (
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh', textAlign: 'center' }}>
