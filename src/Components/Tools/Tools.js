@@ -11,9 +11,6 @@ const Tools = () => {
                 <Grid item xs={12} md={6}>
                     <WorldleSolve />
                 </Grid>
-                <Grid item xs={12} md={6}>
-                    <ArtistGuesserHelp />
-                </Grid>
             </Grid>
         </Box>
     );
